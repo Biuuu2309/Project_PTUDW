@@ -1,5 +1,39 @@
-﻿@*
-    For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
-*@
-@{
+﻿@{
+    ViewData["Title"] = "Champion";
+    Layout = null;
 }
+<link href="~/css/ChampionUs.css" rel="stylesheet" />
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.13.1/css/all.min.css" integrity="sha256-2XFplPlrFClt0bIdPgpz8H7ojnk10H69xRqd9+uTShA=" crossorigin="anonymous" />
+<script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha384-KyZXEAg3QhqLMpG8r+8fhAXLR0Ff3B4o1RjM3TV7pHIUydm4e4W3F4L8tFVCmwHZ" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" />
+<div class="container-fluid" id="getlistchampion">
+    
+</div>
+<script>
+    $(document).ready(function () {
+        $.ajax({
+            type: "GET",
+            url: "/api/UserChampion/GetUserChampion",
+            dataType: "json",
+            success: function (data) {
+                console.log("Data fetched successfully:", data);
+                var tbody = $('#getlistchampion');
+                tbody.empty();
+                data.forEach(function (champion, index) {
+                    var row =
+                        '<a role="button" aria - label="' + champion.champName + '" href = "/vi-vn/champions/aatrox/" class="" >' +
+                        '<img style="height: 100px;" src="/Pictures/Champions/' + champion.imageAVA + '" />' +
+                         champion.champName +
+                        '</a >';
+                    tbody.append(row);
+                });
+            },
+            error: function (error) {
+                console.error("Error fetching data:", error);
+            }
+        });
+    });
+
+</script>

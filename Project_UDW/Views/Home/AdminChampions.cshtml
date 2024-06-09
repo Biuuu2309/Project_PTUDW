@@ -1,5 +1,6 @@
 ﻿@{
     ViewData["Title"] = "Champions";
+    Layout = "~/Views/Shared/Master.cshtml";
 }
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -281,9 +282,8 @@
     $(document).ready(function () {
 
         $.ajax({
-            var userId = getQueryParameter("userId");
             type: "GET",
-            url: "/api/AdminChampions/GetChampions/1" + userId,
+            url: "/api/AdminChampions/GetChampions",
             dataType: "json",
             success: function (data) {
                 var tbody = $('#championsTableBody');

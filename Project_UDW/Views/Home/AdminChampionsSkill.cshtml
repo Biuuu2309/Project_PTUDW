@@ -1,5 +1,6 @@
 ﻿@{
     ViewData["Title"] = "Champion Skill";
+    Layout = "~/Views/Shared/Master.cshtml";
 }
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -339,7 +340,7 @@
                         '<td>' + skill.skillW + '</td>' +
                         '<td>' + skill.skillE + '</td>' +
                         '<td>' + skill.skillR + '</td>' +
-                        '<td> <img style="height: 80px; margin-left: 10px;" src="/Pictures/Skills/Skills_NT/' + skill.avA_NT + '" /><img style="height: 80px; margin-left: 10px;" src="/Pictures/Skills/Skills_Q/' + skill.avA_Q + '" /><img style="height: 80px; margin-left: 10px;" src="/Pictures/Skills/Skills_W/' + skill.avA_W + '" /><img style="height: 80px; margin-left: 10px;" src="/Pictures/Skills/Skills_E/' + skill.avA_E + '" /><img style="height: 80px; margin-left: 10px;" src="/Pictures/Skills/Skills_R/' + skill.avA_R + '" /> </td>' +
+                        '<td style="padding-right: 0px; padding-left: 0px;"> <img style="height: 45px; margin-left: 3px;" src="/Pictures/Skills/Skills_NT/' + skill.avA_NT + '" /><img style="height: 45px; margin-left: 3px;" src="/Pictures/Skills/Skills_Q/' + skill.avA_Q + '" /><img style="height: 45px; margin-left: 3px;" src="/Pictures/Skills/Skills_W/' + skill.avA_W + '" /><img style="height: 45px; margin-left: 3px;" src="/Pictures/Skills/Skills_E/' + skill.avA_E + '" /><img style="height: 45px; margin-left: 3px;" src="/Pictures/Skills/Skills_R/' + skill.avA_R + '" /> </td>' +
                         '</tr>';
                     tbody.append(row);
                 });

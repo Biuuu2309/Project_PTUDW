@@ -26,7 +26,7 @@ namespace Project_UDW.Controllers
             DAL dal = new DAL();
             return dal.Registration(us, conn);
         }
-        // Assuming this is your Login endpoint
+        
         [HttpPost]
         [Route("Login")]
         public Response Login([FromBody] LoginDTO loginDto)
