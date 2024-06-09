@@ -13,7 +13,7 @@ nupkg/
 
 # Visual Studio
 .vs/
-.mp4/
+*.mp4
 
 # Fleet
 .fleet/
