@@ -1,0 +1,387 @@
+﻿@{
+    ViewData["Title"] = "Item";
+}
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>@ViewData["Title"]</title>
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" />
+<link rel="stylesheet" href="~/css/AdminItem.css">
+<!-- jQuery should be loaded here -->
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+
+<div id="additemModal" class="modal fade" tabindex="-1" aria-labelledby="ShowModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title">Add Item Form</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+                <form id="additemForm">
+                    <div class="mb-3">
+                        <label for="addnameitem" class="form-label">Item name</label>
+                        <input type="text" class="form-control" id="addnameitem" name="addnameitem" required>
+                    </div>
+                    <div class="mb-3">
+                        <label for="addpicitem" class="form-label">Image item</label>
+                        <input type='file' class="form-control" id="addpicitem" name="addpicitem" required onchange="readURL(this);" />
+                        <img id="blah" src="#" alt="" />
+                    </div>
+                    <div class="mb-3">
+                        <label for="addhealth" class="form-label">Health</label>
+                        <input type="text" class="form-control" id="addhealth" name="addhealth" required>
+                    </div>
+                    <div class="mb-3">
+                        <label for="addatkdame" class="form-label">Atk dame</label>
+                        <input type="text" class="form-control" id="addatkdame" name="addatkdame" required>
+                    </div>
+                    <div class="mb-3">
+                        <label for="addapdame" class="form-label">Ap dame</label>
+                        <input type="text" class="form-control" id="addapdame" name="addapdame" required>
+                    </div>
+                    <div class="mb-3">
+                        <label for="addatkspeed" class="form-label">Atk speed</label>
+                        <input type="text" class="form-control" id="addatkspeed" name="addatkspeed" required>
+                    </div>
+                    <div class="mb-3">
+                        <label for="addcrit" class="form-label">Crit</label>
+                        <input type="text" class="form-control" id="addcrit" name="addcrit" required>
+                    </div>
+                    <div class="mb-3">
+                        <label for="addarmor" class="form-label">Armor</label>
+                        <input type="text" class="form-control" id="addarmor" name="addarmor" required>
+                    </div>
+                    <div class="mb-3">
+                        <label for="addmagicresis" class="form-label">Magicresis</label>
+                        <input type="text" class="form-control" id="addmagicresis" name="addmagicresis" required>
+                    </div>
+                    <div class="mb-3">
+                        <label for="addahaste" class="form-label">Ahaste</label>
+                        <input type="text" class="form-control" id="addahaste" name="addahaste" required>
+                    </div>
+                    <div class="mb-3">
+                        <label for="addmovespeed" class="form-label">Movespeed</label>
+                        <input type="text" class="form-control" id="addmovespeed" name="addmovespeed" required>
+                    </div>
+                    <div class="mb-3">
+                        <label for="addnoitaiitem" class="form-label">Noi tai</label>
+                        <input type="text" class="form-control" id="addnoitaiitem" name="addnoitaiitem" required>
+                    </div>
+                    <div class="mb-3">
+                        <label for="addcost" class="form-label">Cost</label>
+                        <input type="text" class="form-control" id="addcost" name="addcost" required>
+                    </div>
+                    <button type="button" class="btn btn-primary" onclick="Submit_Add_Item()">Submit</button>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+<div id="deleteitemModal" class="modal fade" tabindex="-1" aria-labelledby="ShowModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title">Delete Item Form</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+                <form id="deleteitemForm">
+                    <div class="mb-3">
+                        <label for="delnameitem" class="form-label">Item name</label>
+                        <input type="text" class="form-control" id="delnameitem" name="delnameitem" required>
+                    </div>
+                    <button type="button" class="btn btn-primary" onclick="Submit_Delete_Item()">Submit</button>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+<div id="updateitemModal" class="modal fade" tabindex="-1" aria-labelledby="ShowModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title">Update Item Form</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+                <form id="updateitemForm">
+                    <div class="mb-3">
+                        <label for="upnameitem" class="form-label">Item name</label>
+                        <input type="text" class="form-control" id="upnameitem" name="upnameitem" required>
+                    </div>
+                    <div class="mb-3">
+                        <label for="uppicitem" class="form-label">Image item</label>
+                        <input type='file' class="form-control" id="uppicitem" name="uppicitem" required onchange="readURL(this);" />
+                        <img id="blah" src="#" alt="" />
+                    </div>
+                    <div class="mb-3">
+                        <label for="uphealth" class="form-label">Health</label>
+                        <input type="text" class="form-control" id="uphealth" name="uphealth" required>
+                    </div>
+                    <div class="mb-3">
+                        <label for="upatkdame" class="form-label">Atk dame</label>
+                        <input type="text" class="form-control" id="upatkdame" name="upatkdame" required>
+                    </div>
+                    <div class="mb-3">
+                        <label for="upapdame" class="form-label">Ap dame</label>
+                        <input type="text" class="form-control" id="upapdame" name="upapdame" required>
+                    </div>
+                    <div class="mb-3">
+                        <label for="upatkspeed" class="form-label">Atk speed</label>
+                        <input type="text" class="form-control" id="upatkspeed" name="upatkspeed" required>
+                    </div>
+                    <div class="mb-3">
+                        <label for="upcrit" class="form-label">Crit</label>
+                        <input type="text" class="form-control" id="upcrit" name="upcrit" required>
+                    </div>
+                    <div class="mb-3">
+                        <label for="uparmor" class="form-label">Armor</label>
+                        <input type="text" class="form-control" id="uparmor" name="uparmor" required>
+                    </div>
+                    <div class="mb-3">
+                        <label for="upmagicresis" class="form-label">Magicresis</label>
+                        <input type="text" class="form-control" id="upmagicresis" name="upmagicresis" required>
+                    </div>
+                    <div class="mb-3">
+                        <label for="upahaste" class="form-label">Ahaste</label>
+                        <input type="text" class="form-control" id="upahaste" name="upahaste" required>
+                    </div>
+                    <div class="mb-3">
+                        <label for="upmovespeed" class="form-label">Movespeed</label>
+                        <input type="text" class="form-control" id="upmovespeed" name="upmovespeed" required>
+                    </div>
+                    <div class="mb-3">
+                        <label for="upnoitaiitem" class="form-label">Noi tai</label>
+                        <input type="text" class="form-control" id="upnoitaiitem" name="upnoitaiitem" required>
+                    </div>
+                    <div class="mb-3">
+                        <label for="upcost" class="form-label">Cost</label>
+                        <input type="text" class="form-control" id="upcost" name="upcost" required>
+                    </div>
+                    <button type="button" class="btn btn-primary" onclick="Submit_Update_Item()">Submit</button>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="container-fluid">
+    <div class="row add_item_main">
+        <div class="col-12">
+            <div class="card">
+                <div class="card-body">
+                    <div class="row">
+                        <div class="col-md-9"></div>
+                        <div class="col-md-1 col-md-offset-4 alert alert-info add_btn" onclick="Add_Item()">
+                            <a style="float: right; cursor: pointer">Add a item</a>
+                        </div>
+                        <div class="col-md-1 col-md-offset-4 alert alert-info add_btn" onclick="Delete_Item()">
+                            <a style="float: right; cursor: pointer">Delete a item</a>
+                        </div>
+                        <div class="col-md-1 col-md-offset-4 alert alert-info add_btn" onclick="Update_Item()">
+                            <a style="float: right; cursor: pointer">Update a item</a>
+                        </div>
+                    </div>
+                    <h4 class="card-title">Item</h4>
+                    <h6 class="card-title mt-5"><i class="me-1 font-18 mdi mdi-numeric-1-box-multiple-outline"></i>Details</h6>
+                    <div class="table-responsive">
+                        <table class="table">
+                            <thead>
+                                <tr>
+                                    <th scope="col">STT</th>
+                                    <th scope="col">Name item</th>
+                                    <th scope="col">Image item</th>
+                                    <th scope="col">Health</th>
+                                    <th scope="col">Atk dame</th>
+                                    <th scope="col">Ap dame</th>
+                                    <th scope="col">Atk speed</th>
+                                    <th scope="col">Crit</th>
+                                    <th scope="col">Armor</th>
+                                    <th scope="col">Magic resistances</th>
+                                    <th scope="col">Ahaste</th>
+                                    <th scope="col">Move speed</th>
+                                    <th scope="col">Noi tai</th>
+                                    <th scope="col">Cost</th>
+                                </tr>
+                            </thead>
+                            <tbody id="itemTableBody">
+                                
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<script>
+    function Add_Item() {
+        var modal = new bootstrap.Modal(document.getElementById('additemModal'), {
+            keyboard: false
+        });
+        modal.show();
+    }
+    function Delete_Item() {
+        var modal = new bootstrap.Modal(document.getElementById('deleteitemModal'), {
+            keyboard: false
+        });
+        modal.show();
+    }
+    function Update_Item() {
+        var modal = new bootstrap.Modal(document.getElementById('updateitemModal'), {
+            keyboard: false
+        });
+        modal.show();
+    }
+    function Submit_Add_Item() {
+        var formData = {
+            nameitem: $('#addnameitem').val(),
+            picitem: $('#addpicitem').val(),
+            health: $('#addhealth').val(),
+            atkdame: $('#addatkdame').val(),
+            apdame: $('#addapdame').val(),
+            atkspeed: $('#addatkspeed').val(),
+            crit: $('#addcrit').val(),
+            armor: $('#addarmor').val(),
+            magicresis: $('#addmagicresis').val(),
+            ahaste: $('#addahaste').val(),
+            movespeed: $('#addmovespeed').val(),
+            noitaiitem: $('#addnoitaiitem').val(),
+            cost: $('#addcost').val()
+        };
+
+        $.ajax({
+            type: "POST",
+            url: "/api/AdminItem/AddItem",
+            data: JSON.stringify(formData),
+            contentType: "application/json; charset=utf-8",
+            dataType: "json",
+            success: function (response) {
+                if (response.statusCode === 200) {
+                    alert("Add item successful: " + response.statusMessage);
+                    $('#additemModal').modal('hide');
+                    $('#additemForm')[0].reset();
+                    location.reload();
+
+                } else {
+                    alert("Add item failed: " + response.statusMessage);
+                }
+            },
+            error: function (error) {
+                console.error("AJAX error response:", error);
+                alert("Error during add item.");
+            }
+        });
+    }
+    function Submit_Update_Item() {
+        var formData = {
+            nameitem: $('#upnameitem').val(),
+            picitem: $('#uppicitem').val(),
+            health: $('#uphealth').val(),
+            atkdame: $('#upatkdame').val(),
+            apdame: $('#upapdame').val(),
+            atkspeed: $('#upatkspeed').val(),
+            crit: $('#upcrit').val(),
+            armor: $('#uparmor').val(),
+            magicresis: $('#upmagicresis').val(),
+            ahaste: $('#upahaste').val(),
+            movespeed: $('#upmovespeed').val(),
+            noitaiitem: $('#upnoitaiitem').val(),
+            cost: $('#upcost').val()
+        };
+        $.ajax({
+            type: "POST",
+            url: "/api/AdminItem/UpdateItem",
+            data: JSON.stringify(formData),
+            contentType: "application/json; charset=utf-8",
+            dataType: "json",
+            success: function (response) {
+                if (response.statusCode === 200) {
+                    alert('Item updated successfully!');
+                    $('#updateitemModal').modal('hide');
+                    $('#updateitemForm')[0].reset();
+                    location.reload();
+                } else {
+                    alert('Update failed: ' + response.statusMessage);
+                }
+            },
+            error: function (error) {
+                console.error('AJAX error:', error);
+                alert('Error updating item');
+            }
+        });
+    }
+    function Submit_Delete_Item() {
+        var formData = {
+            nameitem: $('#delnameitem').val()
+        };
+
+        $.ajax({
+            type: "POST",
+            url: "/api/AdminItem/DeleteItem",
+            data: JSON.stringify(formData),
+            contentType: "application/json; charset=utf-8",
+            dataType: "json",
+            success: function (response) {
+                if (response.statusCode === 200) {
+                    alert("Delete item successful: " + response.statusMessage);
+                    $('#deleteitemModal').modal('hide');
+                    $('#deleteitemForm')[0].reset();
+                    location.reload();
+
+                } else {
+                    alert("Delete item failed: " + response.statusMessage);
+                }
+            },
+            error: function (error) {
+                console.error("AJAX error response:", error);
+                alert("Error during delete item.");
+            }
+        });
+    }
+    $(document).ready(function () {
+        $.ajax({
+            type: "GET",
+            url: "/api/AdminItem/GetItem",
+            dataType: "json",
+            success: function (data) {
+                var tbody = $('#itemTableBody');
+                tbody.empty();
+                data.forEach(function (item, index) {
+                    var row = '<tr>' +
+                        '<th scope="row">' + (index + 1) + '</th>' +
+                        '<td>' + item.nameitem + '</td>' +
+                        '<td> <img style="height: 100px;" src="/Pictures/Items/' + item.picitem + '" /> </td>' +
+                        '<td>' + item.health + '</td>' +
+                        '<td>' + item.atkdame + '</td>' +
+                        '<td>' + item.apdame + '</td>' +
+                        '<td>' + item.atkspeed + '</td>' +
+                        '<td>' + item.crit + '</td>' +
+                        '<td>' + item.armor + '</td>' +
+                        '<td>' + item.magicresis + '</td>' +
+                        '<td>' + item.ahaste + '</td>' +
+                        '<td>' + item.movespeed + '</td>' +
+                        '<td>' + item.noitaiitem + '</td>' +
+                        '<td>' + item.cost + '</td>' +
+                        '</tr>';
+                    tbody.append(row);
+                });
+            },
+            error: function (error) {
+                console.error("Error fetching data:", error);
+            }
+        });
+    });
+    function readURL(input) {
+        if (input.files && input.files[0]) {
+            var reader = new FileReader();
+            reader.onload = function (e) {
+                $('#blah')
+                    .attr('src', e.target.result)
+                    .width(150)
+                    .height(200);
+            };
+            reader.readAsDataURL(input.files[0]);
+        }
+    }
+
+</script>

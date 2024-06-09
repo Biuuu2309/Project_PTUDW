@@ -1,0 +1,458 @@
+﻿@{
+    ViewData["Title"] = "Champion Skin";
+}
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>@ViewData["Title"]</title>
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" />
+<link rel="stylesheet" href="~/css/AdminChampionSkin.css">
+<!-- jQuery should be loaded here -->
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+
+<div id="addskinModal" class="modal fade" tabindex="-1" aria-labelledby="ShowModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title">Add Champions Skin Form</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+                <form id="addskinForm">
+                    <div class="mb-3">
+                        <label for="champnameskin" class="form-label">Champ Name</label>
+                        <input type="text" class="form-control" id="champnameskin" name="champnameskin" required>
+                    </div>
+                    <div class="mb-3">
+                        <label for="skin1" class="form-label">Skin 1</label>
+                        <input type='file' class="form-control" id="skin1" name="skin1" required onchange="readURL(this);" />
+                        <img id="blah" src="#" alt="" />
+                    </div>
+                    <div class="mb-3">
+                        <label for="skin2" class="form-label">Skin 2</label>
+                        <input type='file' class="form-control" id="skin2" name="skin2" required onchange="readURL(this);" />
+                        <img id="blah" src="#" alt="" />
+                    </div>
+                    <div class="mb-3">
+                        <label for="skin3" class="form-label">Skin 3</label>
+                        <input type='file' class="form-control" id="skin3" name="skin3" required onchange="readURL(this);" />
+                        <img id="blah" src="#" alt="" />
+                    </div>
+                    <div class="mb-3">
+                        <label for="skin4" class="form-label">Skin 4</label>
+                        <input type='file' class="form-control" id="skin4" name="skin4" required onchange="readURL(this);" />
+                        <img id="blah" src="#" alt="" />
+                    </div>
+                    <div class="mb-3">
+                        <label for="skin5" class="form-label">Skin 5</label>
+                        <input type='file' class="form-control" id="skin5" name="skin5" required onchange="readURL(this);" />
+                        <img id="blah" src="#" alt="" />
+                    </div>
+                    <div class="mb-3">
+                        <label for="skin6" class="form-label">Skin 6</label>
+                        <input type='file' class="form-control" id="skin6" name="skin6" required onchange="readURL(this);" />
+                        <img id="blah" src="#" alt="" />
+                    </div>
+                    <div class="mb-3">
+                        <label for="skin7" class="form-label">Skin 7</label>
+                        <input type='file' class="form-control" id="skin7" name="skin7" required onchange="readURL(this);" />
+                        <img id="blah" src="#" alt="" />
+                    </div>
+                    <div class="mb-3">
+                        <label for="skin8" class="form-label">Skin 8</label>
+                        <input type='file' class="form-control" id="skin8" name="skin8" required onchange="readURL(this);" />
+                        <img id="blah" src="#" alt="" />
+                    </div>
+                    <div class="mb-3">
+                        <label for="skin9" class="form-label">Skin 9</label>
+                        <input type='file' class="form-control" id="skin9" name="skin9" required onchange="readURL(this);" />
+                        <img id="blah" src="#" alt="" />
+                    </div>
+                    <div class="mb-3">
+                        <label for="skin10" class="form-label">Skin 10</label>
+                        <input type='file' class="form-control" id="skin10" name="skin10" required onchange="readURL(this);" />
+                        <img id="blah" src="#" alt="" />
+                    </div>
+                    <div class="mb-3">
+                        <label for="skin11" class="form-label">Skin 11</label>
+                        <input type='file' class="form-control" id="skin11" name="skin11" required onchange="readURL(this);" />
+                        <img id="blah" src="#" alt="" />
+                    </div>
+                    <div class="mb-3">
+                        <label for="skin12" class="form-label">Skin 12</label>
+                        <input type='file' class="form-control" id="skin12" name="skin12" required onchange="readURL(this);" />
+                        <img id="blah" src="#" alt="" />
+                    </div>
+                    <div class="mb-3">
+                        <label for="skin13" class="form-label">Skin 13</label>
+                        <input type='file' class="form-control" id="skin13" name="skin13" required onchange="readURL(this);" />
+                        <img id="blah" src="#" alt="" />
+                    </div>
+                    <div class="mb-3">
+                        <label for="skin14" class="form-label">Skin 14</label>
+                        <input type='file' class="form-control" id="skin14" name="skin14" required onchange="readURL(this);" />
+                        <img id="blah" src="#" alt="" />
+                    </div>
+                    <div class="mb-3">
+                        <label for="skin15" class="form-label">Skin 15</label>
+                        <input type='file' class="form-control" id="skin15" name="skin15" required onchange="readURL(this);" />
+                        <img id="blah" src="#" alt="" />
+                    </div>
+                    <div class="mb-3">
+                        <label for="skin16" class="form-label">Skin 16</label>
+                        <input type='file' class="form-control" id="skin16" name="skin16" required onchange="readURL(this);" />
+                        <img id="blah" src="#" alt="" />
+                    </div>
+                    <div class="mb-3">
+                        <label for="skin17" class="form-label">Skin 17</label>
+                        <input type='file' class="form-control" id="skin17" name="skin17" required onchange="readURL(this);" />
+                        <img id="blah" src="#" alt="" />
+                    </div>
+                    <div class="mb-3">
+                        <label for="skin18" class="form-label">Skin 18</label>
+                        <input type='file' class="form-control" id="skin18" name="skin18" required onchange="readURL(this);" />
+                        <img id="blah" src="#" alt="" />
+                    </div>
+                    <button type="button" class="btn btn-primary" onclick="Submit_Skin()">Submit</button>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+<div id="deleteskinModal" class="modal fade" tabindex="-1" aria-labelledby="ShowModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title">Delete Champions Skin Form</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+                <form id="deleteskinForm">
+                    <div class="mb-3">
+                        <label for="delskinname" class="form-label">Champ Name</label>
+                        <input type="text" class="form-control" id="delskinname" name="delskinname" required>
+                    </div>
+                    <button type="button" class="btn btn-primary" onclick="SubmitDeleteSkin()">Submit</button>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+<div id="updateskinModal" class="modal fade" tabindex="-1" aria-labelledby="ShowModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title">Update Champions Skin Form</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+                <form id="updateskinForm">
+                    <div class="mb-3">
+                        <label for="upchampnameskin" class="form-label">Champ Name</label>
+                        <input type="text" class="form-control" id="upchampnameskin" name="upchampnameskin" required>
+                    </div>
+                    <div class="mb-3">
+                        <label for="upskin1" class="form-label">Skin 1</label>
+                        <input type='file' class="form-control" id="upskin1" name="upskin1" required onchange="readURL(this);" />
+                        <img id="blah" src="#" alt="" />
+                    </div>
+                    <div class="mb-3">
+                        <label for="upskin2" class="form-label">Skin 2</label>
+                        <input type='file' class="form-control" id="upskin2" name="upskin2" required onchange="readURL(this);" />
+                        <img id="blah" src="#" alt="" />
+                    </div>
+                    <div class="mb-3">
+                        <label for="upskin3" class="form-label">Skin 3</label>
+                        <input type='file' class="form-control" id="upskin3" name="upskin3" required onchange="readURL(this);" />
+                        <img id="blah" src="#" alt="" />
+                    </div>
+                    <div class="mb-3">
+                        <label for="upskin4" class="form-label">Skin 4</label>
+                        <input type='file' class="form-control" id="upskin4" name="upskin4" required onchange="readURL(this);" />
+                        <img id="blah" src="#" alt="" />
+                    </div>
+                    <div class="mb-3">
+                        <label for="upskin5" class="form-label">Skin 5</label>
+                        <input type='file' class="form-control" id="upskin5" name="upskin5" required onchange="readURL(this);" />
+                        <img id="blah" src="#" alt="" />
+                    </div>
+                    <div class="mb-3">
+                        <label for="upskin6" class="form-label">Skin 6</label>
+                        <input type='file' class="form-control" id="upskin6" name="upskin6" required onchange="readURL(this);" />
+                        <img id="blah" src="#" alt="" />
+                    </div>
+                    <div class="mb-3">
+                        <label for="upskin7" class="form-label">Skin 7</label>
+                        <input type='file' class="form-control" id="upskin7" name="upskin7" required onchange="readURL(this);" />
+                        <img id="blah" src="#" alt="" />
+                    </div>
+                    <div class="mb-3">
+                        <label for="upskin8" class="form-label">Skin 8</label>
+                        <input type='file' class="form-control" id="upskin8" name="upskin8" required onchange="readURL(this);" />
+                        <img id="blah" src="#" alt="" />
+                    </div>
+                    <div class="mb-3">
+                        <label for="upskin9" class="form-label">Skin 9</label>
+                        <input type='file' class="form-control" id="upskin9" name="upskin9" required onchange="readURL(this);" />
+                        <img id="blah" src="#" alt="" />
+                    </div>
+                    <div class="mb-3">
+                        <label for="upskin10" class="form-label">Skin 10</label>
+                        <input type='file' class="form-control" id="upskin10" name="upskin10" required onchange="readURL(this);" />
+                        <img id="blah" src="#" alt="" />
+                    </div>
+                    <div class="mb-3">
+                        <label for="upskin11" class="form-label">Skin 11</label>
+                        <input type='file' class="form-control" id="upskin11" name="upskin11" required onchange="readURL(this);" />
+                        <img id="blah" src="#" alt="" />
+                    </div>
+                    <div class="mb-3">
+                        <label for="upskin12" class="form-label">Skin 12</label>
+                        <input type='file' class="form-control" id="upskin12" name="upskin12" required onchange="readURL(this);" />
+                        <img id="blah" src="#" alt="" />
+                    </div>
+                    <div class="mb-3">
+                        <label for="upskin13" class="form-label">Skin 13</label>
+                        <input type='file' class="form-control" id="upskin13" name="upskin13" required onchange="readURL(this);" />
+                        <img id="blah" src="#" alt="" />
+                    </div>
+                    <div class="mb-3">
+                        <label for="upskin14" class="form-label">Skin 14</label>
+                        <input type='file' class="form-control" id="upskin14" name="upskin14" required onchange="readURL(this);" />
+                        <img id="blah" src="#" alt="" />
+                    </div>
+                    <div class="mb-3">
+                        <label for="upskin15" class="form-label">Skin 15</label>
+                        <input type='file' class="form-control" id="upskin15" name="upskin15" required onchange="readURL(this);" />
+                        <img id="blah" src="#" alt="" />
+                    </div>
+                    <div class="mb-3">
+                        <label for="upskin16" class="form-label">Skin 16</label>
+                        <input type='file' class="form-control" id="upskin16" name="upskin16" required onchange="readURL(this);" />
+                        <img id="blah" src="#" alt="" />
+                    </div>
+                    <div class="mb-3">
+                        <label for="upskin17" class="form-label">Skin 17</label>
+                        <input type='file' class="form-control" id="upskin17" name="upskin17" required onchange="readURL(this);" />
+                        <img id="blah" src="#" alt="" />
+                    </div>
+                    <div class="mb-3">
+                        <label for="upskin18" class="form-label">Skin 18</label>
+                        <input type='file' class="form-control" id="upskin18" name="upskin18" required onchange="readURL(this);" />
+                        <img id="blah" src="#" alt="" />
+                    </div>
+                    <button type="button" class="btn btn-primary" onclick="Submit_Update_Skin()">Submit</button>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="container-fluid">
+    <div class="row add_championskin_main">
+        <div class="col-12">
+            <div class="card">
+                <div class="card-body">
+                    <div class="row">
+                        <div class="col-md-9"></div>
+                        <div class="col-md-1 col-md-offset-4 alert alert-info add_btn" onclick="Add_Skin()">
+                            <a style="float: right; cursor: pointer">Add skin</a>
+                        </div>
+                        <div class="col-md-1 col-md-offset-4 alert alert-info add_btn" onclick="Delete_Skin()">
+                            <a style="float: right; cursor: pointer">Delete skin</a>
+                        </div>
+                        <div class="col-md-1 col-md-offset-4 alert alert-info add_btn" onclick="Update_Skin()">
+                            <a style="float: right; cursor: pointer">Update skin</a>
+                        </div>
+                    </div>
+                    <h4 class="card-title">Champions Skin</h4>
+                    <h6 class="card-title mt-5"><i class="me-1 font-18 mdi mdi-numeric-1-box-multiple-outline"></i>Details</h6>
+                    <div class="table-responsive">
+                        <table class="table">
+                            <thead>
+                                <tr>
+                                    <th scope="col">STT</th>
+                                    <th scope="col">Name</th>
+                                    <th scope="col">Skins</th>
+                                </tr>
+                            </thead>
+                            <tbody id="skinTableBody">
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<script>
+    function Delete_Skin() {
+        var modal = new bootstrap.Modal(document.getElementById('deleteskinModal'), {
+            keyboard: false
+        });
+        modal.show();
+    }
+    function Update_Skin() {
+        var modal = new bootstrap.Modal(document.getElementById('updateskinModal'), {
+            keyboard: false
+        });
+        modal.show();
+    }
+    function Add_Skin() {
+        var modal = new bootstrap.Modal(document.getElementById('addskinModal'), {
+            keyboard: false
+        });
+        modal.show();
+    }
+    function Submit_Update_Skin() {
+        var formData = {
+            ChampName: $('#upchampnameskin').val(),
+            skin1: $('#upskin1').val(),
+            skin2: $('#upskin2').val(),
+            skin3: $('#upskin3').val(),
+            skin4: $('#upskin4').val(),
+            skin5: $('#upskin5').val(),
+            skin6: $('#upskin6').val(),
+            skin7: $('#upskin7').val(),
+            skin8: $('#upskin8').val(),
+            skin9: $('#upskin9').val(),
+            skin10: $('#upskin10').val(),
+            skin11: $('#upskin11').val(),
+            skin12: $('#upskin12').val(),
+            skin13: $('#upskin13').val(),
+            skin14: $('#upskin14').val(),
+            skin15: $('#upskin15').val(),
+            skin16: $('#upskin16').val(),
+            skin17: $('#upskin17').val(),
+            skin18: $('#upskin18').val()
+        };
+        $.ajax({
+            type: "POST",
+            url: "/api/AdminSkin/UpdateSkin",
+            data: JSON.stringify(formData),
+            contentType: "application/json; charset=utf-8",
+            dataType: "json",
+            success: function (response) {
+                if (response.statusCode === 200) {
+                    alert('Champion skin updated successfully!');
+                    $('#updateskinModal').modal('hide');
+                    $('#updateskinForm')[0].reset();
+                    location.reload();
+                } else {
+                    alert('Update failed: ' + response.statusMessage);
+                }
+            },
+            error: function (error) {
+                console.error('AJAX error:', error);
+                alert('Error updating champion skin');
+            }
+        });
+    }
+    function SubmitDeleteSkin() {
+        var formData = {
+            champname: $('#delskinname').val()
+        };
+
+        $.ajax({
+            type: "POST",
+            url: "/api/AdminSkin/DeleteSkin",
+            data: JSON.stringify(formData),
+            contentType: "application/json; charset=utf-8",
+            dataType: "json",
+            success: function (response) {
+                if (response.statusCode === 200) {
+                    alert("Delete champions skin successful: " + response.statusMessage);
+                    $('#deleteskinModal').modal('hide');
+                    $('#deleteskinForm')[0].reset();
+                    location.reload();
+
+                } else {
+                    alert("Delete champions skin failed: " + response.statusMessage);
+                }
+            },
+            error: function (error) {
+                console.error("AJAX error response:", error);
+                alert("Error during delete skin.");
+            }
+        });
+    }
+    function Submit_Skin() {
+        var formData = {
+            ChampName: $('#champnameskin').val(),
+            skin1: $('#skin1').val(),
+            skin2: $('#skin2').val(),
+            skin3: $('#skin3').val(),
+            skin4: $('#skin4').val(),
+            skin5: $('#skin5').val(),
+            skin6: $('#skin6').val(),
+            skin7: $('#skin7').val(),
+            skin8: $('#skin8').val(),
+            skin9: $('#skin9').val(),
+            skin10: $('#skin10').val(),
+            skin11: $('#skin11').val(),
+            skin12: $('#skin12').val(),
+            skin13: $('#skin13').val(),
+            skin14: $('#skin14').val(),
+            skin15: $('#skin15').val(),
+            skin16: $('#skin16').val(),
+            skin17: $('#skin17').val(),
+            skin18: $('#skin18').val(),
+        };
+        console.log("Form Data: ", formData);
+        $.ajax({
+            type: "POST",
+            url: "/api/AdminSkin/AddSkin",
+            data: JSON.stringify(formData),
+            contentType: "application/json; charset=utf-8",
+            dataType: "json",
+            success: function (response) {
+                if (response.statusCode === 200) {
+                    alert("Add skin successful: " + response.statusMessage);
+                    $('#addskinModal').modal('hide');
+                    $('#addskinForm')[0].reset(); // Optionally reset the form
+                    location.reload();
+
+                } else {
+                    alert("Add skin failed: " + response.statusMessage);
+                }
+            },
+            error: function (error) {
+                console.error("AJAX error response:", error);
+                alert("Error during add skin.");
+            }
+        });
+    }
+    $(document).ready(function () {
+        $.ajax({
+            type: "GET",
+            url: "/api/AdminSkin/GetSkin",
+            dataType: "json",
+            success: function (data) {
+                var tbody = $('#skinTableBody');
+                tbody.empty();
+                data.forEach(function (skin, index) {
+                    var row = '<tr>' +
+                        '<th scope="row">' + (index + 1) + '</th>' +
+                        '<td>' + skin.champName + '</td>' +
+                        '<td><img style="height: 80px; margin-left: 5px; margin-bottom: 5px;" src="/Pictures/Skins/' + skin.skin1 + '" /><img style="height: 80px; margin-left: 5px; margin-bottom: 5px;" src="/Pictures/Skins/' + skin.skin2 + '" /><img style="height: 80px; margin-left: 5px; margin-bottom: 5px;" src="/Pictures/Skins/' + skin.skin3 + '" /><img style="height: 80px; margin-left: 5px; margin-bottom: 5px;" src="/Pictures/Skins/' + skin.skin4 + '" /><img style="height: 80px; margin-left: 5px; margin-bottom: 5px;" src="/Pictures/Skins/' + skin.skin5 + '" /><img style="height: 80px; margin-left: 5px; margin-bottom: 5px;" src="/Pictures/Skins/' + skin.skin6 + '" /><img style="height: 80px; margin-left: 5px; margin-bottom: 5px;" src="/Pictures/Skins/' + skin.skin7 + '" /><img style="height: 80px; margin-left: 5px; margin-bottom: 5px;" src="/Pictures/Skins/' + skin.skin8 + '" /><img style="height: 80px; margin-left: 5px; margin-bottom: 5px;" src="/Pictures/Skins/' + skin.skin9 + '" /><img style="height: 80px; margin-left: 5px; margin-bottom: 5px;" src="/Pictures/Skins/' + skin.skin10 + '" /><img style="height: 80px; margin-left: 5px; margin-bottom: 5px;" src="/Pictures/Skins/' + skin.skin11 + '" /><img style="height: 80px; margin-left: 5px; margin-bottom: 5px;" src="/Pictures/Skins/' + skin.skin12 + '" /><img style="height: 80px; margin-left: 5px; margin-bottom: 5px;" src="/Pictures/Skins/' + skin.skin13 + '" /><img style="height: 80px; margin-left: 5px; margin-bottom: 5px;" src="/Pictures/Skins/' + skin.skin14 + '" /><img style="height: 80px; margin-left: 5px; margin-bottom: 5px;" src="/Pictures/Skins/' + skin.skin15 + '" /><img style="height: 80px; margin-left: 5px; margin-bottom: 5px;" src="/Pictures/Skins/' + skin.skin16 + '" /><img style="height: 80px; margin-left: 5px; margin-bottom: 5px;" src="/Pictures/Skins/' + skin.skin17 + '" /><img style="height: 80px; margin-left: 5px; margin-bottom: 5px;" src="/Pictures/Skins/' + skin.skin18 + '" /></td>' +
+                        '</tr>';
+                    tbody.append(row);
+                });
+            },
+            error: function (error) {
+                console.error("Error fetching data:", error);
+            }
+        });
+    });
+    function readURL(input) {
+        if (input.files && input.files[0]) {
+            var reader = new FileReader();
+            reader.onload = function (e) {
+                $('#blah')
+                    .attr('src', e.target.result)
+                    .width(150)
+                    .height(200);
+            };
+            reader.readAsDataURL(input.files[0]);
+        }
+    }
+
+</script>

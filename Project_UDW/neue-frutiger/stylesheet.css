@@ -1,0 +1,240 @@
+@font-face {
+    font-family: 'Neue Frutiger World';
+    src: url('NeueFrutigerWorld-Thin.eot');
+    src: local('Neue Frutiger World Thin'), local('NeueFrutigerWorld-Thin'),
+        url('NeueFrutigerWorld-Thin.eot?#iefix') format('embedded-opentype'),
+        url('NeueFrutigerWorld-Thin.woff2') format('woff2'),
+        url('NeueFrutigerWorld-Thin.woff') format('woff'),
+        url('NeueFrutigerWorld-Thin.ttf') format('truetype');
+    font-weight: 100;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Neue Frutiger World';
+    src: url('NeueFrutigerWorld-Regular.eot');
+    src: local('Neue Frutiger World Regular'), local('NeueFrutigerWorld-Regular'),
+        url('NeueFrutigerWorld-Regular.eot?#iefix') format('embedded-opentype'),
+        url('NeueFrutigerWorld-Regular.woff2') format('woff2'),
+        url('NeueFrutigerWorld-Regular.woff') format('woff'),
+        url('NeueFrutigerWorld-Regular.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Neue Frutiger World';
+    src: url('NeueFrutigerWorld-UltLt.eot');
+    src: local('Neue Frutiger World UltLt'), local('NeueFrutigerWorld-UltLt'),
+        url('NeueFrutigerWorld-UltLt.eot?#iefix') format('embedded-opentype'),
+        url('NeueFrutigerWorld-UltLt.woff2') format('woff2'),
+        url('NeueFrutigerWorld-UltLt.woff') format('woff'),
+        url('NeueFrutigerWorld-UltLt.ttf') format('truetype');
+    font-weight: 200;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Neue Frutiger World';
+    src: url('NeueFrutigerWorld-BoldIt.eot');
+    src: local('Neue Frutiger World Bold It'), local('NeueFrutigerWorld-BoldIt'),
+        url('NeueFrutigerWorld-BoldIt.eot?#iefix') format('embedded-opentype'),
+        url('NeueFrutigerWorld-BoldIt.woff2') format('woff2'),
+        url('NeueFrutigerWorld-BoldIt.woff') format('woff'),
+        url('NeueFrutigerWorld-BoldIt.ttf') format('truetype');
+    font-weight: bold;
+    font-style: italic;
+}
+
+@font-face {
+    font-family: 'Neue Frutiger World';
+    src: url('NeueFrutigerWorld-MediumIt.eot');
+    src: local('Neue Frutiger World Medium It'), local('NeueFrutigerWorld-MediumIt'),
+        url('NeueFrutigerWorld-MediumIt.eot?#iefix') format('embedded-opentype'),
+        url('NeueFrutigerWorld-MediumIt.woff2') format('woff2'),
+        url('NeueFrutigerWorld-MediumIt.woff') format('woff'),
+        url('NeueFrutigerWorld-MediumIt.ttf') format('truetype');
+    font-weight: 500;
+    font-style: italic;
+}
+
+@font-face {
+    font-family: 'Neue Frutiger World';
+    src: url('NeueFrutigerWorld-Bold.eot');
+    src: local('Neue Frutiger World Bold'), local('NeueFrutigerWorld-Bold'),
+        url('NeueFrutigerWorld-Bold.eot?#iefix') format('embedded-opentype'),
+        url('NeueFrutigerWorld-Bold.woff2') format('woff2'),
+        url('NeueFrutigerWorld-Bold.woff') format('woff'),
+        url('NeueFrutigerWorld-Bold.ttf') format('truetype');
+    font-weight: bold;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Neue Frutiger World';
+    src: url('NeueFrutigerWorld-ThinIt.eot');
+    src: local('Neue Frutiger World Thin It'), local('NeueFrutigerWorld-ThinIt'),
+        url('NeueFrutigerWorld-ThinIt.eot?#iefix') format('embedded-opentype'),
+        url('NeueFrutigerWorld-ThinIt.woff2') format('woff2'),
+        url('NeueFrutigerWorld-ThinIt.woff') format('woff'),
+        url('NeueFrutigerWorld-ThinIt.ttf') format('truetype');
+    font-weight: 100;
+    font-style: italic;
+}
+
+@font-face {
+    font-family: 'Neue Frutiger World';
+    src: url('NeueFrutigerWorld-HeavyIt.eot');
+    src: local('Neue Frutiger World Heavy It'), local('NeueFrutigerWorld-HeavyIt'),
+        url('NeueFrutigerWorld-HeavyIt.eot?#iefix') format('embedded-opentype'),
+        url('NeueFrutigerWorld-HeavyIt.woff2') format('woff2'),
+        url('NeueFrutigerWorld-HeavyIt.woff') format('woff'),
+        url('NeueFrutigerWorld-HeavyIt.ttf') format('truetype');
+    font-weight: 900;
+    font-style: italic;
+}
+
+@font-face {
+    font-family: 'Neue Frutiger World';
+    src: url('NeueFrutigerWorld-LightIt.eot');
+    src: local('Neue Frutiger World Light It'), local('NeueFrutigerWorld-LightIt'),
+        url('NeueFrutigerWorld-LightIt.eot?#iefix') format('embedded-opentype'),
+        url('NeueFrutigerWorld-LightIt.woff2') format('woff2'),
+        url('NeueFrutigerWorld-LightIt.woff') format('woff'),
+        url('NeueFrutigerWorld-LightIt.ttf') format('truetype');
+    font-weight: 300;
+    font-style: italic;
+}
+
+@font-face {
+    font-family: 'Neue Frutiger World';
+    src: url('NeueFrutigerWorld-Light.eot');
+    src: local('Neue Frutiger World Light'), local('NeueFrutigerWorld-Light'),
+        url('NeueFrutigerWorld-Light.eot?#iefix') format('embedded-opentype'),
+        url('NeueFrutigerWorld-Light.woff2') format('woff2'),
+        url('NeueFrutigerWorld-Light.woff') format('woff'),
+        url('NeueFrutigerWorld-Light.ttf') format('truetype');
+    font-weight: 300;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Neue Frutiger World';
+    src: url('NeueFrutigerWorld-UltLtIt.eot');
+    src: local('Neue Frutiger World UltLt It'), local('NeueFrutigerWorld-UltLtIt'),
+        url('NeueFrutigerWorld-UltLtIt.eot?#iefix') format('embedded-opentype'),
+        url('NeueFrutigerWorld-UltLtIt.woff2') format('woff2'),
+        url('NeueFrutigerWorld-UltLtIt.woff') format('woff'),
+        url('NeueFrutigerWorld-UltLtIt.ttf') format('truetype');
+    font-weight: normal;
+    font-style: italic;
+}
+
+@font-face {
+    font-family: 'Neue Frutiger World';
+    src: url('NeueFrutigerWorld-BookIt.eot');
+    src: local('Neue Frutiger World Book It'), local('NeueFrutigerWorld-BookIt'),
+        url('NeueFrutigerWorld-BookIt.eot?#iefix') format('embedded-opentype'),
+        url('NeueFrutigerWorld-BookIt.woff2') format('woff2'),
+        url('NeueFrutigerWorld-BookIt.woff') format('woff'),
+        url('NeueFrutigerWorld-BookIt.ttf') format('truetype');
+    font-weight: normal;
+    font-style: italic;
+}
+
+@font-face {
+    font-family: 'Neue Frutiger World';
+    src: url('NeueFrutigerWorld-Heavy.eot');
+    src: local('Neue Frutiger World Heavy'), local('NeueFrutigerWorld-Heavy'),
+        url('NeueFrutigerWorld-Heavy.eot?#iefix') format('embedded-opentype'),
+        url('NeueFrutigerWorld-Heavy.woff2') format('woff2'),
+        url('NeueFrutigerWorld-Heavy.woff') format('woff'),
+        url('NeueFrutigerWorld-Heavy.ttf') format('truetype');
+    font-weight: 900;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Neue Frutiger World';
+    src: url('NeueFrutigerWorld-XtraBlkIt.eot');
+    src: local('Neue Frutiger World XtraBlk It'), local('NeueFrutigerWorld-XtraBlkIt'),
+        url('NeueFrutigerWorld-XtraBlkIt.eot?#iefix') format('embedded-opentype'),
+        url('NeueFrutigerWorld-XtraBlkIt.woff2') format('woff2'),
+        url('NeueFrutigerWorld-XtraBlkIt.woff') format('woff'),
+        url('NeueFrutigerWorld-XtraBlkIt.ttf') format('truetype');
+    font-weight: normal;
+    font-style: italic;
+}
+
+@font-face {
+    font-family: 'Neue Frutiger World';
+    src: url('NeueFrutigerWorld-XtraBlk.eot');
+    src: local('Neue Frutiger World XtraBlk'), local('NeueFrutigerWorld-XtraBlk'),
+        url('NeueFrutigerWorld-XtraBlk.eot?#iefix') format('embedded-opentype'),
+        url('NeueFrutigerWorld-XtraBlk.woff2') format('woff2'),
+        url('NeueFrutigerWorld-XtraBlk.woff') format('woff'),
+        url('NeueFrutigerWorld-XtraBlk.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Neue Frutiger World';
+    src: url('NeueFrutigerWorld-Book.eot');
+    src: local('Neue Frutiger World Book'), local('NeueFrutigerWorld-Book'),
+        url('NeueFrutigerWorld-Book.eot?#iefix') format('embedded-opentype'),
+        url('NeueFrutigerWorld-Book.woff2') format('woff2'),
+        url('NeueFrutigerWorld-Book.woff') format('woff'),
+        url('NeueFrutigerWorld-Book.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Neue Frutiger World';
+    src: url('NeueFrutigerWorld-BlackIt.eot');
+    src: local('Neue Frutiger World Black It'), local('NeueFrutigerWorld-BlackIt'),
+        url('NeueFrutigerWorld-BlackIt.eot?#iefix') format('embedded-opentype'),
+        url('NeueFrutigerWorld-BlackIt.woff2') format('woff2'),
+        url('NeueFrutigerWorld-BlackIt.woff') format('woff'),
+        url('NeueFrutigerWorld-BlackIt.ttf') format('truetype');
+    font-weight: 900;
+    font-style: italic;
+}
+
+@font-face {
+    font-family: 'Neue Frutiger World';
+    src: url('NeueFrutigerWorld-Medium.eot');
+    src: local('Neue Frutiger World Medium'), local('NeueFrutigerWorld-Medium'),
+        url('NeueFrutigerWorld-Medium.eot?#iefix') format('embedded-opentype'),
+        url('NeueFrutigerWorld-Medium.woff2') format('woff2'),
+        url('NeueFrutigerWorld-Medium.woff') format('woff'),
+        url('NeueFrutigerWorld-Medium.ttf') format('truetype');
+    font-weight: 500;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Neue Frutiger World';
+    src: url('NeueFrutigerWorld-It.eot');
+    src: local('Neue Frutiger World It'), local('NeueFrutigerWorld-It'),
+        url('NeueFrutigerWorld-It.eot?#iefix') format('embedded-opentype'),
+        url('NeueFrutigerWorld-It.woff2') format('woff2'),
+        url('NeueFrutigerWorld-It.woff') format('woff'),
+        url('NeueFrutigerWorld-It.ttf') format('truetype');
+    font-weight: normal;
+    font-style: italic;
+}
+
+@font-face {
+    font-family: 'Neue Frutiger World';
+    src: url('NeueFrutigerWorld-Black.eot');
+    src: local('Neue Frutiger World Black'), local('NeueFrutigerWorld-Black'),
+        url('NeueFrutigerWorld-Black.eot?#iefix') format('embedded-opentype'),
+        url('NeueFrutigerWorld-Black.woff2') format('woff2'),
+        url('NeueFrutigerWorld-Black.woff') format('woff'),
+        url('NeueFrutigerWorld-Black.ttf') format('truetype');
+    font-weight: 900;
+    font-style: normal;
+}
+
