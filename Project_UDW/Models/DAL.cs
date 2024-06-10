@@ -482,29 +482,15 @@ namespace Project_UDW.Models
 
                 if (reader.Read())
                 {
-                    Skin skin = new Skin
-                    {
-                        ChampName = reader["ChampName"].ToString(),
-                        Skin1 = reader["skin1"].ToString(),
-                        Skin2 = reader["skin2"].ToString(),
-                        Skin3 = reader["skin3"].ToString(),
-                        Skin4 = reader["skin4"].ToString(),
-                        Skin5 = reader["skin5"].ToString(),
-                        Skin6 = reader["skin6"].ToString(),
-                        Skin7 = reader["skin7"].ToString(),
-                        Skin8 = reader["skin8"].ToString(),
-                        Skin9 = reader["skin9"].ToString(),
-                        Skin10 = reader["skin10"].ToString(),
-                        Skin11 = reader["skin11"].ToString(),
-                        Skin12 = reader["skin12"].ToString(),
-                        Skin13 = reader["skin13"].ToString(),
-                        Skin14 = reader["skin14"].ToString(),
-                        Skin15 = reader["skin15"].ToString(),
-                        Skin16 = reader["skin16"].ToString(),
-                        Skin17 = reader["skin17"].ToString(),
-                        Skin18 = reader["skin18"].ToString(),
+                    Skin skin = new Skin();
+                    skin.ChampName = reader["ChampName"].ToString();
 
-                    };
+                    for (int i = 1; i <= 18; i++)
+                    {
+                        string propertyName = "Skin" + i;
+                        typeof(Skin).GetProperty(propertyName).SetValue(skin, reader[propertyName].ToString());
+                    }
+
                     response.StatusCode = 200;
                     response.Data = skin;
                 }
@@ -523,6 +509,7 @@ namespace Project_UDW.Models
 
             return response;
         }
+
         public Response GetChampions(SqlConnection conn)
         {
             Response response = new Response();
