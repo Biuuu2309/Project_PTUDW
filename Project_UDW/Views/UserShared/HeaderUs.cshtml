@@ -1,72 +1,295 @@
 ﻿@{
     ViewBag.Title = "HeaderUs";
 }
-<div id="main-wrapper" data-navbarbg="skin6" data-theme="light" data-layout="vertical" data-sidebartype="full"
-     data-boxed-layout="full">
-    <header class="topbar" data-navbarbg="skin6">
-        <nav class="navbar top-navbar navbar-expand-md navbar-light">
-            <div class="navbar-header" data-logobg="skin5">
-                <a class="nav-toggler waves-effect waves-light d-block d-md-none" href="javascript:void(0)">
-                    <i class="ti-menu ti-close"></i>
-                </a>
-                <div class="navbar-brand">
-                    <a href="index.html" class="logo">
-                        <b class="logo-icon">
-                            <img src="~/assets/images/logo-icon.png" alt="homepage" class="dark-logo" />
-                            <img src="~/assets/images/logo-light-icon.png" alt="homepage" class="light-logo" />
-                        </b>
-                        <span class="logo-text">
-                            <img src="~/assets/images/logo-text.png" alt="homepage" class="dark-logo" />
-                            <img src="~/assets/images/logo-light-text.png" class="light-logo" alt="homepage" />
-                        </span>
+
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<link rel="stylesheet" href="https://unicons.iconscout.com/release/v4.0.0/css/line.css">
+<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.5.0/css/all.css" integrity="sha384-B4dIYHKNBt8Bc12p+WXckhzcICo0wtJAoU8YZTY5qE0Id1GSseTk6S+L3BlXeVIU" crossorigin="anonymous">
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
+      integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
+        crossorigin="anonymous"></script>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+<link href="~/css/HeaderUs.css" rel="stylesheet" />
+
+<style>
+    .HHD1 a {
+        font-size: 13px;
+    }
+
+    .dropdown-item {
+        width: 93%;
+    }
+
+    .navbar-dark .navbar-nav .nav-link {
+        color: white;
+    }
+
+    div.Biu {
+        padding-top: 8px;
+    }
+
+    .menu-right img {
+        display: none;
+    }
+
+        .menu-right img.default {
+            display: block;
+        }
+
+        .menu-right img.active {
+            display: block;
+        }
+</style>
+
+<div class="container-fluid w-100 p-0" style="height: 80px;">
+    <div class="row bg-dark">
+        <div id="HD_L" class="col-xxl-2 col-xl-2 col-lg-3 col-md-3 col-sm-3 col-5 d-flex justify-content-center align-items-center p-0" style="height: 80px;">
+            <a href="#" data-bs-toggle="offcanvas" data-bs-target="#offcanvasTop" aria-controls="offcanvasTop">
+                <img class="logo" src="~/Pictures/IconGames/Icon 2.png" alt="Logo" />
+            </a>
+            <div class="offcanvas offcanvas-top" tabindex="-1" id="offcanvasTop" aria-labelledby="offcanvasTopLabel">
+                <div class="offcanvas-header">
+                    <a href="#">
+                        <img class="HD_MINI" src="~/Pictures/IconGames/Icon 1.png" alt="Mini Logo" />
                     </a>
+                    <button type="button" class="btn-close text-reset" data-bs-dismiss="offcanvas"
+                            aria-label="Close"></button>
+                </div>
+                <div class="offcanvas-body">
+                    <div class="row">
+                        <div class="col-xxl-8 col-xl-8 col-lg-8 col-md-8 col-sm-8 col-8 text-start">
+                            <div class="row">
+                                <div class="col-xxl-4 col-xl-4 col-lg-4 col-md-4 col-sm-4 col-4 p-0">
+                                    <div class="HD_TIEUDE">
+                                        <p>TRÒ CHƠI</p>
+                                    </div>
+                                    <div class="col-xxl-2 col-xl-2 col-lg-2 col-md-2 col-sm-2 col-2 w-100 p-1 mt-1 HD_C">
+                                        <a class="HD_MN menu-item" data-image="img-lien-minh" href="#">
+                                            <span>LIÊN MINH HUYỀN THOẠI</span>
+                                        </a>
+                                    </div>
+                                    <div class="col-xxl-2 col-xl-2 col-lg-2 col-md-2 col-sm-2 col-2 w-100 p-1 HD_C">
+                                        <a class="HD_MN menu-item" data-image="img-dau-truong" href="#">
+                                            <span>ĐẤU TRƯỜNG CHÂN LÝ</span>
+                                        </a>
+                                    </div>
+                                    <div class="col-xxl-2 col-xl-2 col-lg-2 col-md-2 col-sm-2 col-2 w-100 p-1 HD_C">
+                                        <a class="HD_MN" href="#">
+                                            <span>VALORANT</span>
+                                        </a>
+
+                                    </div>
+                                    <div class="col-xxl-3 col-xl-3 col-lg-3 col-md-3 col-sm-3 col-3 w-100 p-1 HDD">
+                                        <a class="HD_MN1" href="#">
+                                            <span>HUYỀN THOẠI RUNETERRA</span>
+                                        </a>
+                                    </div>
+                                    <div class="col-xxl-3 col-xl-3 col-lg-3 col-md-3 col-sm-3 col-3 w-100 p-1 HD_C">
+                                        <a class="HD_MN" href="#">
+                                            <span>LMHT: TỐC CHIẾN</span>
+                                        </a>
+
+                                    </div>
+                                </div>
+                                <div class="col-xxl-4 col-xl-4 col-lg-4 col-md-4 col-sm-4 col-4">
+                                    <div class="HD_TIEUDE">
+                                        <p>FORGE</p>
+                                    </div>
+                                    <div class="col-xxl-2 col-xl-2 col-lg-2 col-md-2 col-sm-2 col-2 w-100 p-1 mt-1 HD_C">
+                                        <a class="HD_MN" href="#">
+                                            <span>RUINED KING</span>
+                                        </a>
+
+                                    </div>
+                                    <div class="col-xxl-2 col-xl-2 col-lg-2 col-md-2 col-sm-2 col-2 w-100 p-1 HD_C">
+                                        <a class="HD_MN" href="#">
+                                            <span>CONV/RGENCE</span>
+                                        </a>
+                                    </div>
+                                    <div class="col-xxl-2 col-xl-2 col-lg-2 col-md-2 col-sm-2 col-2 w-100 p-1 HD_C">
+                                        <a class="HD_MN" href="#">
+                                            <span>SONG OF NUNU</span>
+                                        </a>
+                                    </div>
+                                    <div class="col-xxl-2 col-xl-2 col-lg-2 col-md-2 col-sm-2 col-2 w-100 p-1 HD_C">
+                                        <a class="HD_MN" href="#">
+                                            <span>TRÒ CHƠI CỦA RIOT FORGE</span>
+                                        </a>
+                                    </div>
+                                    <div class="HD_TIEUDE">
+                                        <p>ESPORTS</p>
+                                    </div>
+                                    <div class="col-xxl-2 col-xl-2 col-lg-2 col-md-2 col-sm-2 col-2 w-100 mt-1 HD_C">
+                                        <a class="HD_MN" href="#">
+                                            <span>LOL ESPORTS</span>
+                                        </a>
+                                    </div>
+                                    <div class="col-xxl-2 col-xl-2 col-lg-2 col-md-2 col-sm-2 col-2 w-100 p-1 mt-1 HD_C">
+                                        <a class="HD_MN2" href="#">
+                                            <span>VALORANT ESPORTS</span>
+                                        </a>
+                                    </div>
+                                </div>
+                                <div class="col-xxl-4 col-xl-4 col-lg-4 col-md-4 col-sm-4 col-4">
+                                    <div class="HD_TIEUDE">
+                                        <p>GIẢI TRÍ</p>
+                                    </div>
+                                    <div class="col-xxl-2 col-xl-2 col-lg-2 col-md-2 col-sm-2 col-2 w-100 p-1 mt-1 HD_C">
+                                        <a class="HD_MN" href="#">
+                                            <span>ARCANE</span>
+                                        </a>
+
+                                    </div>
+                                    <div class="col-xxl-2 col-xl-2 col-lg-2 col-md-2 col-sm-2 col-2 w-100 p-1 HD_C">
+                                        <a class="HD_MN" href="#">
+                                            <span>VŨ TRỤ</span>
+                                        </a>
+                                    </div>
+                                    <div class="col-xxl-2 col-xl-2 col-lg-2 col-md-2 col-sm-2 col-2 w-100 p-1 HD_C">
+                                        <a class="HD_MN" href="#">
+                                            <span>RIOT GAMES MUSIC</span>
+                                        </a>
+                                    </div>
+                                    <div class="col-xxl-2 col-xl-2 col-lg-2 col-md-2 col-sm-2 col-2 w-100 HD_TIEUDE">
+                                        <p>KINH DOANH</p>
+                                    </div>
+                                    <div class="col-xxl-2 col-xl-2 col-lg-2 col-md-2 col-sm-2 col-2 w-100 p-1 mt-1 HD_C">
+                                        <a class="HD_MN" href="#">
+                                            <span>RIOT GAMES</span>
+                                        </a>
+                                    </div>
+                                    <div class="col-xxl-2 col-xl-2 col-lg-2 col-md-2 col-sm-2 col-2 w-100 p-1 mt-1 HD_C">
+                                        <a class="HD_MN" href="#">
+                                            <span>HỖ TRỢ RIOT</span>
+                                        </a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-xxl-4 col-xl-4 col-lg-4 col-md-4 col-sm-4 col-4 menu-right">
+                            <div class="row">
+                                <div class="col-12 d-flex flex-grow-0">
+                                    <div id="img-default" class="active">
+                                        <a class="HD_HI" href="#">
+                                            <img src="~/Pictures/IconGames/Icon 13.jpeg" alt="Alternate Text" />
+                                            <p class="p-1">Huyền Thoại Runeterra - Bản Mở Rộng Mới - Con Đường Nguyện Ước</p>
+                                        </a>
+                                        <a class="HD_HI" href="#">
+                                            <img src="~/Pictures/IconGames/Icon 14.jpeg" alt="Alternate Text" />
+                                            <p class="p-1">Thách thức mọi kỳ vọng, dám trở nên khác biệt. HỒI 08 // PHẦN III đã ra mắt. </p>
+                                        </a>
+                                    </div>
+                                    <img id="img-lien-minh" src="~/Pictures/IconGames/Icon 13.jpeg" alt="Liên Minh Huyền Thoại" />
+                                    <img id="img-dau-truong" src="~/Pictures/IconGames/Icon 14.jpeg" alt="Đấu Trường Chân Lý" />
+                                </div>
+                            </div>
+                        </div>
+                    </div>
                 </div>
             </div>
-            <div class="navbar-collapse collapse" id="navbarSupportedContent" data-navbarbg="skin6">
-                <ul class="navbar-nav float-end">
-                    <li class="nav-item dropdown">
-                        <a class="nav-link dropdown-toggle text-muted waves-effect waves-dark pro-pic" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                            <img src="~/assets/images/users/1.jpg" alt="user" class="rounded-circle" width="31">
-                        </a>
-                        <ul class="dropdown-menu dropdown-menu-end user-dd animated" aria-labelledby="navbarDropdown">
-                            <a class="dropdown-item" href="javascript:void(0)">
-                                <i class="ti-user me-1 ms-1"></i>
-                                My Profile
-                            </a>
-                            <a class="dropdown-item" href="javascript:void(0)">
-                                <i class="ti-wallet me-1 ms-1"></i>
-                                My Balance
-                            </a>
-                            <a class="dropdown-item" href="javascript:void(0)">
-                                <i class="ti-email me-1 ms-1"></i>
-                                Inbox
-                            </a>
+        </div>
+        <div class="col-xxl-10 col-xl-10 col-lg-9 col-md-9 col-sm-9 col-7">
+            <nav class="navbar navbar-expand-xxl navbar-dark p-0">
+                <div class="container-fluid HD_T p-0">
+                    <a class="navbar-brand d-flex justify-content-center align-items-center" style="height: 80px;" href="@Url.Action("Index","User")">
+                        <img src="~/Pictures/IconGames/Icon 7.png" alt="Navbar Logo" />
+                    </a>
+                    <a class="nav-link NTT" href="@Url.Action("Champion","User")">TƯỚNG</a>
+
+                    <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
+                            data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false"
+                            aria-label="Toggle navigation">
+                        <span class="navbar-toggler-icon"></span>
+                    </button>
+                    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                        <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                            <li class="nav-item TT">
+                                <a class="nav-link active NTT" aria-current="page"
+                                   href="#">TRÒ CHƠI</a>
+                            </li>
+                            <li class="nav-item TT">
+                                <a class="nav-link NTT" href="@Url.Action("Champion","User")">TƯỚNG</a>
+                            </li>
+                            <li class="nav-item dropdown active TT">
+                                <a class="nav-link dropdown-toggle NTT" href="#" id="navbarDropdown" role="button"
+                                   data-bs-toggle="dropdown" aria-expanded="false">
+                                    TIN TỨC
+                                </a>
+                                <ul class="dropdown-menu text-bg-dark HD_T2" aria-labelledby="navbarDropdown">
+                                    <li><a class="dropdown-item" href="#">TẤT CẢ</a></li>
+                                    <li><a class="dropdown-item" href="#">CẬP NHẬT TRÒ CHƠI</a></li>
+                                    <li><a class="dropdown-item" href="#">ESPORTS</a></li>
+                                    <li><a class="dropdown-item" href="#">ĐỘI NGŨ PHÁT TRIỂN</a></li>
+                                    <li><a class="dropdown-item" href="#">TRUYỀN THÔNG</a></li>
+                                    <li><a class="dropdown-item" href="#">RIOT GAMES</a></li>
+                                </ul>
+                            </li>
+                            <li class="nav-item TT">
+                                <a class="nav-link NTT" href="#">CHI TIẾT CẬP NHẬT</a>
+                            </li>
+                            <li class="nav-item TT">
+                                <a class="nav-link NTT" href="#">ESPORTS</a>
+                            </li>
+                            <li class="nav-item TT">
+                                <a class="nav-link NTT" href="#">VŨ TRỤ</a>
+                            </li>
+                            <li class="nav-item TT">
+                                <a class="nav-link NTT" href="#">HỖ TRỢ</a>
+                            </li>
                         </ul>
-                    </li>
-                </ul>
-            </div>
-        </nav>
-    </header>
-    <aside class="left-sidebar" data-sidebarbg="skin5">
-        <div class="scroll-sidebar">
-            <nav class="sidebar-nav">
-                <ul id="sidebarnav">
-                    <li class="sidebar-item">
-                        <a class="sidebar-link waves-effect waves-dark sidebar-link" href="@Url.Action("Index", "User")"
-                           aria-expanded="false">
-                            <i class="mdi mdi-av-timer"></i>
-                            <span class="hide-menu">Dashboard</span>
-                        </a>
-                    </li>
-                    <li class="sidebar-item">
-                        <a class="sidebar-link waves-effect waves-dark sidebar-link" href="@Url.Action("Champion", "User")"
-                           aria-expanded="false">
-                            <i class="mdi mdi-av-timer"></i>
-                            <span class="hide-menu">Dashboard</span>
-                        </a>
-                    </li>
-                </ul>
+                        <form class="d-flex">
+                            <div class="Biu">
+                                <div class="row">
+                                    <div class="col-xxl-6 col-lg-8 col-lg-offset-2 col-md-8 MM col-md-offset-1 p-0">
+                                        <div id="wrap">
+                                            <form action="" autocomplete="on">
+                                                <input id="search" name="search" type="text" placeholder="Tim kiem...">
+                                                <svg id="search_submit" value="Rechercher" type="submit"
+                                                     xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
+                                                     class="bi bi-search" viewBox="0 0 16 16">
+                                                    <path d="M11.742 10.344a6.5 6.5 0 1 0-1.397 1.398h-.001q.044.06.098.115l3.85 3.85a1 1 0 0 0 1.415-1.414l-3.85-3.85a1 1 0 0 0-.115-.1zM12 6.5a5.5 5.5 0 1 1-11 0 5.5 5.5 0 0 1 11 0" />
+                                                </svg>
+                                            </form>
+                                        </div>
+                                    </div>
+                                    <div class="col-xxl-3 p-0 d-flex justify-content-center align-items-center">
+                                        <div class="DC1"><a href="#">Đăng Nhập</a></div>
+                                    </div>
+                                    <div class="col-xxl-3 p-0 d-flex justify-content-center align-items-center">
+                                        <div class="DC2"><a href="#">Chơi Ngay</a></div>
+                                    </div>
+                                </div>
+                            </div>
+                        </form>
+                    </div>
+                </div>
             </nav>
         </div>
-    </aside>
+    </div>
 </div>
+
+
+
+<script>
+    document.addEventListener("DOMContentLoaded", function () {
+        const menuItems = document.querySelectorAll(".menu-item");
+        const images = document.querySelectorAll(".menu-right img");
+        const defaultImage = document.getElementById("img-default");
+
+        menuItems.forEach(item => {
+            item.addEventListener("mouseover", function () {
+                images.forEach(img => img.classList.remove("active"));
+                const imageId = this.getAttribute("data-image");
+                document.getElementById(imageId).classList.add("active");
+                defaultImage.classList.add("hidden");
+            });
+
+            item.addEventListener("mouseout", function () {
+                images.forEach(img => img.classList.remove("active"));
+                defaultImage.classList.remove("hidden");
+            });
+        });
+    });
+</script>

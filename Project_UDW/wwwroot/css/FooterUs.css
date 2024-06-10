@@ -1,0 +1,380 @@
+﻿body {
+    margin: 0;
+    padding: 0;
+    overflow-x: hidden;
+}
+
+.TPFT {
+    background-color: #292929;
+    height: 80px;
+}
+
+.TPFT2-1 svg {
+    size: 20px;
+    color: #fafafa;
+}
+
+.TPFT2-1 a {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    background-color: #3d3d3d;
+    height: 48px;
+    width: 48px;
+    border-radius: 25%;
+    margin: 0 10px;
+}
+
+.TPFT2-1 {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    margin-top: 40px;
+}
+
+.TPFT2 {
+    background-color: #121212;
+    width: 100%;
+}
+
+.FT_A {
+    height: 40px;
+    filter: opacity(0.4);
+}
+
+    .FT_A:hover {
+        filter: opacity(1);
+    }
+
+footer {
+    width: 100%;
+}
+
+.container-fluid {
+    padding: 0;
+}
+
+.FT_VIDEO video {
+    width: 100%;
+}
+
+.FT_BG {
+    width: 100%;
+}
+
+.FT_B, .FT_B2, .FT_C {
+    text-align: center;
+}
+
+.TPFT {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+}
+
+.TPFT {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.TTP {
+    text-decoration: none;
+    font-family: neuefrutigerworld-heavy;
+    font-size: 15px;
+    color: #fafafa;
+}
+
+@font-face {
+    font-family: 'neuefrutigerworld-heavy';
+    src: url('../neue-frutiger/neuefrutigerworld-heavy.woff') format('woff');
+}
+
+.TTTP1 {
+    height: 40px;
+    width: 250px;
+    margin: 0 10px 0 10px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 10px;
+}
+
+.TTTP2 {
+    height: 40px;
+    width: 100px;
+    margin: 0 10px 0 10px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 10px;
+}
+
+.TTTP3 {
+    height: 40px;
+    width: 250px;
+    margin: 0 10px 0 10px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 10px;
+}
+
+.TTTP1 :hover {
+    height: 40px;
+    background-color: #3d3d3d;
+    width: 250px;
+    margin: 0 10px 0 10px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 10px;
+    text-decoration: none;
+    color: #fafafa;
+}
+
+.TTTP2 :hover {
+    height: 40px;
+    background-color: #3d3d3d;
+    width: 100px;
+    margin: 0 10px 0 10px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 10px;
+    text-decoration: none;
+    color: #fafafa;
+}
+
+.TTTP3 :hover {
+    height: 40px;
+    background-color: #3d3d3d;
+    width: 250px;
+    margin: 0 10px 0 10px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 10px;
+    text-decoration: none;
+    color: #fafafa;
+}
+
+.FT_CBT {
+    display: flex;
+    flex-direction: row;
+    height: 40px;
+    justify-content: center;
+    align-items: center;
+    padding: 0 13px 0 13px;
+}
+
+.FT_CBT1 {
+    text-decoration: none;
+    color: #fafafa;
+    font-size: 13px;
+    font-family: neuefrutigerworld-medium;
+}
+
+@font-face {
+    font-family: "neuefrutigerworld-medium";
+    src: url("../neue-frutiger/neuefrutigerworld-medium.woff") format("woff");
+}
+
+.FT_CBT1 :hover {
+    text-decoration: none;
+    font-size: 14px;
+    background-color: #3d3d3d;
+    color: #fafafa;
+}
+
+.FT_CBT :hover {
+}
+
+.FT_BG {
+    background: #292929;
+    height: 85px;
+}
+
+.FT_B a {
+    text-decoration: none;
+    font-family: neuefrutigerworld-medium;
+    font-size: 14px;
+    font-weight: 700;
+    color: #f9f9f9;
+    box-sizing: border-box;
+    display: inline-block; /* Để kích thước phần tử tự động theo nội dung */
+    padding: 5px 10px; /* Padding mặc định */
+    border-radius: 8px;
+    transition: background-color 0.3s, padding 0.3s, margin 0.3s; /* Hiệu ứng chuyển động mượt mà */
+}
+
+    .FT_B a:hover {
+        background-color: #3d3d3c;
+        padding: 5px 15px; /* Thêm khoảng padding để dài ra */
+        margin-left: -5px; /* Cân bằng lại để chữ không di chuyển */
+        margin-right: -5px; /* Cân bằng lại để chữ không di chuyển */
+    }
+
+.FT_B2 a {
+    text-decoration: none;
+    font-family: neuefrutigerworld-medium;
+    font-size: 14px;
+    font-weight: 700;
+    color: #f9f9f9;
+    box-sizing: border-box;
+    display: inline-block;
+    padding: 5px 20px;
+    border-radius: 8px;
+    transition: background-color 0.3s, padding 0.3s;
+}
+
+    .FT_B2 a:hover {
+        background-color: #3d3d3c;
+        padding: 5px 10px;
+    }
+
+.FT_C a {
+    text-decoration: none;
+    font-family: neuefrutigerworld-medium;
+    font-size: 14px;
+    font-weight: 700;
+    color: #f9f9f9;
+    box-sizing: border-box;
+    display: inline-block; /* Để kích thước phần tử tự động theo nội dung */
+    padding: 5px 10px; /* Padding mặc định */
+    border-radius: 8px;
+    transition: background-color 0.3s, padding 0.3s, margin 0.3s; /* Hiệu ứng chuyển động mượt mà */
+}
+
+    .FT_C a:hover {
+        background-color: #3d3d3c;
+        padding: 5px 15px; /* Thêm khoảng padding để dài ra */
+        margin-left: -5px; /* Cân bằng lại để chữ không di chuyển */
+        margin-right: -5px; /* Cân bằng lại để chữ không di chuyển */
+    }
+
+@media only screen and (max-width: 992px) {
+    .FT_BG {
+        height: 150px;
+    }
+
+    .FT_B {
+        padding: 10px 10px;
+    }
+
+    .FT_C {
+        padding: 10px 10px;
+    }
+}
+
+video {
+    z-index: 0;
+    position: relative;
+}
+
+.row.position-absolute {
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 1; /* Đảm bảo hàng này nằm trên video */
+}
+
+.FT_D {
+    position: absolute;
+    top: 30%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: #f9f9f9;
+    text-decoration: none;
+    font-family: neuefrutigerworld-medium;
+    font-size: 15px;
+}
+
+.FT_DD {
+    height: 100px;
+}
+
+
+a.btn.btn-secondary.btn-lg.FT_D:hover {
+    background-color: #c6b696;
+}
+
+
+
+a.btn.btn-secondary.btn-lg {
+    width: 12%;
+    height: 65%;
+    background-color: #c7a96d;
+    color: #0a1340;
+    border: none;
+    border-radius: inherit;
+    z-index: 2;
+    pointer-events: auto;
+}
+
+.FT_video-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    color: white;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+}
+
+.FT_NUT a {
+    text-decoration: none;
+    color: #0a1340;
+    font-family: neuefrutigerworld-medium;
+    display: flex;
+    text-align: center;
+    justify-content: center;
+}
+
+.FT_NUT {
+    background-color: #c7a96d;
+    color: #0a1340;
+    border: none;
+    border-radius: inherit;
+    width: 50%;
+}
+
+button.btn.btn-secondary.btn-lg.FT_NUT:hover {
+    background-color: #c6b696;
+}
+
+
+@media (max-width:1000px) {
+    .FT_NUT a {
+        font-size: 13px;
+    }
+}
+
+@media (max-width:700px) {
+    .FT_NUT a {
+        font-size: 10px;
+    }
+}
+
+@media (max-width:575px) {
+    .FT_NUT a {
+        font-size: 8px;
+    }
+}
+
+@media (max-width:365px) {
+    .FT_NUT a {
+        font-size: 6px;
+    }
+}
