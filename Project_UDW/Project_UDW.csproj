@@ -7,6 +7,13 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <Compile Remove="wwwroot\font\**" />
+    <Content Remove="wwwroot\font\**" />
+    <EmbeddedResource Remove="wwwroot\font\**" />
+    <None Remove="wwwroot\font\**" />
+  </ItemGroup>
+
+  <ItemGroup>
     <Content Remove="wwwroot\Pictures\Update\Pic 1.jpeg" />
     <Content Remove="wwwroot\Pictures\Update\Pic 11.jpg" />
   </ItemGroup>
@@ -694,7 +701,6 @@
   </ItemGroup>
 
   <ItemGroup>
-    <Folder Include="wwwroot\font\" />
     <Folder Include="wwwroot\Pictures\Backgrounds_Champs\" />
     <Folder Include="wwwroot\Pictures\Skins\" />
     <Folder Include="wwwroot\Pictures\Skills\Skills_R\" />

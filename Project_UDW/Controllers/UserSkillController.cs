@@ -1,48 +1,44 @@
 ﻿using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
-using Microsoft.Extensions.Configuration;
+using Newtonsoft.Json;
 using Project_UDW.Models;
-using System.Collections.Generic;
 using System.Data.SqlClient;
 
 namespace Project_UDW.Controllers
 {
     [Route("api/[controller]")]
     [ApiController]
-    public class UserChampionController : ControllerBase
+    public class UserSkillController : ControllerBase
     {
         private readonly IConfiguration _configuration;
         private readonly SqlConnection conn;
-
-        public UserChampionController(IConfiguration configuration)
+        public UserSkillController(IConfiguration configuration)
         {
             _configuration = configuration;
             conn = new SqlConnection(_configuration.GetConnectionString("DBCS"));
         }
-
         [HttpGet]
-        [Route("GetUserChampion")]
-        public IEnumerable<Champions> GetChampions()
+        [Route("GetUserSkill")]
+        public IEnumerable<Skills> GetSkills()
         {
             DAL dal = new DAL();
-            Response response = dal.GetChampions(conn);
+            Response response = dal.GetSkills(conn);
 
             if (response.StatusCode == 200)
             {
-                return (List<Champions>)response.Data;
+                return (List<Skills>)response.Data;
             }
             else
             {
-                return new List<Champions>(); // Or you can throw an exception
+                return new List<Skills>();
             }
         }
-
         [HttpGet]
-        [Route("GetUserChampionDetail")]
-        public IActionResult GetUserChampionDetail(string champName)
+        [Route("GetUserSkillDetail")]
+        public IActionResult GetSkillDetail(string champName)
         {
             DAL dal = new DAL();
-            Response response = dal.GetChampionDetail(conn, champName);
+            Response response = dal.GetSkillDetail(conn, champName);
 
             if (response.StatusCode == 200)
             {

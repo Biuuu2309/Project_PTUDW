@@ -383,6 +383,146 @@ namespace Project_UDW.Models
             }
             return response;
         }
+        public Response GetChampionDetail(SqlConnection conn, string champName)
+        {
+            Response response = new Response();
+            try
+            {
+                conn.Open();
+                string query = "SELECT ChampName, NickName, Describle, Role, Level, ImageDD, ImageAVA FROM champions WHERE ChampName = @ChampName";
+                SqlCommand cmd = new SqlCommand(query, conn);
+                cmd.Parameters.AddWithValue("@ChampName", champName);
+                SqlDataReader reader = cmd.ExecuteReader();
+
+                if (reader.Read())
+                {
+                    Champions champion = new Champions
+                    {
+                        ChampName = reader["ChampName"].ToString(),
+                        NickName = reader["NickName"].ToString(),
+                        Describle = reader["Describle"].ToString(),
+                        Role = reader["Role"].ToString(),
+                        Level = reader["Level"].ToString(),
+                        ImageDD = reader["ImageDD"].ToString(),
+                        ImageAVA = reader["ImageAVA"].ToString()
+                    };
+                    response.StatusCode = 200;
+                    response.Data = champion;
+                }
+                else
+                {
+                    response.StatusCode = 404;
+                    response.StatusMessage = "Champion not found";
+                }
+                conn.Close();
+            }
+            catch (Exception ex)
+            {
+                response.StatusCode = 500;
+                response.StatusMessage = ex.Message;
+            }
+
+            return response;
+        }
+        public Response GetSkillDetail(SqlConnection conn, string champName)
+        {
+            Response response = new Response();
+            try
+            {
+                conn.Open();
+                string query = "SELECT * FROM skills WHERE ChampName = @ChampName";
+                SqlCommand cmd = new SqlCommand(query, conn);
+                cmd.Parameters.AddWithValue("@ChampName", champName);
+                SqlDataReader reader = cmd.ExecuteReader();
+
+                if (reader.Read())
+                {
+                    Skills skill = new Skills
+                    {
+                        ChampName = reader["ChampName"].ToString(),
+                        NoiTai = reader["Skillnt"].ToString(),
+                        SkillQ = reader["Skillq"].ToString(),
+                        SkillW = reader["Skillw"].ToString(),
+                        SkillE = reader["Skille"].ToString(),
+                        SkillR = reader["Skillr"].ToString(),
+                        AVA_NT = reader["AVAnt"].ToString(),
+                        AVA_Q = reader["AVAq"].ToString(),
+                        AVA_W = reader["AVAw"].ToString(),
+                        AVA_E = reader["AVAe"].ToString(),
+                        AVA_R = reader["AVAr"].ToString()
+                    };
+                    response.StatusCode = 200;
+                    response.Data = skill;
+                }
+                else
+                {
+                    response.StatusCode = 404;
+                    response.StatusMessage = "Skill not found";
+                }
+                conn.Close();
+            }
+            catch (Exception ex)
+            {
+                response.StatusCode = 500;
+                response.StatusMessage = ex.Message;
+            }
+
+            return response;
+        }
+        public Response GetSkinDetail(SqlConnection conn, string champName)
+        {
+            Response response = new Response();
+            try
+            {
+                conn.Open();
+                string query = "SELECT * FROM skins WHERE ChampName = @ChampName";
+                SqlCommand cmd = new SqlCommand(query, conn);
+                cmd.Parameters.AddWithValue("@ChampName", champName);
+                SqlDataReader reader = cmd.ExecuteReader();
+
+                if (reader.Read())
+                {
+                    Skin skin = new Skin
+                    {
+                        ChampName = reader["ChampName"].ToString(),
+                        Skin1 = reader["skin1"].ToString(),
+                        Skin2 = reader["skin2"].ToString(),
+                        Skin3 = reader["skin3"].ToString(),
+                        Skin4 = reader["skin4"].ToString(),
+                        Skin5 = reader["skin5"].ToString(),
+                        Skin6 = reader["skin6"].ToString(),
+                        Skin7 = reader["skin7"].ToString(),
+                        Skin8 = reader["skin8"].ToString(),
+                        Skin9 = reader["skin9"].ToString(),
+                        Skin10 = reader["skin10"].ToString(),
+                        Skin11 = reader["skin11"].ToString(),
+                        Skin12 = reader["skin12"].ToString(),
+                        Skin13 = reader["skin13"].ToString(),
+                        Skin14 = reader["skin14"].ToString(),
+                        Skin15 = reader["skin15"].ToString(),
+                        Skin16 = reader["skin16"].ToString(),
+                        Skin17 = reader["skin17"].ToString(),
+                        Skin18 = reader["skin18"].ToString(),
+
+                    };
+                    response.StatusCode = 200;
+                    response.Data = skin;
+                }
+                else
+                {
+                    response.StatusCode = 404;
+                    response.StatusMessage = "Skin not found";
+                }
+                conn.Close();
+            }
+            catch (Exception ex)
+            {
+                response.StatusCode = 500;
+                response.StatusMessage = ex.Message;
+            }
+
+            return response;
+        }
         public Response GetChampions(SqlConnection conn)
         {
             Response response = new Response();
