@@ -20,5 +20,9 @@ namespace Project_UDW.Controllers
         {
             return View();
         }
+        public IActionResult Detail_Champion()
+        {
+            return View();
+        }
     }
 }
