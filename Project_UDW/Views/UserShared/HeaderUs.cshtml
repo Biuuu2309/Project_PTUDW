@@ -1,49 +1,8 @@
 ﻿@{
     ViewBag.Title = "HeaderUs";
 }
-
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-<link rel="stylesheet" href="https://unicons.iconscout.com/release/v4.0.0/css/line.css">
-<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.5.0/css/all.css" integrity="sha384-B4dIYHKNBt8Bc12p+WXckhzcICo0wtJAoU8YZTY5qE0Id1GSseTk6S+L3BlXeVIU" crossorigin="anonymous">
-<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
-      integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
-<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
-        integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
-        crossorigin="anonymous"></script>
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
 <link href="~/css/HeaderUs.css" rel="stylesheet" />
-
-<style>
-    .HHD1 a {
-        font-size: 13px;
-    }
-
-    .dropdown-item {
-        width: 93%;
-    }
-
-    .navbar-dark .navbar-nav .nav-link {
-        color: white;
-    }
-
-    div.Biu {
-        padding-top: 8px;
-    }
-
-    .menu-right img {
-        display: none;
-    }
-
-        .menu-right img.default {
-            display: block;
-        }
-
-        .menu-right img.active {
-            display: block;
-        }
-</style>
-
-<div class="container-fluid w-100 p-0" style="height: 80px;">
+<div class="container-fluid w-100 p-0" style="height: 80px; position:relative;z-index:2;">
     <div class="row bg-dark">
         <div id="HD_L" class="col-xxl-2 col-xl-2 col-lg-3 col-md-3 col-sm-3 col-5 d-flex justify-content-center align-items-center p-0" style="height: 80px;">
             <a href="#" data-bs-toggle="offcanvas" data-bs-target="#offcanvasTop" aria-controls="offcanvasTop">
@@ -193,24 +152,24 @@
         <div class="col-xxl-10 col-xl-10 col-lg-9 col-md-9 col-sm-9 col-7">
             <nav class="navbar navbar-expand-xxl navbar-dark p-0">
                 <div class="container-fluid HD_T p-0">
-                    <a class="navbar-brand d-flex justify-content-center align-items-center" style="height: 80px;" href="@Url.Action("Index","User")">
+                    <a class="navbar-brand d-flex justify-content-center align-items-center" style="height: 80px;" href="#">
                         <img src="~/Pictures/IconGames/Icon 7.png" alt="Navbar Logo" />
                     </a>
-                    <a class="nav-link NTT" href="@Url.Action("Champion","User")">TƯỚNG</a>
-
                     <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
                             data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false"
                             aria-label="Toggle navigation">
                         <span class="navbar-toggler-icon"></span>
                     </button>
                     <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                        <button type="button" class="btn-close text-reset" data-bs-dismiss="navbarSupportedContent"
+                                aria-label="Close"></button>
                         <ul class="navbar-nav me-auto mb-2 mb-lg-0">
                             <li class="nav-item TT">
                                 <a class="nav-link active NTT" aria-current="page"
-                                   href="#">TRÒ CHƠI</a>
+                                   href="@Url.Action("TroChoi", "Home")">TRÒ CHƠI</a>
                             </li>
                             <li class="nav-item TT">
-                                <a class="nav-link NTT" href="@Url.Action("Champion","User")">TƯỚNG</a>
+                                <a class="nav-link NTT" href="#">TƯỚNG</a>
                             </li>
                             <li class="nav-item dropdown active TT">
                                 <a class="nav-link dropdown-toggle NTT" href="#" id="navbarDropdown" role="button"
@@ -269,27 +228,3 @@
         </div>
     </div>
 </div>
-
-
-
-<script>
-    document.addEventListener("DOMContentLoaded", function () {
-        const menuItems = document.querySelectorAll(".menu-item");
-        const images = document.querySelectorAll(".menu-right img");
-        const defaultImage = document.getElementById("img-default");
-
-        menuItems.forEach(item => {
-            item.addEventListener("mouseover", function () {
-                images.forEach(img => img.classList.remove("active"));
-                const imageId = this.getAttribute("data-image");
-                document.getElementById(imageId).classList.add("active");
-                defaultImage.classList.add("hidden");
-            });
-
-            item.addEventListener("mouseout", function () {
-                images.forEach(img => img.classList.remove("active"));
-                defaultImage.classList.remove("hidden");
-            });
-        });
-    });
-</script>
