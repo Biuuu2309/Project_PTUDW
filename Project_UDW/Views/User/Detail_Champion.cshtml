@@ -23,8 +23,8 @@
     .text-overlay {
         position: absolute;
         top: 0;
-        width: 90%; /* Đảm bảo chiều rộng giống như ảnh */
-        color: white; /* Tùy chọn màu chữ */
+        width: 90%; 
+        color: white; 
         display: flex;
         justify-content: start;
         align-items: center;
@@ -32,7 +32,7 @@
 
     img {
         width: 90%;
-        height: auto; /* Đảm bảo tỉ lệ ảnh đúng */
+        height: auto; 
     }
 </style>
 <div class="container-fluid" id="getuserchampiondetail">
@@ -57,9 +57,9 @@
         var img = document.getElementById('backgroundImage');
         var textOverlay = document.getElementById('textOverlay');
         textOverlay.style.height = img.clientHeight + 'px';
-    }
+    };
     window.onresize = adjustHeight;
-    $(document).ready(function () {
+    function fetchChampionDetails() {
         var champName = getQueryParameter("Uschamp");
         $.ajax({
             type: "GET",
@@ -92,8 +92,13 @@
                 console.error("Error fetching data:", error);
             }
         });
-    });
+    };
+
     $(document).ready(function () {
+        fetchChampionDetails(); 
+        setInterval(fetchChampionDetails, 30000);
+    });
+    function fetchSkillDetails() {
         var champName = getQueryParameter("Uschamp");
         $.ajax({
             type: "GET",
@@ -135,8 +140,12 @@
                 console.error("Error fetching data:", error);
             }
         });
-    });
+    };
     $(document).ready(function () {
+        fetchSkillDetails(); 
+        setInterval(fetchSkillDetails, 30000); 
+    });
+    function fetchSkinDetails() {
         var champName = getQueryParameter("Uschamp");
         $.ajax({
             type: "GET",
@@ -167,6 +176,9 @@
                 console.error("Error fetching data:", error);
             }
         });
+    };
+    $(document).ready(function () {
+        fetchSkinDetails(); 
+        setInterval(fetchSkinDetails, 30000); 
     });
-
 </script>
