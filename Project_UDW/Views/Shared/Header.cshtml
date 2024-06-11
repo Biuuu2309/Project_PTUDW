@@ -2,8 +2,7 @@
     ViewBag.Title = "Header";
     Layout = null;
 }
-<div id="main-wrapper" data-navbarbg="skin6" data-theme="light" data-layout="vertical" data-sidebartype="full"
-     data-boxed-layout="full">
+<div id="main-wrapper" data-navbarbg="skin6" data-theme="light" data-layout="vertical" data-sidebartype="full" data-boxed-layout="full">
     <header class="topbar" data-navbarbg="skin6">
         <nav class="navbar top-navbar navbar-expand-md navbar-light">
             <div class="navbar-header" data-logobg="skin5">
@@ -53,74 +52,66 @@
             <nav class="sidebar-nav">
                 <ul id="sidebarnav">
                     <li class="sidebar-item">
-                        <a class="sidebar-link waves-effect waves-dark sidebar-link" href="@Url.Action("Dashboard", "Home")"
-                           aria-expanded="false">
+                        <a class="sidebar-link waves-effect waves-dark sidebar-link" href="@Url.Action("Dashboard", "Home")" aria-expanded="false">
                             <i class="mdi mdi-av-timer"></i>
                             <span class="hide-menu">Dashboard</span>
                         </a>
                     </li>
                     <li class="sidebar-item">
-                        <a class="sidebar-link waves-effect waves-dark sidebar-link" href="@Url.Action("ProfileUser", "Home")"
-                           aria-expanded="false">
+                        <a class="sidebar-link waves-effect waves-dark sidebar-link" href="@Url.Action("ProfileUser", "Home")" aria-expanded="false">
                             <i class="mdi mdi-account-network"></i>
                             <span class="hide-menu">Profile User</span>
                         </a>
                     </li>
                     <li class="sidebar-item">
-                        <a class="sidebar-link waves-effect waves-dark sidebar-link" href="@Url.Action("AdminChampions", "Home")"
-                           aria-expanded="false">
+                        <a class="sidebar-link waves-effect waves-dark sidebar-link" href="@Url.Action("AdminChampions", "Home")" aria-expanded="false">
                             <i class="mdi mdi-border-none"></i>
                             <span class="hide-menu">Add Champ</span>
                         </a>
                     </li>
                     <li class="sidebar-item">
-                        <a class="sidebar-link waves-effect waves-dark sidebar-link" href="@Url.Action("AdminChampionsSkill", "Home")"
-                           aria-expanded="false">
+                        <a class="sidebar-link waves-effect waves-dark sidebar-link" href="@Url.Action("AdminChampionsSkill", "Home")" aria-expanded="false">
                             <i class="mdi mdi-border-none"></i>
                             <span class="hide-menu">Add Champion Skill</span>
                         </a>
                     </li>
                     <li class="sidebar-item">
-                        <a class="sidebar-link waves-effect waves-dark sidebar-link" href="@Url.Action("AdminChampionsSkin", "Home")"
-                           aria-expanded="false">
+                        <a class="sidebar-link waves-effect waves-dark sidebar-link" href="@Url.Action("AdminChampionsSkin", "Home")" aria-expanded="false">
                             <i class="mdi mdi-border-none"></i>
                             <span class="hide-menu">Add Champion Skin</span>
                         </a>
                     </li>
                     <li class="sidebar-item">
-                        <a class="sidebar-link waves-effect waves-dark sidebar-link" href="@Url.Action("AdminDetailsChamp", "Home")"
-                           aria-expanded="false">
+                        <a class="sidebar-link waves-effect waves-dark sidebar-link" href="@Url.Action("AdminDetailsChamp", "Home")" aria-expanded="false">
                             <i class="mdi mdi-border-none"></i>
                             <span class="hide-menu">Add Details Champ Skill</span>
                         </a>
                     </li>
                     <li class="sidebar-item">
-                        <a class="sidebar-link waves-effect waves-dark sidebar-link" href="@Url.Action("AdminItem", "Home")"
-                           aria-expanded="false">
+                        <a class="sidebar-link waves-effect waves-dark sidebar-link" href="@Url.Action("AdminItem", "Home")" aria-expanded="false">
                             <i class="mdi mdi-border-none"></i>
                             <span class="hide-menu">Add Item</span>
                         </a>
                     </li>
                     <li class="sidebar-item">
-                        <a class="sidebar-link waves-effect waves-dark sidebar-link" href="@Url.Action("AdminUpdate", "Home")"
-                           aria-expanded="false">
+                        <a class="sidebar-link waves-effect waves-dark sidebar-link" href="@Url.Action("AdminUpdate", "Home")" aria-expanded="false">
                             <i class="mdi mdi-border-none"></i>
                             <span class="hide-menu">Update</span>
                         </a>
                     </li>
                     <li class="sidebar-item">
-                        <a class="sidebar-link waves-effect waves-dark sidebar-link" href="@Url.Action("Index", "User")"
-                           aria-expanded="false">
+                        <a class="sidebar-link waves-effect waves-dark sidebar-link" href="@Url.Action("Index", "User")" aria-expanded="false">
                             <i class="mdi mdi-av-timer"></i>
                             <span class="hide-menu">User Index</span>
                         </a>
                     </li>
                     <li class="sidebar-item d-flex align-items-end">
-                        <a class="sidebar-link waves-effect waves-dark sidebar-link" href="@Url.Action()"
-                           aria-expanded="false">
-                            <i class="mdi mdi-border-none"></i>
-                            <span class="hide-menu">Log Out</span>
-                        </a>
+                        <form id="logoutForm" class="form-inline" asp-area="Identity" asp-page="/Account/Logout" asp-route-returnUrl="/Home/Dashboard" method="post">
+                            <button id="logout" type="submit" class="nav-link btn btn-link text-dark border-0">
+                                <i class="mdi mdi-border-none"></i>
+                                <span class="hide-menu">Log Out</span>
+                            </button>
+                        </form>
                     </li>
                 </ul>
             </nav>
