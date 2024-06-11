@@ -1,2 +1,517 @@
 ﻿body {
+    padding: 0;
+    margin: 0;
+    width: 100%;
+    height: 100%;
+}
+
+img.logo {
+    height: 40px;
+}
+
+.HD_T img {
+    height: 40px;
+}
+
+.HD_T {
+    font-family: neuefrutigerworld-medium;
+}
+
+.HD_T2 {
+    background: #292929;
+}
+
+    .HD_T2 li a {
+        color: white;
+        padding: 7px;
+        margin-left: 10px;
+    }
+
+.nav-item .HD_T3 a {
+    font-size: 13px;
+}
+
+#HD_L {
+    display: flex;
+}
+
+@font-face {
+    font-family: "neuefrutigerworld-light";
+    src: url("../neue-frutiger/neuefrutigerworld-light.woff") format("woff");
+}
+
+@font-face {
+    font-family: "neuefrutigerworld-thin";
+    src: url("../neue-frutiger/neuefrutigerworld-thin.woff") format("woff");
+}
+
+@font-face {
+    font-family: "neuefrutigerworld-medium";
+    src: url("../neue-frutiger/neuefrutigerworld-medium.woff") format("woff");
+}
+
+.HD_T2 a {
+    background-image: linear-gradient( to right, #54b3d6, #54b3d6 50%, #f9f9f9 50% );
+    background-size: 200% 100%;
+    background-position: -100%;
+    display: inline-block;
+    padding: 5px 0;
+    position: relative;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    transition: all 0.3s ease-in-out;
+}
+
+    .HD_T2 a:before {
+        content: "";
+        background: #54b3d6;
+        display: block;
+        position: absolute;
+        bottom: -5px;
+        left: 0;
+        width: 0;
+        height: 3px;
+        border-radius: 2px;
+        transition: all 0.3s ease-in-out;
+    }
+
+    .HD_T2 a:hover {
+        background-position: 0;
+    }
+
+        .HD_T2 a:hover::before {
+            width: 100%;
+        }
+
+.HD_TK i {
+    color: blue;
+}
+
+@import url(http://fonts.googleapis.com/css?family=Lato:100,300,400,700);
+@import url(https://raw.github.com/FortAwesome/Font-Awesome/master/docs/assets/css/font-awesome.min.css);
+
+#wrap {
+    display: flex;
+    position: relative;
+    height: 40px;
+    width: 40px;
+    float: right;
+    padding: 0;
+    position: relative;
+    justify-content: center;
+    align-items: center;
+    background-color: white;
+    border-radius: 50%;
+}
+
+input[type="text"] {
+    height: 40px;
+    font-size: 15px;
+    line-height: 16px;
+    font-weight: 600;
+    display: inline-block;
+    font-family: neuefrutigerworld-medium;
+    font-weight: 100;
+    border: none;
+    outline: none;
+    color: #f9f9f9;
+    padding: 3px;
+    padding-left: 15px;
+    padding-right: 40px;
+    width: 0px;
+    position: absolute;
+    top: 0;
+    right: 0;
+    background: none;
+    z-index: 3;
+    transition: width 1s cubic-bezier(0, 0.795, 0, 1);
+    cursor: pointer;
+}
+
+    input[type="text"]:focus:hover {
+        border-bottom: 0px solid #bbb;
+    }
+
+    input[type="text"]:focus {
+        width: 100%;
+        z-index: 1;
+        border-bottom: 0px solid #bbb;
+        cursor: text;
+        background-color: #3d3d3d;
+        border-radius: 20px;
+    }
+
+input[type="submit"] {
+    height: 40px;
+    width: 40px;
+    display: inline-block;
+    color: red;
+    float: right;
+    text-indent: -10000px;
+    border: none;
+    position: absolute;
+    top: 0;
+    right: 0;
+    z-index: 2;
+    cursor: pointer;
+    opacity: 0.4;
+    cursor: pointer;
+    transition: opacity 1s ease;
+}
+
+    input[type="submit"]:hover {
+        opacity: 0.8;
+    }
+
+@import url(https://fonts.googleapis.com/css?family=Roboto:400,700);
+
+.DC1 a {
+    text-decoration: none;
+    cursor: pointer;
+    color: #f9f9f9;
+}
+
+.DC2 a {
+    text-decoration: none;
+    cursor: pointer;
+    color: #111212;
+}
+
+.DC1 {
+    margin-left: 20px;
+    width: 240px;
+    height: 40px;
+    background-color: #3d3d3d;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    box-sizing: border-box;
+    border-radius: 20px;
+    cursor: pointer;
+    margin-right: 5px;
+}
+
+
+.DC2 {
+    margin-right: 20px;
+    width: 240px;
+    height: 40px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    box-sizing: border-box;
+    border-radius: 20px;
+    cursor: pointer;
+    background-color: #0bc6e3;
+    margin-right: 20px;
+}
+
+.DC1 a:hover {
+    color: #f9f9f9;
+    text-decoration: none;
+    opacity: 0.7;
+}
+
+.DC2 a:hover {
+    text-decoration: none;
+    opacity: 0.4;
+    color: #111212;
+}
+
+@media only screen and (max-width: 1512px) {
+
+    input[type="text"]:focus {
+        width: 300px;
+    }
+}
+
+@media only screen and (max-width: 1399px) {
+    a#HHD_S.nav-link {
+        width: 77px;
+    }
+
+    a#HHD_S2.nav-link {
+        width: 133px;
+    }
+
+    a#HHD_S3.nav-link {
+        width: 63px;
+    }
+
+    a#HHD_S4.nav-link {
+        width: 65px;
+    }
+
+    input[type="text"]:focus {
+        width: 200px;
+    }
+
+    #wrap {
+        margin-right: 24px;
+        margin-bottom: 10px;
+    }
+}
+
+@media only screen and (max-width: 1475.20px) {
+    a#HHD_S.nav-link {
+        width: 77px;
+    }
+
+    a#HHD_S2.nav-link {
+        width: 133px;
+    }
+
+    a#HHD_S3.nav-link {
+        width: 63px;
+    }
+
+    a#HHD_S4.nav-link {
+        width: 65px;
+    }
+}
+
+@media(max-width:685px) {
+    .DC1 {
+        margin-left: 0;
+    }
+}
+
+@media(max-width:430px) {
+    #HD_L {
+        display: none;
+    }
+
+    div.col-xxl-10.col-xl-10.col-lg-9.col-md-9.col-sm-9.col-7 {
+        width: 100%;
+    }
+}
+
+img.HD_MINI {
+    height: 40px;
+}
+
+div#offcanvasTop.offcanvas-top.show {
+    height: 500px;
+}
+
+.HD_TIEUDE p {
+    background: rgba(186, 186, 186, .1);
+    border-radius: 6.4px;
+    width: 100%;
+    position: static;
+    height: 32px;
+    margin: 0px;
+    padding: 8px 12px 8px 16px;
+    font-size: 13px;
+    text-align: left;
+    font-weight: bold;
+    line-height: 120%;
+    letter-spacing: .08em;
+    text-transform: uppercase;
+    color: #0a0a0a;
+}
+
+.HD_TIEUDE2 p {
+    background: rgba(186, 186, 186, .1);
+    border-radius: 6.4px;
+    width: 100%;
+    position: static;
+    height: 32px;
+    margin: 0px;
+    padding: 8px 12px 8px 16px;
+    font-size: 13px;
+    text-align: left;
+    font-weight: bold;
+    line-height: 120%;
+    letter-spacing: .08em;
+    text-transform: uppercase;
+    color: #0a0a0a;
+}
+
+.HD_C:hover {
+    background: rgba(186, 186, 186, .1);
+    border-radius: 8px;
+}
+
+a.HD_MN span {
+    color: #4a4a4a;
+    font-weight: 400;
+}
+
+a.HD_MN {
+    font-size: 13px;
+    text-decoration: none;
+}
+
+a.HD_MN1 {
+    font-size: 13px;
+    text-decoration: none;
+    color: #4a4a4a;
+}
+
+a.HD_MN2 {
+    font-size: 13px;
+    text-decoration: none;
+    color: #4a4a4a;
+}
+
+.HDD {
+}
+
+    .HDD:hover {
+        background: rgba(186, 186, 186, .1);
+        border-radius: 8px;
+    }
+
+a.HD_HI img {
+    width: 100%;
+    height: auto;
+    max-width: 452px;
+    border-radius: 8px;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, .12), 0 1px 2px rgba(0, 0, 0, .24);
+    transition: all .3s cubic-bezier(0.25, 0.8, 0.25, 1);
+    display: block;
+}
+
+a.HD_HI {
+    text-decoration: none;
+    color: #0a0a0a;
+    font-size: 13px;
+    font-weight: bold;
+}
+
+
+@media only screen and (max-width: 782px) {
+    .HD_TIEUDE2 p {
+        padding: 8px 5px 7px 7px;
+    }
+}
+
+@media only screen and (max-width: 700px) {
+    .HD_TIEUDE2 p {
+        padding: 8px 5px 0px 6px;
+    }
+}
+
+@media only screen and (max-width: 695px) {
+    .HD_TIEUDE2 p {
+        padding: 9px 2px 3px 7px;
+    }
+}
+
+@media only screen and (max-width: 684px) {
+    .HD_TIEUDE2 p {
+        padding: 7px 1px 3px 7px;
+    }
+}
+
+@media only screen and (min-width: 679px) {
+    .HD_TIEUDE2 p {
+        padding: 7px 1px 3px 7px;
+    }
+}
+
+@media only screen and (max-width: 500px) {
+    .HD_TIEUDE2 p {
+        padding: 2px 6px 1px 5px;
+        height: 36px;
+    }
+}
+
+.NTT {
+    text-decoration: none;
+    cursor: pointer;
+    font-family: neuefrutigerworld-medium;
+    font-size: 15px;
+    font-weight: 600;
+    letter-spacing: 1.04px;
+    line-height: 15.6px;
+}
+
+@font-face {
+    font-family: "neuefrutigerworld-light";
+    src: url("../neue-frutiger/neuefrutigerworld-light.woff") format("woff");
+}
+
+@font-face {
+    font-family: "neuefrutigerworld-thin";
+    src: url("../neue-frutiger/neuefrutigerworld-thin.woff") format("woff");
+}
+
+@font-face {
+    font-family: "neuefrutigerworld-medium";
+    src: url("../neue-frutiger/neuefrutigerworld-medium.woff") format("woff");
+}
+
+.TT {
+    display: flex;
+}
+
+    .TT a {
+        background-image: linear-gradient( to right, #54b3d6, #54b3d6 50%, #f9f9f9 50% );
+        background-size: 200% 100%;
+        background-position: -100%;
+        display: inline-block;
+        padding: 5px 0;
+        position: relative;
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+        transition: all 0.3s ease-in-out;
+        font-size: 13px;
+    }
+
+        .TT a:before {
+            content: "";
+            background: #54b3d6;
+            display: block;
+            position: absolute;
+            bottom: -5px;
+            left: 0;
+            width: 0;
+            height: 3px;
+            border-radius: 2px;
+            transition: all 0.3s ease-in-out;
+        }
+
+        .TT a:hover {
+            background-position: 0;
+        }
+
+            .TT a:hover::before {
+                width: 100%;
+            }
+
+@import url(http://fonts.googleapis.com/css?family=Lato:100,300,400,700);
+@import url(https://raw.github.com/FortAwesome/Font-Awesome/master/docs/assets/css/font-awesome.min.css);
+
+.menu {
+    display: flex;
+}
+
+.games {
+    margin-right: 20px;
+}
+
+.game-item {
+    margin-bottom: 10px;
+    cursor: pointer;
+}
+
+.image-container {
+    flex-grow: 1;
+}
+
+#menu-image {
+    width: 100%;
+    height: auto;
+}
+
+
+.hidden {
+    display: none;
+}
+
+.active {
+    display: flex;
+    flex-grow: 0;
 }
