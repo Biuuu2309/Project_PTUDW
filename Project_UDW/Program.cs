@@ -4,22 +4,16 @@ using Project_UDW.Service;
 
 var builder = WebApplication.CreateBuilder(args);
 
-// Add services to the container
+// Add services to the container.
 builder.Services.AddRazorPages();
 builder.Services.AddControllersWithViews();
-
-// Configure database context
 builder.Services.AddDbContext<ApplicationDBContext>(options =>
 {
     var connectionString = builder.Configuration.GetConnectionString("DBCS");
     options.UseSqlServer(connectionString);
 });
-
-// Configure Identity
-builder.Services.AddDefaultIdentity<IdentityUser>(options => options.SignIn.RequireConfirmedAccount = true)
+builder.Services.AddDefaultIdentity<IdentityUser>()
     .AddEntityFrameworkStores<ApplicationDBContext>();
-
-// Add CORS policy
 builder.Services.AddCors(options =>
 {
     options.AddPolicy("AllowAllOrigins",
@@ -33,26 +27,28 @@ builder.Services.AddCors(options =>
 
 var app = builder.Build();
 
-// Configure the HTTP request pipeline
-if (!app.Environment.IsDevelopment())
+// Configure the HTTP request pipeline.
+if (app.Environment.IsDevelopment())
+{
+    app.UseDeveloperExceptionPage();
+}
+else
 {
     app.UseExceptionHandler("/Home/Error");
     app.UseHsts();
 }
+
 
 app.UseHttpsRedirection();
 app.UseStaticFiles();
 
 app.UseRouting();
 
-// Enable CORS
 app.UseCors("AllowAllOrigins");
 
-// Use Authentication and Authorization middleware
-app.UseAuthentication();
+app.UseAuthentication(); // Add authentication middleware
 app.UseAuthorization();
 
-// Map endpoints
 app.UseEndpoints(endpoints =>
 {
     endpoints.MapControllerRoute(
