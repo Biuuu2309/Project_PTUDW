@@ -60,13 +60,6 @@
                         </a>
                     </li>
                     <li class="sidebar-item">
-                        <a class="sidebar-link waves-effect waves-dark sidebar-link" href="@Url.Action("Index", "User")"
-                           aria-expanded="false">
-                            <i class="mdi mdi-av-timer"></i>
-                            <span class="hide-menu">Dashboard</span>
-                        </a>
-                    </li>
-                    <li class="sidebar-item">
                         <a class="sidebar-link waves-effect waves-dark sidebar-link" href="@Url.Action("ProfileUser", "Home")"
                            aria-expanded="false">
                             <i class="mdi mdi-account-network"></i>
@@ -115,8 +108,15 @@
                             <span class="hide-menu">Update</span>
                         </a>
                     </li>
+                    <li class="sidebar-item">
+                        <a class="sidebar-link waves-effect waves-dark sidebar-link" href="@Url.Action("Index", "User")"
+                           aria-expanded="false">
+                            <i class="mdi mdi-av-timer"></i>
+                            <span class="hide-menu">User Index</span>
+                        </a>
+                    </li>
                     <li class="sidebar-item d-flex align-items-end">
-                        <a class="sidebar-link waves-effect waves-dark sidebar-link" href="@Url.Action("_Layout", "Shared")"
+                        <a class="sidebar-link waves-effect waves-dark sidebar-link" href="@Url.Action()"
                            aria-expanded="false">
                             <i class="mdi mdi-border-none"></i>
                             <span class="hide-menu">Log Out</span>
