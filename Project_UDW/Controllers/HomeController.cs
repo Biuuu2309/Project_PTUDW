@@ -14,10 +14,10 @@ namespace Project_UDW.Controllers
         {
             _logger = logger;
         }
-        public IActionResult Index()
-        {
-            return View();
-        }
+        //public IActionResult Index()
+        //{
+        //    return View();
+        //}
         public IActionResult ProfileUser()
         {
             return View();

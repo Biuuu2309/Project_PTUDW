@@ -8,7 +8,7 @@ public class AdminAuthorizeAttribute : ActionFilterAttribute
         if (!context.HttpContext.User.Identity.IsAuthenticated || !context.HttpContext.User.IsInRole("Admin"))
         {
             context.Result = new RedirectToRouteResult(
-                new RouteValueDictionary(new { controller = "Home", action = "Index" }));
+                new RouteValueDictionary(new { controller = "Home", action = "Dashboard" }));
         }
         base.OnActionExecuting(context);
     }
