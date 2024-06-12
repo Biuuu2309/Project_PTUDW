@@ -1,7 +1,53 @@
-﻿body {
+﻿@font-face {
+    font-family: 'neuefrutigerworld-medium';
+    src: url('../neue-frutiger/neuefrutigerworld-medium.woff') format('woff');
+}
+body {
     margin-top: 20px;
+    font-family:neuefrutigerworld-medium;
 }
 
+
+body {
+    font-family: neuefrutigerworld-medium;
+}
+
+input.form-control.mr-sm-2.TUONG_SEARCH {
+    width: 80%;
+}
+
+button.TUONG_SEARCHBUTTON {
+    border-color: #c7a96d;
+    background-color: #c7a96d;
+    color: #0a1429;
+}
+
+    button.TUONG_SEARCHBUTTON:hover {
+        background-color: #ccb17b;
+        color: #0a1429;
+        border-color: #c7a96d;
+    }
+
+.TUONG_MODAU_TEXT_1 {
+    color: #0a1429;
+    font-size: 20px;
+    margin: 0;
+}
+
+.TUONG_MODAU_TEXT_2 {
+    color: #0a1429;
+    font-size: 80px;
+    font-weight: bolder;
+    font-style: italic;
+    margin: 0;
+}
+.TUONG_CARD_BG_TEXT {
+    background-color: #0a1429;
+}
+p.card-text{
+    text-decoration: none;
+    color: #fffff7;
+}
 .blog-grid {
     position: relative;
     box-shadow: 0 1rem 1.75rem 0 rgba(45, 55, 75, 0.1);
@@ -227,3 +273,5 @@ a, a:active, a:focus {
 .mt-6, .my-6 {
     margin-top: 3.5rem;
 }
+
+   
