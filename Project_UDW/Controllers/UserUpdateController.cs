@@ -33,7 +33,7 @@ namespace Project_UDW.Controllers
             }
             else
             {
-                return new List<Update_Head>(); // Or you can throw an exception
+                return new List<Update_Head>(); 
             }
         }
 

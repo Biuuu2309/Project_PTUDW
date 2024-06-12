@@ -552,9 +552,9 @@ namespace Project_UDW.Models
             try
             {
                 conn.Open();
-                string query = "SELECT * FROM update_head WHERE version_update = @version";
+                string query = "SELECT * FROM update_head WHERE version_update = @version_update";
                 SqlCommand cmd = new SqlCommand(query, conn);
-                cmd.Parameters.AddWithValue("@version", version);
+                cmd.Parameters.AddWithValue("@version_update", version);
                 SqlDataReader reader = cmd.ExecuteReader();
 
                 if (reader.Read())

@@ -137,54 +137,49 @@
     }
     function Submit_Add_UpChampVer() {
         var formData = {
-            champname: $('#champname').val(),
-            nickname: $('#nickname').val()
+            ChampName: $('#adducvchampname').val(),
+            version_update: $('#adducvupdateversion').val()
         };
 
         $.ajax({
             type: "POST",
-            url: "/api/AdminChampions/AddChampions",
+            url: "/api/AdminUpChampVer/AddUpChampVer",
             data: JSON.stringify(formData),
             contentType: "application/json; charset=utf-8",
             dataType: "json",
             success: function (response) {
                 if (response.statusCode === 200) {
-                    alert("Add champions successful: " + response.statusMessage);
-                    $('#addchampModal').modal('hide');
-                    $('#addchampForm')[0].reset();
+                    alert("Add champions version successful: " + response.statusMessage);
+                    $('#addupchampverModal').modal('hide');
+                    $('#addupchampverForm')[0].reset();
                     location.reload();
 
                 } else {
-                    alert("Add champions failed: " + response.statusMessage);
+                    alert("Add champions version failed: " + response.statusMessage);
                 }
             },
             error: function (error) {
                 console.error("AJAX error response:", error);
-                alert("Error during add champ.");
+                alert("Error during add champ version.");
             }
         });
     }
-    function SubmitUpdateChamp() {
+    function Submit_Update_UpChampVer() {
         var formData = {
-            champname: $('#upchampname').val(),
-            nickname: $('#upnickname').val(),
-            describle: $('#updescrible').val(),
-            role: $('#uprole').val(),
-            level: $('#uplevel').val(),
-            imagedd: $('#upimagedd').val(),
-            imageava: $('#upimageava').val()
+            ChampName: $('#upucvchampname').val(),
+            version_update: $('#upucvupdateversion').val()
         };
         $.ajax({
             type: "POST",
-            url: "/api/AdminChampions/UpdateChamp",
+            url: "/api/AdminUpChampVer/UpdateUpChampVer",
             data: JSON.stringify(formData),
             contentType: "application/json; charset=utf-8",
             dataType: "json",
             success: function (response) {
                 if (response.statusCode === 200) {
-                    alert('Champion updated successfully!');
-                    $('#updatechampModal').modal('hide');
-                    $('#updatechampForm')[0].reset();
+                    alert('Champion version updated successfully!');
+                    $('#updateupchampverModal').modal('hide');
+                    $('#updateupchampverForm')[0].reset();
                     location.reload();
                 } else {
                     alert('Update failed: ' + response.statusMessage);
@@ -192,35 +187,35 @@
             },
             error: function (error) {
                 console.error('AJAX error:', error);
-                alert('Error updating champion');
+                alert('Error updating champion version');
             }
         });
     }
-    function SubmitDeleteChamp() {
+    function Submit_Delete_UpChampVer() {
         var formData = {
-            champname: $('#delchampname').val()
+            version_update: $('#delucvupdateversion').val()
         };
 
         $.ajax({
             type: "POST",
-            url: "/api/AdminChampions/DeleteChamp",
+            url: "/api/AdminUpChampVer/DeleteUpChampVer",
             data: JSON.stringify(formData),
             contentType: "application/json; charset=utf-8",
             dataType: "json",
             success: function (response) {
                 if (response.statusCode === 200) {
-                    alert("Delete champions successful: " + response.statusMessage);
-                    $('#deletechampModal').modal('hide');
-                    $('#deletechampForm')[0].reset();
+                    alert("Delete champion version successful: " + response.statusMessage);
+                    $('#deleteupchampverModal').modal('hide');
+                    $('#deleteupchampverForm')[0].reset();
                     location.reload();
 
                 } else {
-                    alert("Delete champions failed: " + response.statusMessage);
+                    alert("Delete champion version failed: " + response.statusMessage);
                 }
             },
             error: function (error) {
                 console.error("AJAX error response:", error);
-                alert("Error during delete champ.");
+                alert("Error during delete champ version.");
             }
         });
     }
@@ -228,21 +223,16 @@
 
         $.ajax({
             type: "GET",
-            url: "/api/AdminChampions/GetChampions",
+            url: "/api/AdminUpChampVer/GetUpChampVer",
             dataType: "json",
             success: function (data) {
-                var tbody = $('#championsTableBody');
+                var tbody = $('#upchampverTableBody');
                 tbody.empty();
-                data.forEach(function (champion, index) {
+                data.forEach(function (upchampver, index) {
                     var row = '<tr>' +
                         '<th scope="row">' + (index + 1) + '</th>' +
-                        '<td>' + champion.champName + '</td>' +
-                        '<td>' + champion.nickName + '</td>' +
-                        '<td>' + champion.describle + '</td>' +
-                        '<td>' + champion.role + '</td>' +
-                        '<td>' + champion.level + '</td>' +
-                        '<td> <img style="height: 100px;" src="/Pictures/Backgrounds_Champs/' + champion.imageDD + '" /> </td>' +
-                        '<td> <img style="height: 100px;" src="/Pictures/Champions/' + champion.imageAVA + '" /> </td>' +
+                        '<td>' + upchampver.champName + '</td>' +
+                        '<td>' + upchampver.version_update + '</td>' +
                         '</tr>';
                     tbody.append(row);
                 });
@@ -252,16 +242,4 @@
             }
         });
     });
-    function readURL(input) {
-        if (input.files && input.files[0]) {
-            var reader = new FileReader();
-            reader.onload = function (e) {
-                $('#blah')
-                    .attr('src', e.target.result)
-                    .width(150)
-                    .height(200);
-            };
-            reader.readAsDataURL(input.files[0]);
-        }
-    }
 </script>
