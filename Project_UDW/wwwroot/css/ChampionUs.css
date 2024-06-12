@@ -4,14 +4,22 @@
 }
 body {
     margin-top: 20px;
-    font-family:neuefrutigerworld-medium;
-}
-
-
-body {
     font-family: neuefrutigerworld-medium;
+
 }
 
+
+a {
+    text-decoration: none;
+}
+#getlistchampion a {
+    text-decoration: none;
+    
+}
+
+.TUONG_MODAU {
+    background-color: #161f33;
+}
 input.form-control.mr-sm-2.TUONG_SEARCH {
     width: 80%;
 }
@@ -44,9 +52,26 @@ button.TUONG_SEARCHBUTTON {
 .TUONG_CARD_BG_TEXT {
     background-color: #0a1429;
 }
+.TUONG_CARD_BG_TEXT:hover{
+    background-color:#222b3e;
+}
 p.card-text{
-    text-decoration: none;
     color: #fffff7;
+    font-style:italic;
+    font-weight:bolder;
+    font-size:20px;
+}
+
+.card {
+    overflow: hidden;
+}
+
+.card-img-top {
+    transition: transform 0.5s ease;
+}
+
+.card-img-top:hover {
+    transform: scale(1.1);
 }
 .blog-grid {
     position: relative;
