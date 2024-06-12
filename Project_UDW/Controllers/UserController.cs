@@ -24,5 +24,13 @@ namespace Project_UDW.Controllers
         {
             return View();
         }
+        public IActionResult Update()
+        {
+            return View();
+        }
+        public IActionResult Detail_Update()
+        {
+            return View();
+        }
     }
 }

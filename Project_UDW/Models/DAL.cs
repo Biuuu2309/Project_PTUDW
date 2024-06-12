@@ -424,6 +424,58 @@ namespace Project_UDW.Models
 
             return response;
         }
+        public Response GetUpdateDetail(SqlConnection conn, string version)
+        {
+            Response response = new Response();
+            try
+            {
+                conn.Open();
+                string query = "SELECT * FROM update_head WHERE version_update = @version";
+                SqlCommand cmd = new SqlCommand(query, conn);
+                cmd.Parameters.AddWithValue("@version", version);
+                SqlDataReader reader = cmd.ExecuteReader();
+
+                if (reader.Read())
+                {
+                    Update_Head update = new Update_Head
+                    {
+                        version_update = reader["version_update"].ToString(),
+                        picheadblur = reader["picheadblur"].ToString(),
+                        picheadmain = reader["picheadmain"].ToString(),
+                        maintitle = reader["maintitle"].ToString(),
+                        maindestitle = reader["maindestitle"].ToString(),
+                        picupdate = reader["picupdate"].ToString(),
+                        upversiontitle1 = reader["upversiontitle1"].ToString(),
+                        upversiontitle_con1 = reader["upversiontitle_con1"].ToString(),
+                        upversiontitle2 = reader["upversiontitle2"].ToString(),
+                        upversiontitle_con2 = reader["upversiontitle_con2"].ToString(),
+                        upversiontitle3 = reader["upversiontitle3"].ToString(),
+                        upversiontitle_con3 = reader["upversiontitle_con3"].ToString(),
+                        upversiontitle4 = reader["upversiontitle4"].ToString(),
+                        upversiontitle_con4 = reader["upversiontitle_con4"].ToString(),
+                        upversiontitle5 = reader["upversiontitle5"].ToString(),
+                        upversiontitle_con5 = reader["upversiontitle_con5"].ToString(),
+                        nangcaptrainghiem = reader["nangcaptrainghiem"].ToString(),
+                        sualoi = reader["sualoi"].ToString(),
+                    };
+                    response.StatusCode = 200;
+                    response.Data = update;
+                }
+                else
+                {
+                    response.StatusCode = 404;
+                    response.StatusMessage = "Version not found";
+                }
+                conn.Close();
+            }
+            catch (Exception ex)
+            {
+                response.StatusCode = 500;
+                response.StatusMessage = ex.Message;
+            }
+
+            return response;
+        }
         public Response GetSkillDetail(SqlConnection conn, string champName)
         {
             Response response = new Response();
@@ -509,7 +561,6 @@ namespace Project_UDW.Models
 
             return response;
         }
-
         public Response GetChampions(SqlConnection conn)
         {
             Response response = new Response();
