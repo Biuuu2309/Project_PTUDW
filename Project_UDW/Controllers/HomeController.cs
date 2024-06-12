@@ -50,6 +50,10 @@ namespace Project_UDW.Controllers
         {
             return View();
         }
+        public IActionResult AdminUpChampVer()
+        {
+            return View();
+        }
         public IActionResult Privacy()
         {
             return View();

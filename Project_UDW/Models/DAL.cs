@@ -424,6 +424,128 @@ namespace Project_UDW.Models
 
             return response;
         }
+        public Response AddUpChampVer(UpChampVer upchampver, SqlConnection conn)
+        {
+            Response response = new Response();
+            try
+            {
+                SqlCommand cmd = new SqlCommand("sp_addupchampver", conn);
+                cmd.CommandType = CommandType.StoredProcedure;
+                cmd.Parameters.AddWithValue("@champname", upchampver.ChampName);
+                cmd.Parameters.AddWithValue("@version_update", upchampver.version_update);
+                cmd.Parameters.Add("@ErrorMessage", SqlDbType.Char, 200);
+                cmd.Parameters["@ErrorMessage"].Direction = ParameterDirection.Output;
+                conn.Open();
+                int i = cmd.ExecuteNonQuery();
+                conn.Close();
+                string mess = (string)cmd.Parameters["@ErrorMessage"].Value;
+                response.StatusCode = i > 0 ? 200 : 100;
+                response.StatusMessage = mess;
+            }
+            catch (Exception ex)
+            {
+                response.StatusCode = 100;
+                response.StatusMessage = ex.Message;
+            }
+            return response;
+        }
+        public Response DeleteUpChampVer(UpChampVer_Delete delupchampver, SqlConnection conn)
+        {
+            Response response = new Response();
+            try
+            {
+                SqlCommand cmd = new SqlCommand("sp_deleteupchampver", conn);
+                cmd.CommandType = CommandType.StoredProcedure;
+                cmd.Parameters.AddWithValue("@version_update", delupchampver.version_update);
+                cmd.Parameters.Add("@ErrorMessage", SqlDbType.Char, 200);
+                cmd.Parameters["@ErrorMessage"].Direction = ParameterDirection.Output;
+                conn.Open();
+                int i = cmd.ExecuteNonQuery();
+                conn.Close();
+                string mess = (string)cmd.Parameters["@ErrorMessage"].Value;
+                response.StatusCode = i > 0 ? 200 : 100;
+                response.StatusMessage = mess;
+            }
+            catch (Exception ex)
+            {
+                response.StatusCode = 100;
+                response.StatusMessage = ex.Message;
+            }
+            return response;
+        }
+        public Response UpdateUpChampVer(UpChampVer upupchampver, SqlConnection conn)
+        {
+            Response response = new Response();
+            try
+            {
+                SqlCommand cmd = new SqlCommand("sp_updateupchampver", conn);
+                cmd.CommandType = CommandType.StoredProcedure;
+                if (!string.IsNullOrEmpty(upupchampver.ChampName))
+                {
+                    cmd.Parameters.AddWithValue("@champname", upupchampver.ChampName);
+                }
+                if (!string.IsNullOrEmpty(upupchampver.version_update))
+                {
+                    cmd.Parameters.AddWithValue("@version_update", upupchampver.version_update);
+                }
+                cmd.Parameters.Add("@ErrorMessage", SqlDbType.NVarChar, 200);
+                cmd.Parameters["@ErrorMessage"].Direction = ParameterDirection.Output;
+                conn.Open();
+                int i = cmd.ExecuteNonQuery();
+                conn.Close();
+                string mess = (string)cmd.Parameters["@ErrorMessage"].Value;
+                response.StatusCode = i > 0 ? 200 : 100;
+                response.StatusMessage = mess;
+            }
+            catch (Exception ex)
+            {
+                response.StatusCode = 100;
+                response.StatusMessage = ex.Message;
+            }
+            return response;
+        }
+        public Response GetUpChampVer(SqlConnection conn)
+        {
+            Response response = new Response();
+            List<UpChampVer> upchampverList = new List<UpChampVer>();
+
+            try
+            {
+                string query = "SELECT ChampName, version_update FROM update_champ_version";
+                using (SqlCommand cmd = new SqlCommand(query, conn))
+                {
+                    conn.Open();
+                    using (SqlDataReader reader = cmd.ExecuteReader())
+                    {
+                        while (reader.Read())
+                        {
+                            UpChampVer upchampver = new UpChampVer
+                            {
+                                ChampName = reader["ChampName"].ToString(),
+                                version_update = reader["version_update"].ToString()
+                            };
+                            upchampverList.Add(upchampver);
+                        }
+                    }
+                }
+                response.StatusCode = 200;
+                response.Data = upchampverList;
+                response.StatusMessage = "Update champion version retrieved successfully";
+            }
+            catch (Exception ex)
+            {
+                response.StatusCode = 100;
+                response.StatusMessage = ex.Message;
+            }
+            finally
+            {
+                if (conn.State == ConnectionState.Open)
+                    conn.Close();
+            }
+
+            return response;
+        }
+        /// 
         public Response GetUpdateDetail(SqlConnection conn, string version)
         {
             Response response = new Response();
