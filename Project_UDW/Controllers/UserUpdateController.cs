@@ -39,10 +39,10 @@ namespace Project_UDW.Controllers
 
         [HttpGet]
         [Route("GetUserUpdateDetail")]
-        public IActionResult GetUserChampionDetail(string version)
+        public IActionResult GetUserUpdateDetail(string version_update)
         {
             DAL dal = new DAL();
-            Response response = dal.GetUpdateDetail(conn, version);
+            Response response = dal.GetUpdateDetail(conn, version_update);
 
             if (response.StatusCode == 200)
             {

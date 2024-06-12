@@ -545,8 +545,7 @@ namespace Project_UDW.Models
 
             return response;
         }
-        /// 
-        public Response GetUpdateDetail(SqlConnection conn, string version)
+        public Response GetUpdateDetail(SqlConnection conn, string version_update)
         {
             Response response = new Response();
             try
@@ -554,7 +553,7 @@ namespace Project_UDW.Models
                 conn.Open();
                 string query = "SELECT * FROM update_head WHERE version_update = @version_update";
                 SqlCommand cmd = new SqlCommand(query, conn);
-                cmd.Parameters.AddWithValue("@version_update", version);
+                cmd.Parameters.AddWithValue("@version_update", version_update);
                 SqlDataReader reader = cmd.ExecuteReader();
 
                 if (reader.Read())
@@ -578,7 +577,7 @@ namespace Project_UDW.Models
                         upversiontitle5 = reader["upversiontitle5"].ToString(),
                         upversiontitle_con5 = reader["upversiontitle_con5"].ToString(),
                         nangcaptrainghiem = reader["nangcaptrainghiem"].ToString(),
-                        sualoi = reader["sualoi"].ToString(),
+                        sualoi = reader["sualoi"].ToString()
                     };
                     response.StatusCode = 200;
                     response.Data = update;
