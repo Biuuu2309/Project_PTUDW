@@ -277,3 +277,60 @@ a, a:active, a:focus {
 .mt-6, .my-6 {
     margin-top: 3.5rem;
 }
+body {
+    padding: 0;
+    margin: 0;
+}
+
+.LO {
+    background-color: #161f33;
+    display: flex;
+    justify-content: center;
+    flex-wrap: nowrap;
+}
+
+.LOUH {
+    width: 85%;
+    background-color: #0a1429;
+}
+
+.LOUB {
+    display: flex;
+    justify-content: center;
+    background-color: #ffffff;
+    padding-top: 40px;
+}
+
+.LOUB_1 {
+    width: 90%;
+}
+.LG_COL{
+    display:flex;
+    justify-content:flex-start;
+    align-items:center;
+    height:350px;
+    text-align:start;
+    font-style:italic;
+    font-weight:bolder;
+}
+div.col-xxl-6.LG_COL{
+    padding-left:10%;
+}
+.LG_COL h1{
+    color: #ffffff;
+    font-size:80px;
+}
+#getlistupdate a {
+    text-decoration: none;
+}
+.UPDATE_CARD_BG_TEXT {
+    color: #c7a96d;
+    background-color: #0a1429;
+}
+.UPDATE_CARD_BG_TEXT h4{
+    font-size:26px;
+    font-weight:bolder;
+}
+p.card-text.UPDATE_CARD_TEXT{
+    font-size:16px;
+}
