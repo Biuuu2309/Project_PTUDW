@@ -570,6 +570,127 @@ namespace Project_UDW.Models
 
             return response;
         }
+        public Response AddUpItemVer(UpItemVer upitemver, SqlConnection conn)
+        {
+            Response response = new Response();
+            try
+            {
+                SqlCommand cmd = new SqlCommand("sp_addupitemver", conn);
+                cmd.CommandType = CommandType.StoredProcedure;
+                cmd.Parameters.AddWithValue("@nameitem", upitemver.nameitem);
+                cmd.Parameters.AddWithValue("@version_update", upitemver.version_update);
+                cmd.Parameters.Add("@ErrorMessage", SqlDbType.Char, 200);
+                cmd.Parameters["@ErrorMessage"].Direction = ParameterDirection.Output;
+                conn.Open();
+                int i = cmd.ExecuteNonQuery();
+                conn.Close();
+                string mess = (string)cmd.Parameters["@ErrorMessage"].Value;
+                response.StatusCode = i > 0 ? 200 : 100;
+                response.StatusMessage = mess;
+            }
+            catch (Exception ex)
+            {
+                response.StatusCode = 100;
+                response.StatusMessage = ex.Message;
+            }
+            return response;
+        }
+        public Response DeleteUpItemVer(UpItemVer_Delete delupitemver, SqlConnection conn)
+        {
+            Response response = new Response();
+            try
+            {
+                SqlCommand cmd = new SqlCommand("sp_deleteupitemver", conn);
+                cmd.CommandType = CommandType.StoredProcedure;
+                cmd.Parameters.AddWithValue("@version_update", delupitemver.version_update);
+                cmd.Parameters.Add("@ErrorMessage", SqlDbType.Char, 200);
+                cmd.Parameters["@ErrorMessage"].Direction = ParameterDirection.Output;
+                conn.Open();
+                int i = cmd.ExecuteNonQuery();
+                conn.Close();
+                string mess = (string)cmd.Parameters["@ErrorMessage"].Value;
+                response.StatusCode = i > 0 ? 200 : 100;
+                response.StatusMessage = mess;
+            }
+            catch (Exception ex)
+            {
+                response.StatusCode = 100;
+                response.StatusMessage = ex.Message;
+            }
+            return response;
+        }
+        public Response UpdateUpItemVer(UpItemVer upupitemver, SqlConnection conn)
+        {
+            Response response = new Response();
+            try
+            {
+                SqlCommand cmd = new SqlCommand("sp_updateupitemver", conn);
+                cmd.CommandType = CommandType.StoredProcedure;
+                if (!string.IsNullOrEmpty(upupitemver.nameitem))
+                {
+                    cmd.Parameters.AddWithValue("@nameitem", upupitemver.nameitem);
+                }
+                if (!string.IsNullOrEmpty(upupitemver.version_update))
+                {
+                    cmd.Parameters.AddWithValue("@version_update", upupitemver.version_update);
+                }
+                cmd.Parameters.Add("@ErrorMessage", SqlDbType.NVarChar, 200);
+                cmd.Parameters["@ErrorMessage"].Direction = ParameterDirection.Output;
+                conn.Open();
+                int i = cmd.ExecuteNonQuery();
+                conn.Close();
+                string mess = (string)cmd.Parameters["@ErrorMessage"].Value;
+                response.StatusCode = i > 0 ? 200 : 100;
+                response.StatusMessage = mess;
+            }
+            catch (Exception ex)
+            {
+                response.StatusCode = 100;
+                response.StatusMessage = ex.Message;
+            }
+            return response;
+        }
+        public Response GetUpItemVer(SqlConnection conn)
+        {
+            Response response = new Response();
+            List<UpItemVer> upitemverList = new List<UpItemVer>();
+
+            try
+            {
+                string query = "SELECT nameitem, version_update FROM update_item_version";
+                using (SqlCommand cmd = new SqlCommand(query, conn))
+                {
+                    conn.Open();
+                    using (SqlDataReader reader = cmd.ExecuteReader())
+                    {
+                        while (reader.Read())
+                        {
+                            UpItemVer upitemver = new UpItemVer
+                            {
+                                nameitem = reader["nameitem"].ToString(),
+                                version_update = reader["version_update"].ToString()
+                            };
+                            upitemverList.Add(upitemver);
+                        }
+                    }
+                }
+                response.StatusCode = 200;
+                response.Data = upitemverList;
+                response.StatusMessage = "Update item version retrieved successfully";
+            }
+            catch (Exception ex)
+            {
+                response.StatusCode = 100;
+                response.StatusMessage = ex.Message;
+            }
+            finally
+            {
+                if (conn.State == ConnectionState.Open)
+                    conn.Close();
+            }
+
+            return response;
+        }
         public Response GetUpdateDetail(SqlConnection conn, string version_update)
         {
             Response response = new Response();

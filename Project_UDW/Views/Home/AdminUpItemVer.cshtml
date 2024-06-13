@@ -1,0 +1,245 @@
+﻿@{
+    ViewData["Title"] = "Update Item Verion";
+    Layout = "~/Views/Shared/Master.cshtml";
+}
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>@ViewData["Title"]</title>
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" />
+<link rel="stylesheet" href="~/css/UpItemVer.css">
+<!-- jQuery should be loaded here -->
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+
+<div id="addupitemverModal" class="modal fade" tabindex="-1" aria-labelledby="ShowModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title">Add Items Version Form</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+                <form id="addupitemverForm">
+                    <div class="mb-3">
+                        <label for="adduivnameitem" class="form-label">Champ Name</label>
+                        <input type="text" class="form-control" id="adduivnameitem" name="adduivnameitem" required>
+                    </div>
+                    <div class="mb-3">
+                        <label for="adduivupdateversion" class="form-label">Update Version</label>
+                        <input type="text" class="form-control" id="adduivupdateversion" name="adduivupdateversion" required>
+                    </div>
+                    <button type="button" class="btn btn-primary" onclick="Submit_Add_UpItemVer()">Submit</button>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+<div id="deleteupitemverModal" class="modal fade" tabindex="-1" aria-labelledby="ShowModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title">Delete Update Item Version Form</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+                <form id="deleteupitemverForm">
+                    <div class="mb-3">
+                        <label for="deluivupdateversion" class="form-label">Version Update</label>
+                        <input type="text" class="form-control" id="deluivupdateversion" name="deluivupdateversion" required>
+                    </div>
+                    <button type="button" class="btn btn-primary" onclick="Submit_Delete_UpItemVer()">Submit</button>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+<div id="updateupitemverModal" class="modal fade" tabindex="-1" aria-labelledby="ShowModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title">Update Item Version Form</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+                <form id="updateupitemverForm">
+                    <div class="mb-3">
+                        <label for="upuivnameitem" class="form-label">Champ Name</label>
+                        <input type="text" class="form-control" id="upuivnameitem" name="upuivnameitem" required>
+                    </div>
+                    <div class="mb-3">
+                        <label for="upuivupdateversion" class="form-label">Version Update</label>
+                        <input type="text" class="form-control" id="upuivupdateversion" name="upuivupdateversion" required>
+                    </div>
+                    <button type="button" class="btn btn-primary" onclick="Submit_Update_UpItemVer()">Submit</button>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="container-fluid">
+    <div class="row add_upitemver_main">
+        <div class="col-12">
+            <div class="card">
+                <div class="card-body">
+                    <div class="row">
+                        <div class="col-md-9"></div>
+                        <div class="col-md-1 col-md-offset-4 alert alert-info add_btn" onclick="Add_UpItemVer()">
+                            <a style="float: right; cursor: pointer">Add a item version</a>
+                        </div>
+                        <div class="col-md-1 col-md-offset-4 alert alert-info add_btn" onclick="Delete_UpItemVer()">
+                            <a style="float: right; cursor: pointer">Delete a item version</a>
+                        </div>
+                        <div class="col-md-1 col-md-offset-4 alert alert-info add_btn" onclick="Update_UpItemVer()">
+                            <a style="float: right; cursor: pointer">Update a item version</a>
+                        </div>
+                    </div>
+                    <h4 class="card-title">Update Item Version</h4>
+                    <h6 class="card-title mt-5"><i class="me-1 font-18 mdi mdi-numeric-1-box-multiple-outline"></i>Details</h6>
+                    <div class="table-responsive">
+                        <table class="table">
+                            <thead>
+                                <tr>
+                                    <th scope="col">STT</th>
+                                    <th scope="col">Name Item</th>
+                                    <th scope="col">Version Update</th>
+                                </tr>
+                            </thead>
+                            <tbody id="upitemverTableBody">
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </div>
+</div>
+
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"></script>
+<script>
+    function Add_UpItemVer() {
+        var modal = new bootstrap.Modal(document.getElementById('addupitemverModal'), {
+            keyboard: false
+        });
+        modal.show();
+    }
+    function Delete_UpItemVer() {
+        var modal = new bootstrap.Modal(document.getElementById('deleteupitemverModal'), {
+            keyboard: false
+        });
+        modal.show();
+    }
+    function Update_UpItemVer() {
+        var modal = new bootstrap.Modal(document.getElementById('updateupitemverModal'), {
+            keyboard: false
+        });
+        modal.show();
+    }
+    function Submit_Add_UpItemVer() {
+        var formData = {
+            nameitem: $('#adduivnameitem').val(),
+            version_update: $('#adduivupdateversion').val()
+        };
+
+        $.ajax({
+            type: "POST",
+            url: "/api/AdminUpItemVer/AddUpItemVer",
+            data: JSON.stringify(formData),
+            contentType: "application/json; charset=utf-8",
+            dataType: "json",
+            success: function (response) {
+                if (response.statusCode === 200) {
+                    alert("Add item version successful: " + response.statusMessage);
+                    $('#addupitemverModal').modal('hide');
+                    $('#addupitemverForm')[0].reset();
+                    location.reload();
+
+                } else {
+                    alert("Add item version failed: " + response.statusMessage);
+                }
+            },
+            error: function (error) {
+                console.error("AJAX error response:", error);
+                alert("Error during add item version.");
+            }
+        });
+    }
+    function Submit_Update_UpItemVer() {
+        var formData = {
+            ChampName: $('#upuivnameitem').val(),
+            version_update: $('#upuivupdateversion').val()
+        };
+        $.ajax({
+            type: "POST",
+            url: "/api/AdminUpItemVer/UpdateUpItemVer",
+            data: JSON.stringify(formData),
+            contentType: "application/json; charset=utf-8",
+            dataType: "json",
+            success: function (response) {
+                if (response.statusCode === 200) {
+                    alert('Item version updated successfully!');
+                    $('#updateupitemverModal').modal('hide');
+                    $('#updateupitemverForm')[0].reset();
+                    location.reload();
+                } else {
+                    alert('Update failed: ' + response.statusMessage);
+                }
+            },
+            error: function (error) {
+                console.error('AJAX error:', error);
+                alert('Error updating item version');
+            }
+        });
+    }
+    function Submit_Delete_UpItemVer() {
+        var formData = {
+            version_update: $('#deluivupdateversion').val()
+        };
+
+        $.ajax({
+            type: "POST",
+            url: "/api/AdminUpItemVer/DeleteUpItemVer",
+            data: JSON.stringify(formData),
+            contentType: "application/json; charset=utf-8",
+            dataType: "json",
+            success: function (response) {
+                if (response.statusCode === 200) {
+                    alert("Delete item version successful: " + response.statusMessage);
+                    $('#deleteupitemverModal').modal('hide');
+                    $('#deleteupitemverForm')[0].reset();
+                    location.reload();
+
+                } else {
+                    alert("Delete item version failed: " + response.statusMessage);
+                }
+            },
+            error: function (error) {
+                console.error("AJAX error response:", error);
+                alert("Error during delete item version.");
+            }
+        });
+    }
+    $(document).ready(function () {
+
+        $.ajax({
+            type: "GET",
+            url: "/api/AdminUpItemVer/GetUpItemVer",
+            dataType: "json",
+            success: function (data) {
+                var tbody = $('#upitemverTableBody');
+                tbody.empty();
+                data.forEach(function (upitemver, index) {
+                    var row = '<tr>' +
+                        '<th scope="row">' + (index + 1) + '</th>' +
+                        '<td>' + upitemver.nameitem + '</td>' +
+                        '<td>' + upitemver.version_update + '</td>' +
+                        '</tr>';
+                    tbody.append(row);
+                });
+            },
+            error: function (error) {
+                console.error("Error fetching data:", error);
+            }
+        });
+    });
+</script>
