@@ -58,6 +58,10 @@ namespace Project_UDW.Controllers
         {
             return View();
         }
+        public IActionResult AdminNews()
+        {
+            return View();
+        }
         public IActionResult Privacy()
         {
             return View();

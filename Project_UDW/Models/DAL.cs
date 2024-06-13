@@ -141,6 +141,251 @@ namespace Project_UDW.Models
             }
             return response;
         }
+        public Response AddNews(News news, SqlConnection conn)
+        {
+            Response response = new Response();
+            try
+            {
+                string imagepicnewmain = Path.GetFileName(news.picnewmain);
+                string imagepicnewblur = Path.GetFileName(news.picnewblur);
+                SqlCommand cmd = new SqlCommand("sp_addnews", conn);
+                cmd.CommandType = CommandType.StoredProcedure;
+                cmd.Parameters.AddWithValue("@namenews", news.namenews);
+                cmd.Parameters.AddWithValue("@picnewmain", imagepicnewmain);
+                cmd.Parameters.AddWithValue("@picnewblur", imagepicnewblur);
+                cmd.Parameters.AddWithValue("@maintitle", news.maintitle);
+                cmd.Parameters.AddWithValue("@destitle", news.destitle);
+                cmd.Parameters.AddWithValue("@mota", news.mota);
+                cmd.Parameters.AddWithValue("@title1", news.title1);
+                cmd.Parameters.AddWithValue("@title1_con1", news.title1_con1);
+                cmd.Parameters.AddWithValue("@title1_con2", news.title1_con2);
+                cmd.Parameters.AddWithValue("@title2", news.title2);
+                cmd.Parameters.AddWithValue("@title2_con1", news.title2_con1);
+                cmd.Parameters.AddWithValue("@title2_con2", news.title2_con2);
+                cmd.Parameters.AddWithValue("@title3", news.title3);
+                cmd.Parameters.AddWithValue("@title3_con1", news.title3_con1);
+                cmd.Parameters.AddWithValue("@title3_con2", news.title3_con2);
+                cmd.Parameters.AddWithValue("@title4", news.title4);
+                cmd.Parameters.AddWithValue("@title4_con1", news.title4_con1);
+                cmd.Parameters.AddWithValue("@title4_con2", news.title4_con2);
+                cmd.Parameters.AddWithValue("@title5", news.title5);
+                cmd.Parameters.AddWithValue("@title5_con1", news.title5_con1);
+                cmd.Parameters.AddWithValue("@title5_con2", news.title5_con2);
+                cmd.Parameters.AddWithValue("@tomtat", news.tomtat);
+                cmd.Parameters.Add("@ErrorMessage", SqlDbType.Char, 200);
+                cmd.Parameters["@ErrorMessage"].Direction = ParameterDirection.Output;
+                conn.Open();
+                int i = cmd.ExecuteNonQuery();
+                conn.Close();
+                string mess = (string)cmd.Parameters["@ErrorMessage"].Value;
+                response.StatusCode = i > 0 ? 200 : 100;
+                response.StatusMessage = mess;
+            }
+            catch (Exception ex)
+            {
+                response.StatusCode = 100;
+                response.StatusMessage = ex.Message;
+            }
+            return response;
+        }
+        public Response UpdateNews(News updatenews, SqlConnection conn)
+        {
+            Response response = new Response();
+            try
+            {
+                string imagepicnewmain = Path.GetFileName(updatenews.picnewmain);
+                string imagepicnewblur = Path.GetFileName(updatenews.picnewblur);
+                SqlCommand cmd = new SqlCommand("sp_updatenews", conn);
+                cmd.CommandType = CommandType.StoredProcedure;
+                if (!string.IsNullOrEmpty(updatenews.namenews))
+                {
+                    cmd.Parameters.AddWithValue("@namenews", updatenews.namenews);
+                }
+                if (!string.IsNullOrEmpty(imagepicnewmain))
+                {
+                    cmd.Parameters.AddWithValue("@picnewmain", imagepicnewmain);
+                }
+                if (!string.IsNullOrEmpty(imagepicnewblur))
+                {
+                    cmd.Parameters.AddWithValue("@picnewblur", imagepicnewblur);
+                }
+                if (!string.IsNullOrEmpty(updatenews.maintitle))
+                {
+                    cmd.Parameters.AddWithValue("@maintitle", updatenews.maintitle);
+                }
+                if (!string.IsNullOrEmpty(updatenews.destitle))
+                {
+                    cmd.Parameters.AddWithValue("@destitle", updatenews.destitle);
+                }
+                if (!string.IsNullOrEmpty(updatenews.mota))
+                {
+                    cmd.Parameters.AddWithValue("@mota", updatenews.mota);
+                }
+                if (!string.IsNullOrEmpty(updatenews.title1))
+                {
+                    cmd.Parameters.AddWithValue("@title1", updatenews.title1);
+                }
+                if (!string.IsNullOrEmpty(updatenews.title1_con1))
+                {
+                    cmd.Parameters.AddWithValue("@title1_con1", updatenews.title1_con1);
+                }
+                if (!string.IsNullOrEmpty(updatenews.title1_con2))
+                {
+                    cmd.Parameters.AddWithValue("@title1_con2", updatenews.title1_con2);
+                }
+                if (!string.IsNullOrEmpty(updatenews.title2))
+                {
+                    cmd.Parameters.AddWithValue("@title2", updatenews.title2);
+                }
+                if (!string.IsNullOrEmpty(updatenews.title2_con1))
+                {
+                    cmd.Parameters.AddWithValue("@title2_con1", updatenews.title2_con1);
+                }
+                if (!string.IsNullOrEmpty(updatenews.title2_con2))
+                {
+                    cmd.Parameters.AddWithValue("@title2_con2", updatenews.title2_con2);
+                }
+                if (!string.IsNullOrEmpty(updatenews.title3))
+                {
+                    cmd.Parameters.AddWithValue("@title3", updatenews.title3);
+                }
+                if (!string.IsNullOrEmpty(updatenews.title3_con1))
+                {
+                    cmd.Parameters.AddWithValue("@title3_con1", updatenews.title3_con1);
+                }
+                if (!string.IsNullOrEmpty(updatenews.title3_con2))
+                {
+                    cmd.Parameters.AddWithValue("@title3_con2", updatenews.title3_con2);
+                }
+                if (!string.IsNullOrEmpty(updatenews.title4))
+                {
+                    cmd.Parameters.AddWithValue("@title4", updatenews.title4);
+                }
+                if (!string.IsNullOrEmpty(updatenews.title4_con1))
+                {
+                    cmd.Parameters.AddWithValue("@title4_con1", updatenews.title4_con1);
+                }
+                if (!string.IsNullOrEmpty(updatenews.title4_con2))
+                {
+                    cmd.Parameters.AddWithValue("@title4_con2", updatenews.title4_con2);
+                }
+                if (!string.IsNullOrEmpty(updatenews.title5))
+                {
+                    cmd.Parameters.AddWithValue("@title5", updatenews.title5);
+                }
+                if (!string.IsNullOrEmpty(updatenews.title5_con1))
+                {
+                    cmd.Parameters.AddWithValue("@title5_con1", updatenews.title5_con1);
+                }
+                if (!string.IsNullOrEmpty(updatenews.title5_con2))
+                {
+                    cmd.Parameters.AddWithValue("@title5_con2", updatenews.title5_con2);
+                }
+                if (!string.IsNullOrEmpty(updatenews.tomtat))
+                {
+                    cmd.Parameters.AddWithValue("@tomtat", updatenews.tomtat);
+                }
+                cmd.Parameters.Add("@ErrorMessage", SqlDbType.NVarChar, 200);
+                cmd.Parameters["@ErrorMessage"].Direction = ParameterDirection.Output;
+                conn.Open();
+                int i = cmd.ExecuteNonQuery();
+                conn.Close();
+                string mess = (string)cmd.Parameters["@ErrorMessage"].Value;
+                response.StatusCode = i > 0 ? 200 : 100;
+                response.StatusMessage = mess;
+            }
+            catch (Exception ex)
+            {
+                response.StatusCode = 100;
+                response.StatusMessage = ex.Message;
+            }
+            return response;
+        }
+        public Response DeleteNews(News_Delete delnews, SqlConnection conn)
+        {
+            Response response = new Response();
+            try
+            {
+                SqlCommand cmd = new SqlCommand("sp_deletenews", conn);
+                cmd.CommandType = CommandType.StoredProcedure;
+                cmd.Parameters.AddWithValue("@namenews", delnews.namenews);
+                cmd.Parameters.Add("@ErrorMessage", SqlDbType.Char, 200);
+                cmd.Parameters["@ErrorMessage"].Direction = ParameterDirection.Output;
+                conn.Open();
+                int i = cmd.ExecuteNonQuery();
+                conn.Close();
+                string mess = (string)cmd.Parameters["@ErrorMessage"].Value;
+                response.StatusCode = i > 0 ? 200 : 100;
+                response.StatusMessage = mess;
+            }
+            catch (Exception ex)
+            {
+                response.StatusCode = 100;
+                response.StatusMessage = ex.Message;
+            }
+            return response;
+        }
+        public Response GetNews(SqlConnection conn)
+        {
+            Response response = new Response();
+            List<News> newsList = new List<News>();
+
+            try
+            {
+                string query = "SELECT * FROM news";
+                using (SqlCommand cmd = new SqlCommand(query, conn))
+                {
+                    conn.Open();
+                    using (SqlDataReader reader = cmd.ExecuteReader())
+                    {
+                        while (reader.Read())
+                        {
+                            News news = new News
+                            {
+                                namenews = reader["namenews"].ToString(),
+                                picnewmain = reader["picnewmain"].ToString(),
+                                picnewblur = reader["picnewblur"].ToString(),
+                                maintitle = reader["maintitle"].ToString(),
+                                destitle = reader["destitle"].ToString(),
+                                mota = reader["mota"].ToString(),
+                                title1 = reader["title1"].ToString(),
+                                title1_con1 = reader["title1_con1"].ToString(),
+                                title1_con2 = reader["title1_con2"].ToString(),
+                                title2 = reader["title2"].ToString(),
+                                title2_con1 = reader["title2_con1"].ToString(),
+                                title2_con2 = reader["title2_con2"].ToString(),
+                                title3 = reader["title3"].ToString(),
+                                title3_con1 = reader["title3_con1"].ToString(),
+                                title3_con2 = reader["title3_con2"].ToString(),
+                                title4 = reader["title4"].ToString(),
+                                title4_con1 = reader["title4_con1"].ToString(),
+                                title4_con2 = reader["title4_con2"].ToString(),
+                                title5 = reader["title5"].ToString(),
+                                title5_con1 = reader["title5_con1"].ToString(),
+                                title5_con2 = reader["title5_con2"].ToString(),
+                                tomtat = reader["tomtat"].ToString()
+                            };
+                            newsList.Add(news);
+                        }
+                    }
+                }
+                response.StatusCode = 200;
+                response.Data = newsList;
+                response.StatusMessage = "News retrieved successfully";
+            }
+            catch (Exception ex)
+            {
+                response.StatusCode = 100;
+                response.StatusMessage = ex.Message;
+            }
+            finally
+            {
+                if (conn.State == ConnectionState.Open)
+                    conn.Close();
+            }
+
+            return response;
+        }
         public Response UpdateChamp(Champions updatechamp, SqlConnection conn)
         {
             Response response = new Response();
