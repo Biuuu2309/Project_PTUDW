@@ -13,6 +13,11 @@
         public string AVA_W { get; set; }
         public string AVA_E { get; set; }
         public string AVA_R { get; set; }
+        public string Vdnt { get; set; }
+        public string Vdq { get; set; }
+        public string Vdw { get; set; }
+        public string Vde { get; set; }
+        public string Vdr { get; set; }
     }
     public class Skills_Delete
     {

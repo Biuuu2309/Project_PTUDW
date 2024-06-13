@@ -204,6 +204,11 @@ namespace Project_UDW.Models
                 string imageW = Path.GetFileName(updateskill.AVA_W);
                 string imageE = Path.GetFileName(updateskill.AVA_E);
                 string imageR = Path.GetFileName(updateskill.AVA_R);
+                string vdnt = Path.GetFileName(updateskill.Vdnt);
+                string vdq = Path.GetFileName(updateskill.Vdq);
+                string vdw = Path.GetFileName(updateskill.Vdw);
+                string vde = Path.GetFileName(updateskill.Vde);
+                string vdr = Path.GetFileName(updateskill.Vdr);
                 SqlCommand cmd = new SqlCommand("sp_updateskill", conn);
                 cmd.CommandType = CommandType.StoredProcedure;
                 if (!string.IsNullOrEmpty(updateskill.ChampName)) 
@@ -249,6 +254,26 @@ namespace Project_UDW.Models
                 if (!string.IsNullOrEmpty(imageR)) 
                 {
                     cmd.Parameters.AddWithValue("@avar", imageR);
+                }
+                if (!string.IsNullOrEmpty(vdnt))
+                {
+                    cmd.Parameters.AddWithValue("@vdnt", vdnt);
+                }
+                if (!string.IsNullOrEmpty(vdq))
+                {
+                    cmd.Parameters.AddWithValue("@vdq", vdq);
+                }
+                if (!string.IsNullOrEmpty(vdw))
+                {
+                    cmd.Parameters.AddWithValue("@vdw", vdw);
+                }
+                if (!string.IsNullOrEmpty(vde))
+                {
+                    cmd.Parameters.AddWithValue("@vde", vde);
+                }
+                if (!string.IsNullOrEmpty(vdr))
+                {
+                    cmd.Parameters.AddWithValue("@vdr", vdr);
                 }
                 cmd.Parameters.Add("@ErrorMessage", SqlDbType.NVarChar, 200);
                 cmd.Parameters["@ErrorMessage"].Direction = ParameterDirection.Output;
@@ -622,7 +647,12 @@ namespace Project_UDW.Models
                         AVA_Q = reader["AVAq"].ToString(),
                         AVA_W = reader["AVAw"].ToString(),
                         AVA_E = reader["AVAe"].ToString(),
-                        AVA_R = reader["AVAr"].ToString()
+                        AVA_R = reader["AVAr"].ToString(),
+                        Vdnt = reader["Vdnt"].ToString(),
+                        Vdq = reader["Vdq"].ToString(),
+                        Vdw = reader["Vdw"].ToString(),
+                        Vde = reader["Vde"].ToString(),
+                        Vdr = reader["Vdr"].ToString()
                     };
                     response.StatusCode = 200;
                     response.Data = skill;
@@ -738,6 +768,11 @@ namespace Project_UDW.Models
                 string imageAVA_W = Path.GetFileName(skills.AVA_W);
                 string imageAVA_E = Path.GetFileName(skills.AVA_E);
                 string imageAVA_R = Path.GetFileName(skills.AVA_R);
+                string vdnt = Path.GetFileName(skills.Vdnt);
+                string vdq = Path.GetFileName(skills.Vdq);
+                string vdw = Path.GetFileName(skills.Vdw);
+                string vde = Path.GetFileName(skills.Vde);
+                string vdr = Path.GetFileName(skills.Vdr);
                 SqlCommand cmd = new SqlCommand("sp_addskill", conn);
                 cmd.CommandType = CommandType.StoredProcedure;
                 cmd.Parameters.AddWithValue("@champname", skills.ChampName);
@@ -751,6 +786,11 @@ namespace Project_UDW.Models
                 cmd.Parameters.AddWithValue("@avaw", imageAVA_W);
                 cmd.Parameters.AddWithValue("@avae", imageAVA_E);
                 cmd.Parameters.AddWithValue("@avar", imageAVA_R);
+                cmd.Parameters.AddWithValue("@vdnt", vdnt);
+                cmd.Parameters.AddWithValue("@vdq", vdq);
+                cmd.Parameters.AddWithValue("@vdw", vdw);
+                cmd.Parameters.AddWithValue("@vde", vde);
+                cmd.Parameters.AddWithValue("@vdr", vdr);
                 cmd.Parameters.Add("@ErrorMessage", SqlDbType.Char, 200);
                 cmd.Parameters["@ErrorMessage"].Direction = ParameterDirection.Output;
                 conn.Open();
@@ -794,7 +834,12 @@ namespace Project_UDW.Models
                                 AVA_Q = reader["AVAq"].ToString(),
                                 AVA_W = reader["AVAw"].ToString(),
                                 AVA_E = reader["AVAe"].ToString(),
-                                AVA_R = reader["AVAr"].ToString()
+                                AVA_R = reader["AVAr"].ToString(),
+                                Vdnt = reader["Vdnt"].ToString(),
+                                Vdq = reader["Vdq"].ToString(),
+                                Vdw = reader["Vdw"].ToString(),
+                                Vde = reader["Vde"].ToString(),
+                                Vdr = reader["Vdr"].ToString()
                             };
                             skillslist.Add(skills);
                         }

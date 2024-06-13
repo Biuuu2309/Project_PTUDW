@@ -68,6 +68,32 @@
                         <input type='file' class="form-control" id="avar" name="avar" required onchange="readURL(this);" />
                         <img id="blah" src="#" alt="" />
                     </div>
+
+                    <div class="mb-3">
+                        <label for="vdnt" class="form-label">Video noi tai</label>
+                        <input type='file' class="form-control" id="vdnt" name="vdnt" required onchange="readURL(this);" />
+                        <video id="blah" src="#" alt="" />
+                    </div>
+                    <div class="mb-3">
+                        <label for="vdq" class="form-label">Video Q</label>
+                        <input type='file' class="form-control" id="vdq" name="vdq" required onchange="readURL(this);" />
+                        <video id="blah" src="#" alt="" />
+                    </div>
+                    <div class="mb-3">
+                        <label for="vdw" class="form-label">Video W</label>
+                        <input type='file' class="form-control" id="vdw" name="vdw" required onchange="readURL(this);" />
+                        <video id="blah" src="#" alt="" />
+                    </div>
+                    <div class="mb-3">
+                        <label for="vde" class="form-label">Video E</label>
+                        <input type='file' class="form-control" id="vde" name="vde" required onchange="readURL(this);" />
+                        <video id="blah" src="#" alt="" />
+                    </div>
+                    <div class="mb-3">
+                        <label for="vdr" class="form-label">Video R</label>
+                        <input type='file' class="form-control" id="vdr" name="vdr" required onchange="readURL(this);" />
+                        <video id="blah" src="#" alt="" />
+                    </div>
                     <button type="button" class="btn btn-primary" onclick="Submit_Skill()">Submit</button>
                 </form>
             </div>
@@ -151,6 +177,32 @@
                         <input type='file' class="form-control" id="upavar" name="upavar" required onchange="readURL(this);" />
                         <img id="blah" src="#" alt="" />
                     </div>
+
+                    <div class="mb-3">
+                        <label for="upvdnt" class="form-label">Video noi tai</label>
+                        <input type='file' class="form-control" id="upvdnt" name="upvdnt" required onchange="readURL(this);" />
+                        <video id="blah" src="#" alt="" />
+                    </div>
+                    <div class="mb-3">
+                        <label for="upvdq" class="form-label">Video Q</label>
+                        <input type='file' class="form-control" id="upvdq" name="upvdq" required onchange="readURL(this);" />
+                        <video id="blah" src="#" alt="" />
+                    </div>
+                    <div class="mb-3">
+                        <label for="upvdw" class="form-label">Video W</label>
+                        <input type='file' class="form-control" id="upvdw" name="upvdw" required onchange="readURL(this);" />
+                        <video id="blah" src="#" alt="" />
+                    </div>
+                    <div class="mb-3">
+                        <label for="upvde" class="form-label">Video E</label>
+                        <input type='file' class="form-control" id="upvde" name="upvde" required onchange="readURL(this);" />
+                        <video id="blah" src="#" alt="" />
+                    </div>
+                    <div class="mb-3">
+                        <label for="upvdr" class="form-label">Video R</label>
+                        <input type='file' class="form-control" id="upvdr" name="upvdr" required onchange="readURL(this);" />
+                        <video id="blah" src="#" alt="" />
+                    </div>
                     <button type="button" class="btn btn-primary" onclick="Submit_Update_Skill()">Submit</button>
                 </form>
             </div>
@@ -188,6 +240,7 @@
                                     <th scope="col">E</th>
                                     <th scope="col">R</th>
                                     <th scope="col">AVA Skills</th>
+                                    <th scope="col">Video Skills</th>
                                 </tr>
                             </thead>
                             <tbody id="skillsTableBody">
@@ -230,7 +283,12 @@
             AVA_Q: $('#upavaq').val(),
             AVA_W: $('#upavaw').val(),
             AVA_E: $('#upavae').val(),
-            AVA_R: $('#upavar').val()
+            AVA_R: $('#upavar').val(),
+            Vdnt: $('#upvdnt').val(),
+            Vdq: $('#upvdq').val(),
+            Vdw: $('#upvdw').val(),
+            Vde: $('#upvde').val(),
+            Vdr: $('#upvdr').val()
         };
         $.ajax({
             type: "POST",
@@ -294,7 +352,12 @@
             AVA_Q: $('#avaq').val(),
             AVA_W: $('#avaw').val(),
             AVA_E: $('#avae').val(),
-            AVA_R: $('#avar').val()
+            AVA_R: $('#avar').val(),
+            Vdnt: $('#vdnt').val(),
+            Vdq: $('#vdq').val(),
+            Vdw: $('#vdw').val(),
+            Vde: $('#vde').val(),
+            Vdr: $('#vdr').val()
         };
 
         // Log the form data to verify its correctness
@@ -341,6 +404,7 @@
                         '<td>' + skill.skillE + '</td>' +
                         '<td>' + skill.skillR + '</td>' +
                         '<td style="padding-right: 0px; padding-left: 0px;"> <img style="height: 45px; margin-left: 3px;" src="/Pictures/Skills/Skills_NT/' + skill.avA_NT + '" /><img style="height: 45px; margin-left: 3px;" src="/Pictures/Skills/Skills_Q/' + skill.avA_Q + '" /><img style="height: 45px; margin-left: 3px;" src="/Pictures/Skills/Skills_W/' + skill.avA_W + '" /><img style="height: 45px; margin-left: 3px;" src="/Pictures/Skills/Skills_E/' + skill.avA_E + '" /><img style="height: 45px; margin-left: 3px;" src="/Pictures/Skills/Skills_R/' + skill.avA_R + '" /> </td>' +
+                        '<td style="padding-right: 0px; padding-left: 0px;"> <video muted loop style="height: 45px; margin-left: 3px;" src="/Videos/Video_Skill/' + skill.vdnt + '" /><video muted loop style="height: 45px; margin-left: 3px;" src="/Videos/Video_Skill/' + skill.vdq + '" /><video muted loop style="height: 45px; margin-left: 3px;" src="/Videos/Video_Skill/' + skill.vdw + '" /><video muted loop style="height: 45px; margin-left: 3px;" src="/Videos/Video_Skill/' + skill.vde + '" /><video muted loop style="height: 45px; margin-left: 3px;" src="/Videos/Video_Skill/' + skill.vde + '" /> </td>' +
                         '</tr>';
                     tbody.append(row);
                 });
