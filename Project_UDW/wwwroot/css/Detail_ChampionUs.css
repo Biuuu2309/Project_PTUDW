@@ -1,0 +1,168 @@
+﻿@font-face {
+    font-family: "neuefrutigerworld-medium";
+    src: url("../neue-frutiger/neuefrutigerworld-medium.woff") format("woff");
+}
+
+body {
+    font-family: neuefrutigerworld-medium;
+}
+
+.DTC {
+    background-color: #161f33;
+}
+
+.DTC_CONTAINER {
+    background-color: #0a1429;
+}
+
+.DTC_TIEUDE_THANHKYNANG {
+    justify-content: center;
+    cursor: pointer;
+}
+
+.DTC_BORDER_VIDEO {
+    border: 1px solid;
+    width: 100%;
+    border-color: #c7a96d;
+    margin-top: 10px;
+}
+
+.DTC_TIEUDE_THANHKYNANG p {
+    font-size: 14px;
+    color: red;
+    margin-bottom: 0px;
+    margin-top: 15px;
+    color: #ffffff;
+    width: 100%;
+    height: 100%;
+    text-align: center;
+}
+
+.DTC_VIDEO_IN_KYNANG {
+    padding: 10px;
+}
+
+.DTC_KYNANG_COL {
+    padding: 10px;
+}
+
+.DTC_TIEUDE_KYNANG {
+    color: #ffffff;
+    font-weight: bolder;
+    font-style: italic;
+}
+
+    .DTC_TIEUDE_KYNANG h1 {
+        font-size: 80px;
+    }
+
+.DTC_VIDEO_TEXT_KYNANG {
+    text-align: center;
+    color: #ffffff;
+    font-size: 24px;
+}
+
+.DTC_VIDEO_TEXT_KYNANG_1 {
+    color: #879999;
+    font-size: 16px;
+}
+
+.DTC_VIDEO_TEXT_KYNANG_2 {
+    font-size: 18px;
+}
+
+.DTC_SKIN {
+    background-color: #161f33;
+}
+
+.DTC_SKIN_TIEUDE p {
+    font-size: 32px;
+    font-style: italic;
+    font-weight: bolder;
+    margin-left: 10%;
+}
+
+.DTC_SKIN_SHOW {
+    display: flex;
+    justify-content: center;
+}
+
+    .DTC_SKIN_SHOW img {
+        width: 80%;
+    }
+
+.DTC_SKIN_CONTAINER {
+    background-color: white;
+}
+
+.DTC_THANH_SKIN {
+    padding: 40px 80px 80px 80px;
+}
+
+div.owl-nav {
+    margin: 0 !important;
+}
+
+.owl-nav {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 97%;
+    display: flex;
+    justify-content: space-between;
+    padding: 0 20px;
+    z-index: 1000;
+}
+
+    .owl-nav button {
+        background-color: rgba(255, 255, 255, 0.5);
+        border: none;
+        padding: 10px;
+        cursor: pointer;
+    }
+
+        .owl-nav button.owl-prev,
+        .owl-nav button.owl-next {
+            background-color: rgba(255, 255, 255, 0.5);
+            border: none;
+            padding: 10px;
+            cursor: pointer;
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+            z-index: 1000;
+        }
+
+        .owl-nav button.owl-prev {
+            left: 20px;
+        }
+
+        .owl-nav button.owl-next {
+            right: 20px;
+        }
+
+
+button.owl-prev span {
+    color: #c7a96d;
+    font-size: 60px;
+}
+
+button.owl-next span {
+    color: #c7a96d;
+    font-size: 60px;
+}
+
+button.owl-prev span:hover {
+    background-color: none;
+}
+
+button.owl-next span:hover {
+    background-color: none;
+}
+
+.owl-theme .owl-nav [class*=owl-]:hover {
+    background: none;
+}
+div.DTC_MODAU_TEXT{
+    padding-left:80px;
+}
