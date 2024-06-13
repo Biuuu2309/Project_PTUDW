@@ -69,25 +69,54 @@
                 var container = $('#getuserupdatedetail');
                 container.empty();
                 var row =
-                    '<img id="backgroundImagee" src="/Pictures/Update/' + update.picheadblur + '" onload="adjustHeight()" />' +
-                    '<img id="backgroundImagee" src="/Pictures/Update/' + update.picheadmain + '" onload="adjustHeight()" />' +
-                    '<img id="backgroundImagee" src="/Pictures/Update/' + update.picupdate + '" onload="adjustHeight()" />' +
-                    '<h3>' + update.version_update + ' </h3>' +
-                    '<h1> ' + update.maintitle + ' </h1>' +
-                    '<p> ' + update.maindestitle + ' </p>' +
-                    '<p>Vai trò: ' + update.upversiontitle1 + ' </p>' +
-                    '<p>Vai trò: ' + update.upversiontitle_con1 + ' </p>' +
-                    '<p>Vai trò: ' + update.upversiontitle2 + ' </p>' +
-                    '<p>Vai trò: ' + update.upversiontitle_con2 + ' </p>' +
-                    '<p>Vai trò: ' + update.upversiontitle3 + ' </p>' +
-                    '<p>Vai trò: ' + update.upversiontitle_con3 + ' </p>' +
-                    '<p>Vai trò: ' + update.upversiontitle4 + ' </p>' +
-                    '<p>Vai trò: ' + update.upversiontitle_con4 + ' </p>' +
-                    '<p>Vai trò: ' + update.upversiontitle5 + ' </p>' +
-                    '<p>Vai trò: ' + update.upversiontitle_con5 + ' </p>' +
-                    '<p>Độ khó: ' + update.nangcaptrainghiem + ' </p>' +
-                    '<p>Độ khó: ' + update.sualoi + ' </p>';
-                    '<p>Độ khó bìu: ' + update.skillQ + ' </p>';
+                '<img id="backgroundImagee" src="/Pictures/Update/' + update.picheadblur + '" onload="adjustHeight()" />' +
+                '<img id="backgroundImagee" src="/Pictures/Update/' + update.picheadmain + '" onload="adjustHeight()" />' +
+                '<img id="backgroundImagee" src="/Pictures/Update/' + update.picupdate + '" onload="adjustHeight()" />' +
+                '<h3>' + update.version_update + ' </h3>' +
+                '<h1> ' + update.maintitle + ' </h1>' +
+                '<p> ' + update.maindestitle + ' </p>' +
+                '<p>Vai trò: ' + update.upversiontitle1 + ' </p>' +
+                '<p>Vai trò: ' + update.upversiontitle_con1 + ' </p>' +
+                '<p>Vai trò: ' + update.upversiontitle2 + ' </p>' +
+                '<p>Vai trò: ' + update.upversiontitle_con2 + ' </p>' +
+                '<p>Vai trò: ' + update.upversiontitle3 + ' </p>' +
+                '<p>Vai trò: ' + update.upversiontitle_con3 + ' </p>' +
+                '<p>Vai trò: ' + update.upversiontitle4 + ' </p>' +
+                '<p>Vai trò: ' + update.upversiontitle_con4 + ' </p>' +
+                '<p>Vai trò: ' + update.upversiontitle5 + ' </p>' +
+                '<p>Vai trò: ' + update.upversiontitle_con5 + ' </p>' +
+                '<p>Độ khó: ' + update.nangcaptrainghiem + ' </p>' +
+                '<p>Độ khó: ' + update.sualoi + ' </p>' +
+                '<p>Độ khó bìu: ' + update.champName + ' </p>' +
+                '<p>Độ khó bìu: ' + update.noiTai + ' </p>' +
+                '<p>Độ khó bìu: ' + update.skillQ + ' </p>' +
+                '<p>Độ khó bìu: ' + update.skillW + ' </p>' +
+                '<p>Độ khó bìu: ' + update.skillE + ' </p>' +
+                '<p>Độ khó bìu: ' + update.skillR + ' </p>' +
+                '<img id="backgroundImagee" src="/Pictures/Skills/Skills_NT/' + update.avA_NT + '" onload="adjustHeight()" />' +
+                '<img id="backgroundImagee" src="/Pictures/Skills/Skills_Q/' + update.avA_Q + '" onload="adjustHeight()" />' +
+                '<img id="backgroundImagee" src="/Pictures/Skills/Skills_W/' + update.avA_W + '" onload="adjustHeight()" />' +
+                '<img id="backgroundImagee" src="/Pictures/Skills/Skills_E/' + update.avA_E + '" onload="adjustHeight()" />' +
+                '<img id="backgroundImagee" src="/Pictures/Skills/Skills_R/' + update.avA_R + '" onload="adjustHeight()" />' +
+                '<p>Độ khó bìu: ' + update.nameitem + ' </p>' +
+                '<img id="backgroundImagee" src="/Pictures/Items/' + update.picitem + '" onload="adjustHeight()" />' +
+                '<p>Độ khó bìu: ' + update.health + ' </p>' +
+                '<p>Độ khó bìu: ' + update.atkdame + ' </p>' +
+                '<p>Độ khó bìu: ' + update.apdame + ' </p>' +
+                '<p>Độ khó bìu: ' + update.atkspeed + ' </p>' +
+                '<p>Độ khó bìu: ' + update.crit + ' </p>' +
+                '<p>Độ khó bìu: ' + update.armor + ' </p>' +
+                '<p>Độ khó bìu: ' + update.magicresis + ' </p>';
+                '<p>Độ khó bìu: ' + update.ahaste + ' </p>';
+                '<p>Độ khó bìu: ' + update.movespeed + ' </p>';
+                '<p>Độ khó bìu: ' + update.noitaiitem + ' </p>';
+                '<p>Độ khó bìu: ' + update.cost + ' </p>';
+                '<p>Độ khó bìu: ' + update.dame_nt + ' </p>';
+                '<p>Độ khó bìu: ' + update.dame_q + ' </p>';
+                '<p>Độ khó bìu: ' + update.dame_w + ' </p>';
+                '<p>Độ khó bìu: ' + update.dame_e + ' </p>';
+                '<p>Độ khó bìu: ' + update.dame_r + ' </p>';
+                '<p>Độ khó bìu: ' + update.detail_NN + ' </p>';
                 container.append(row);
             },
             error: function (error) {
@@ -100,87 +129,4 @@
         fetchUpdateDetails();
         setInterval(fetchUpdateDetails, 30000);
     });
-    // function fetchSkillDetails() {
-    //     var champName = getQueryParameter("Uschamp");
-    //     $.ajax({
-    //         type: "GET",
-    //         url: "/api/UserSkill/GetUserSkillDetail",
-    //         data: { champName: champName },
-    //         dataType: "json",
-    //         success: function (skill) {
-    //             var container = $('#getuserskilldetail');
-    //             container.empty();
-    //             var row =
-    //                 '<div>' +
-    //                 '<h1>Ky nang</h1>' +
-    //                 '<div style = "display: flex;">' +
-    //                 '<div>' +
-    //                 '<img src = "/Pictures/Skills/Skills_NT/' + skill.avA_NT + '" />' +
-    //                 '<p>' + skill.noiTai + '</p>' +
-    //                 '</div>' +
-    //                 '<div>' +
-    //                 '<img src = "/Pictures/Skills/Skills_Q/' + skill.avA_Q + '" />' +
-    //                 '<p>' + skill.skillQ + '</p>' +
-    //                 '</div>' +
-    //                 '<div>' +
-    //                 '<img src = "/Pictures/Skills/Skills_W/' + skill.avA_W + '" />' +
-    //                 '<p>' + skill.skillW + '</p>' +
-    //                 '</div>' +
-    //                 '<div>' +
-    //                 '<img src = "/Pictures/Skills/Skills_E/' + skill.avA_E + '" />' +
-    //                 '<p>' + skill.skillE + '</p>' +
-    //                 '</div>' +
-    //                 '<div>' +
-    //                 '<img src = "/Pictures/Skills/Skills_R/' + skill.avA_R + '" />' +
-    //                 '<p>' + skill.skillR + '</p>' +
-    //                 '</div>'
-    //             '</div>' +
-    //                 '</div>';
-    //             container.append(row);
-    //         },
-    //         error: function (error) {
-    //             console.error("Error fetching data:", error);
-    //         }
-    //     });
-    // };
-    // $(document).ready(function () {
-    //     fetchSkillDetails();
-    //     setInterval(fetchSkillDetails, 30000);
-    // });
-    // function fetchSkinDetails() {
-    //     var champName = getQueryParameter("Uschamp");
-    //     $.ajax({
-    //         type: "GET",
-    //         url: "/api/UserSkin/GetUserSkinDetail",
-    //         data: { champName: champName },
-    //         dataType: "json",
-    //         success: function (skin) {
-    //             var container = $('#getuserskindetail');
-    //             container.empty();
-    //             var row = '<div>' +
-    //                 '<h1>Tranh phuc hien co</h1>' +
-    //                 '<div style="display: flex;" class="skinlist">' +
-    //                 '<div style="display: flex; flex-direction: column;">';
-
-    //             var skinProperties = ['skin1', 'skin2', 'skin3', 'skin4', 'skin5', 'skin6', 'skin7', 'skin8', 'skin9', 'skin10', 'skin11', 'skin12', 'skin13', 'skin14', 'skin15', 'skin16', 'skin17', 'skin18'];
-
-    //             for (var i = 0; i < skinProperties.length; i++) {
-    //                 var skinProperty = skinProperties[i];
-    //                 if (skin[skinProperty]) {
-    //                     row += '<img src="/Pictures/Skins/' + skin[skinProperty] + '"/>';
-    //                 }
-    //             }
-
-    //             row += '</div></div></div>';
-    //             container.append(row);
-    //         },
-    //         error: function (error) {
-    //             console.error("Error fetching data:", error);
-    //         }
-    //     });
-    // };
-    // $(document).ready(function () {
-    //     fetchSkinDetails();
-    //     setInterval(fetchSkinDetails, 30000);
-    // });
 </script>
