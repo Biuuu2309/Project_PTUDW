@@ -720,6 +720,7 @@
 
   <ItemGroup>
     <Folder Include="wwwroot\Pictures\Backgrounds_Champs\" />
+    <Folder Include="wwwroot\Pictures\News\" />
     <Folder Include="wwwroot\Pictures\Skins\" />
     <Folder Include="wwwroot\Pictures\Skills\Skills_R\" />
     <Folder Include="wwwroot\Pictures\Skills\Skills_E\" />

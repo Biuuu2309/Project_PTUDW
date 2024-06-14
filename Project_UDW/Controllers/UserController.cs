@@ -32,5 +32,13 @@ namespace Project_UDW.Controllers
         {
             return View();
         }
+        public IActionResult News()
+        {
+            return View();
+        }
+        public IActionResult Detail_News()
+        {
+            return View();
+        }
     }
 }

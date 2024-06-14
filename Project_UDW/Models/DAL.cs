@@ -936,6 +936,62 @@ namespace Project_UDW.Models
 
             return response;
         }
+        public Response GetNewsDetail(SqlConnection conn, string namenews)
+        {
+            Response response = new Response();
+            try
+            {
+                conn.Open();
+                string query = @"SELECT * FROM news WHERE namenews = @namenews";
+                SqlCommand cmd = new SqlCommand(query, conn);
+                cmd.Parameters.AddWithValue("@namenews", namenews);
+                SqlDataReader reader = cmd.ExecuteReader();
+
+                if (reader.Read())
+                {
+                    News news = new News
+                    {
+                        namenews = reader["namenews"].ToString(),
+                        picnewmain = reader["picnewmain"].ToString(),
+                        picnewblur = reader["picnewblur"].ToString(),
+                        maintitle = reader["maintitle"].ToString(),
+                        destitle = reader["destitle"].ToString(),
+                        mota = reader["mota"].ToString(),
+                        title1 = reader["title1"].ToString(),
+                        title1_con1 = reader["title1_con1"].ToString(),
+                        title1_con2 = reader["title1_con2"].ToString(),
+                        title2 = reader["title2"].ToString(),
+                        title2_con1 = reader["title2_con1"].ToString(),
+                        title2_con2 = reader["title2_con2"].ToString(),
+                        title3 = reader["title3"].ToString(),
+                        title3_con1 = reader["title3_con1"].ToString(),
+                        title3_con2 = reader["title3_con2"].ToString(),
+                        title4 = reader["title4"].ToString(),
+                        title4_con1 = reader["title4_con1"].ToString(),
+                        title4_con2 = reader["title4_con2"].ToString(),
+                        title5 = reader["title5"].ToString(),
+                        title5_con1 = reader["title5_con1"].ToString(),
+                        title5_con2 = reader["title5_con2"].ToString(),
+                        tomtat = reader["tomtat"].ToString()
+                    };
+                    response.StatusCode = 200;
+                    response.Data = news;
+                }
+                else
+                {
+                    response.StatusCode = 404;
+                    response.StatusMessage = "News name not found";
+                }
+                conn.Close();
+            }
+            catch (Exception ex)
+            {
+                response.StatusCode = 500;
+                response.StatusMessage = ex.Message;
+            }
+
+            return response;
+        }
         public Response GetUpdateDetail(SqlConnection conn, string version_update)
         {
             Response response = new Response();
