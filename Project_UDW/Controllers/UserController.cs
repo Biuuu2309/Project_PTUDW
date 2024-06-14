@@ -40,5 +40,9 @@ namespace Project_UDW.Controllers
         {
             return View();
         }
+        public IActionResult Esport()
+        {
+            return View();
+        }
     }
 }

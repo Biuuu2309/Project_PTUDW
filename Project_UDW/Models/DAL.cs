@@ -147,6 +147,100 @@ namespace Project_UDW.Models
 
             return response;
         }
+        public Response GetUserTeamDetail(SqlConnection conn, string makhuvuc)
+        {
+            Response response = new Response();
+            List<Team> teamList = new List<Team>();
+
+            try
+            {
+                string query = @"SELECT * 
+                         FROM team
+                         WHERE team.makhuvuc = @makhuvuc";
+                SqlCommand cmd = new SqlCommand(query, conn);
+                cmd.Parameters.AddWithValue("@makhuvuc", makhuvuc);
+                conn.Open();
+                SqlDataReader reader = cmd.ExecuteReader();
+
+                while (reader.Read())
+                {
+                    Team team = new Team
+                    {
+                        mateam = reader["mateam"].ToString(),
+                        tenteam = reader["tenteam"].ToString(),
+                        makhuvuc = reader["makhuvuc"].ToString(),
+                        avateam = reader["avateam"].ToString()
+                    };
+                    teamList.Add(team);
+                }
+
+                if (teamList.Count > 0)
+                {
+                    response.StatusCode = 200;
+                    response.Data = teamList;
+                }
+                else
+                {
+                    response.StatusCode = 404;
+                    response.StatusMessage = "No teams found for the given region";
+                }
+            }
+            catch (Exception ex)
+            {
+                response.StatusCode = 500;
+                response.StatusMessage = ex.Message;
+            }
+            finally
+            {
+                if (conn.State == ConnectionState.Open)
+                    conn.Close();
+            }
+
+            return response;
+        }
+
+
+        public Response GetChampionDetail(SqlConnection conn, string champName)
+        {
+            Response response = new Response();
+            try
+            {
+                conn.Open();
+                string query = "SELECT ChampName, NickName, Describle, Role, Level, ImageDD, ImageAVA FROM champions WHERE ChampName = @ChampName";
+                SqlCommand cmd = new SqlCommand(query, conn);
+                cmd.Parameters.AddWithValue("@ChampName", champName);
+                SqlDataReader reader = cmd.ExecuteReader();
+
+                if (reader.Read())
+                {
+                    Champions champion = new Champions
+                    {
+                        ChampName = reader["ChampName"].ToString(),
+                        NickName = reader["NickName"].ToString(),
+                        Describle = reader["Describle"].ToString(),
+                        Role = reader["Role"].ToString(),
+                        Level = reader["Level"].ToString(),
+                        ImageDD = reader["ImageDD"].ToString(),
+                        ImageAVA = reader["ImageAVA"].ToString()
+                    };
+                    response.StatusCode = 200;
+                    response.Data = champion;
+                }
+                else
+                {
+                    response.StatusCode = 404;
+                    response.StatusMessage = "Champion not found";
+                }
+                conn.Close();
+            }
+            catch (Exception ex)
+            {
+                response.StatusCode = 500;
+                response.StatusMessage = ex.Message;
+            }
+
+            return response;
+        }
         public Response AddKhuVuc(KhuVuc khuvuc, SqlConnection conn)
         {
             Response response = new Response();
@@ -915,47 +1009,6 @@ namespace Project_UDW.Models
                 response.StatusCode = 100;
                 response.StatusMessage = ex.Message;
             }
-            return response;
-        }
-        public Response GetChampionDetail(SqlConnection conn, string champName)
-        {
-            Response response = new Response();
-            try
-            {
-                conn.Open();
-                string query = "SELECT ChampName, NickName, Describle, Role, Level, ImageDD, ImageAVA FROM champions WHERE ChampName = @ChampName";
-                SqlCommand cmd = new SqlCommand(query, conn);
-                cmd.Parameters.AddWithValue("@ChampName", champName);
-                SqlDataReader reader = cmd.ExecuteReader();
-
-                if (reader.Read())
-                {
-                    Champions champion = new Champions
-                    {
-                        ChampName = reader["ChampName"].ToString(),
-                        NickName = reader["NickName"].ToString(),
-                        Describle = reader["Describle"].ToString(),
-                        Role = reader["Role"].ToString(),
-                        Level = reader["Level"].ToString(),
-                        ImageDD = reader["ImageDD"].ToString(),
-                        ImageAVA = reader["ImageAVA"].ToString()
-                    };
-                    response.StatusCode = 200;
-                    response.Data = champion;
-                }
-                else
-                {
-                    response.StatusCode = 404;
-                    response.StatusMessage = "Champion not found";
-                }
-                conn.Close();
-            }
-            catch (Exception ex)
-            {
-                response.StatusCode = 500;
-                response.StatusMessage = ex.Message;
-            }
-
             return response;
         }
         public Response AddUpChampVer(UpChampVer upchampver, SqlConnection conn)
