@@ -1,0 +1,149 @@
+﻿html, body {
+    margin: 0;
+    padding: 0;
+    height: 100%;
+}
+
+.CN {
+    position: relative;
+    height: 100%;
+}
+
+    .CN::before {
+        content: "";
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background-image: url('../Pictures/Backgrounds/Pic-40.jpeg');
+        background-repeat: no-repeat;
+        background-position: center;
+        background-size: cover;
+        filter: blur(3px);
+        z-index: -1;
+    }
+
+.CN_ICON img {
+    width: 50%;
+    margin-left: 7%;
+}
+
+.CN_PHANDAU_COL {
+    display: flex;
+    justify-content: flex-start;
+    align-items: start;
+}
+
+.CN_TEXT {
+    color: #ffffff;
+}
+
+    .CN_TEXT h1 {
+        font-size: 80px;
+        text-align: center;
+    }
+
+.CN_BUTTON {
+    border: 4px solid;
+    border-color: #027a9c;
+}
+
+    .CN_BUTTON button {
+        background-color: #101a1f;
+        border-radius: inherit;
+    }
+
+        .CN_BUTTON button:hover {
+            background-color: #0e4357;
+        }
+
+    .CN_BUTTON a {
+        text-decoration: none;
+        color: #b1effa;
+    }
+
+.CN_PHAN_CUOI_ICON_1 img {
+    width: 12%;
+    margin-left: 3%;
+}
+
+.CN_PHAN_CUOI_ICON_2 img {
+    width: 16%;
+    margin-right: 7%;
+}
+
+.CN_PHAN_CUOI_COL {
+    display: flex;
+    justify-content: end;
+    align-items: center;
+    text-align: end;
+}
+
+.CN_PHANCUOI_TEXT p {
+    color: #947441;
+}
+
+.CN_PHANCUOI_TEXT a {
+    color: #947441;
+}
+
+@media(max-width:990px) {
+    .CN_PHANDAU_COL {
+        justify-content: center;
+        align-items: center;
+        text-align: center;
+    }
+
+    .CN_ICON img {
+        width: 100%;
+        margin: 0;
+    }
+
+    .CN_TEXT h1 {
+        font-size: 9vw;
+    }
+
+    .CN_PHAN_CUOI_ICON_1 {
+        justify-content: center;
+        display: flex;
+        align-items: center;
+    }
+
+        .CN_PHAN_CUOI_ICON_1 img {
+            width: 15%;
+            margin: 0;
+        }
+
+    .CN_PHAN_CUOI_COL {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        margin-top: 3%;
+    }
+
+    .CN_PHAN_CUOI_ICON_2 {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+
+        .CN_PHAN_CUOI_ICON_2 img {
+            margin: 0;
+        }
+
+    .CN_PHANCUOI_TEXT p {
+        font-size: 15px;
+    }
+
+    .CN_PHANCUOI_TEXT a {
+        font-size: 15px;
+    }
+}
+
+@media(max-width:600px) {
+    .CN_PHAN_CUOI_ICON_1 img {
+        width: 25%;
+        margin: 0;
+    }
+}
