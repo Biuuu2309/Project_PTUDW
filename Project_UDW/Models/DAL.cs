@@ -12,6 +12,270 @@ namespace Project_UDW.Models
 {
     public class DAL
     {
+        public Response AddTeam(Team team, SqlConnection conn)
+        {
+            Response response = new Response();
+            try
+            {
+                string imageteam = Path.GetFileName(team.avateam);
+                SqlCommand cmd = new SqlCommand("sp_addteam", conn);
+                cmd.CommandType = CommandType.StoredProcedure;
+                cmd.Parameters.AddWithValue("@mateam", team.mateam);
+                cmd.Parameters.AddWithValue("@tenteam", team.tenteam);
+                cmd.Parameters.AddWithValue("@makhuvuc", team.makhuvuc);
+                cmd.Parameters.AddWithValue("@avateam", imageteam);
+                cmd.Parameters.Add("@ErrorMessage", SqlDbType.Char, 200);
+                cmd.Parameters["@ErrorMessage"].Direction = ParameterDirection.Output;
+                conn.Open();
+                int i = cmd.ExecuteNonQuery();
+                conn.Close();
+                string mess = (string)cmd.Parameters["@ErrorMessage"].Value;
+                response.StatusCode = i > 0 ? 200 : 100;
+                response.StatusMessage = mess;
+            }
+            catch (Exception ex)
+            {
+                response.StatusCode = 100;
+                response.StatusMessage = ex.Message;
+            }
+            return response;
+        }
+        public Response UpdateTeam(Team team, SqlConnection conn)
+        {
+            Response response = new Response();
+            try
+            {
+                string imageteam = Path.GetFileName(team.avateam);
+                SqlCommand cmd = new SqlCommand("sp_updateteam", conn);
+                cmd.CommandType = CommandType.StoredProcedure;
+                if (!string.IsNullOrEmpty(team.mateam))
+                {
+                    cmd.Parameters.AddWithValue("@mateam", team.mateam);
+                }
+                if (!string.IsNullOrEmpty(team.tenteam))
+                {
+                    cmd.Parameters.AddWithValue("@tenteam", team.tenteam);
+                }
+                if (!string.IsNullOrEmpty(team.makhuvuc))
+                {
+                    cmd.Parameters.AddWithValue("@makhuvuc", team.makhuvuc);
+                }
+                if (!string.IsNullOrEmpty(imageteam))
+                {
+                    cmd.Parameters.AddWithValue("@avateam", imageteam);
+                }
+                cmd.Parameters.Add("@ErrorMessage", SqlDbType.NVarChar, 200);
+                cmd.Parameters["@ErrorMessage"].Direction = ParameterDirection.Output;
+                conn.Open();
+                int i = cmd.ExecuteNonQuery();
+                conn.Close();
+                string mess = (string)cmd.Parameters["@ErrorMessage"].Value;
+                response.StatusCode = i > 0 ? 200 : 100;
+                response.StatusMessage = mess;
+            }
+            catch (Exception ex)
+            {
+                response.StatusCode = 100;
+                response.StatusMessage = ex.Message;
+            }
+            return response;
+        }
+        public Response DeleteTeam(Team_Delete delteam, SqlConnection conn)
+        {
+            Response response = new Response();
+            try
+            {
+                SqlCommand cmd = new SqlCommand("sp_deleteteam", conn);
+                cmd.CommandType = CommandType.StoredProcedure;
+                cmd.Parameters.AddWithValue("@mateam", delteam.mateam);
+                cmd.Parameters.Add("@ErrorMessage", SqlDbType.Char, 200);
+                cmd.Parameters["@ErrorMessage"].Direction = ParameterDirection.Output;
+                conn.Open();
+                int i = cmd.ExecuteNonQuery();
+                conn.Close();
+                string mess = (string)cmd.Parameters["@ErrorMessage"].Value;
+                response.StatusCode = i > 0 ? 200 : 100;
+                response.StatusMessage = mess;
+            }
+            catch (Exception ex)
+            {
+                response.StatusCode = 100;
+                response.StatusMessage = ex.Message;
+            }
+            return response;
+        }
+        public Response GetTeam(SqlConnection conn)
+        {
+            Response response = new Response();
+            List<Team> teamList = new List<Team>();
+
+            try
+            {
+                string query = "SELECT * FROM team";
+                using (SqlCommand cmd = new SqlCommand(query, conn))
+                {
+                    conn.Open();
+                    using (SqlDataReader reader = cmd.ExecuteReader())
+                    {
+                        while (reader.Read())
+                        {
+                            Team team = new Team
+                            {
+                                mateam = reader["mateam"].ToString(),
+                                tenteam = reader["tenteam"].ToString(),
+                                makhuvuc = reader["makhuvuc"].ToString(),
+                                avateam = reader["avateam"].ToString()
+                            };
+                            teamList.Add(team);
+                        }
+                    }
+                }
+                response.StatusCode = 200;
+                response.Data = teamList;
+                response.StatusMessage = "Team retrieved successfully";
+            }
+            catch (Exception ex)
+            {
+                response.StatusCode = 100;
+                response.StatusMessage = ex.Message;
+            }
+            finally
+            {
+                if (conn.State == ConnectionState.Open)
+                    conn.Close();
+            }
+
+            return response;
+        }
+        public Response AddKhuVuc(KhuVuc khuvuc, SqlConnection conn)
+        {
+            Response response = new Response();
+            try
+            {
+                string imagekhuvuc = Path.GetFileName(khuvuc.avakhuvuc);
+                SqlCommand cmd = new SqlCommand("sp_addkhuvuc", conn);
+                cmd.CommandType = CommandType.StoredProcedure;
+                cmd.Parameters.AddWithValue("@makhuvuc", khuvuc.makhuvuc);
+                cmd.Parameters.AddWithValue("@tenkhuvuc", khuvuc.tenkhuvuc);
+                cmd.Parameters.AddWithValue("@avakhuvuc", imagekhuvuc);
+                cmd.Parameters.Add("@ErrorMessage", SqlDbType.Char, 200);
+                cmd.Parameters["@ErrorMessage"].Direction = ParameterDirection.Output;
+                conn.Open();
+                int i = cmd.ExecuteNonQuery();
+                conn.Close();
+                string mess = (string)cmd.Parameters["@ErrorMessage"].Value;
+                response.StatusCode = i > 0 ? 200 : 100;
+                response.StatusMessage = mess;
+            }
+            catch (Exception ex)
+            {
+                response.StatusCode = 100;
+                response.StatusMessage = ex.Message;
+            }
+            return response;
+        }
+        public Response UpdateKhuVuc(KhuVuc khuvuc, SqlConnection conn)
+        {
+            Response response = new Response();
+            try
+            {
+                string imagekhuvuc = Path.GetFileName(khuvuc.avakhuvuc);
+                SqlCommand cmd = new SqlCommand("sp_updatekhuvuc", conn);
+                cmd.CommandType = CommandType.StoredProcedure;
+                if (!string.IsNullOrEmpty(khuvuc.makhuvuc))
+                {
+                    cmd.Parameters.AddWithValue("@makhuvuc", khuvuc.makhuvuc);
+                }
+                if (!string.IsNullOrEmpty(khuvuc.tenkhuvuc))
+                {
+                    cmd.Parameters.AddWithValue("@tenkhuvuc", khuvuc.tenkhuvuc);
+                }
+                if (!string.IsNullOrEmpty(imagekhuvuc))
+                {
+                    cmd.Parameters.AddWithValue("@avakhuvuc", imagekhuvuc);
+                }
+                cmd.Parameters.Add("@ErrorMessage", SqlDbType.NVarChar, 200);
+                cmd.Parameters["@ErrorMessage"].Direction = ParameterDirection.Output;
+                conn.Open();
+                int i = cmd.ExecuteNonQuery();
+                conn.Close();
+                string mess = (string)cmd.Parameters["@ErrorMessage"].Value;
+                response.StatusCode = i > 0 ? 200 : 100;
+                response.StatusMessage = mess;
+            }
+            catch (Exception ex)
+            {
+                response.StatusCode = 100;
+                response.StatusMessage = ex.Message;
+            }
+            return response;
+        }
+        public Response DeleteKhuVuc(KhuVuc_Delete delkhuvuc, SqlConnection conn)
+        {
+            Response response = new Response();
+            try
+            {
+                SqlCommand cmd = new SqlCommand("sp_deletekhuvuc", conn);
+                cmd.CommandType = CommandType.StoredProcedure;
+                cmd.Parameters.AddWithValue("@makhuvuc", delkhuvuc.makhuvuc);
+                cmd.Parameters.Add("@ErrorMessage", SqlDbType.Char, 200);
+                cmd.Parameters["@ErrorMessage"].Direction = ParameterDirection.Output;
+                conn.Open();
+                int i = cmd.ExecuteNonQuery();
+                conn.Close();
+                string mess = (string)cmd.Parameters["@ErrorMessage"].Value;
+                response.StatusCode = i > 0 ? 200 : 100;
+                response.StatusMessage = mess;
+            }
+            catch (Exception ex)
+            {
+                response.StatusCode = 100;
+                response.StatusMessage = ex.Message;
+            }
+            return response;
+        }
+        public Response GetKhuVuc(SqlConnection conn)
+        {
+            Response response = new Response();
+            List<KhuVuc> khuvucList = new List<KhuVuc>();
+
+            try
+            {
+                string query = "SELECT * FROM khuvuc";
+                using (SqlCommand cmd = new SqlCommand(query, conn))
+                {
+                    conn.Open();
+                    using (SqlDataReader reader = cmd.ExecuteReader())
+                    {
+                        while (reader.Read())
+                        {
+                            KhuVuc khuvuc = new KhuVuc
+                            {
+                                makhuvuc = reader["makhuvuc"].ToString(),
+                                tenkhuvuc = reader["tenkhuvuc"].ToString(),
+                                avakhuvuc = reader["avakhuvuc"].ToString()
+                            };
+                            khuvucList.Add(khuvuc);
+                        }
+                    }
+                }
+                response.StatusCode = 200;
+                response.Data = khuvucList;
+                response.StatusMessage = "Khu vuc retrieved successfully";
+            }
+            catch (Exception ex)
+            {
+                response.StatusCode = 100;
+                response.StatusMessage = ex.Message;
+            }
+            finally
+            {
+                if (conn.State == ConnectionState.Open)
+                    conn.Close();
+            }
+
+            return response;
+        }
         public Response Registration(Users users, SqlConnection conn)
         {
             Response response = new Response();
