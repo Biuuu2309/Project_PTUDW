@@ -44,5 +44,9 @@ namespace Project_UDW.Controllers
         {
             return View();
         }
+        public IActionResult ChoiNgayUs()
+        {
+            return View();
+        }
     }
 }
