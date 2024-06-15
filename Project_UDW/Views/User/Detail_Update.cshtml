@@ -37,12 +37,6 @@
 </style>
 <div class="container-fluid" id="getuserupdatedetail">
 </div>
-<div class="container-fluid" id="getuserchampiondetail">
-</div>
-<div class="container-fluid" id="getuserskilldetail">
-</div>
-<div class="container-fluid" id="getuserskindetail">
-</div>
 
 
 
@@ -69,64 +63,140 @@
                 var container = $('#getuserupdatedetail');
                 container.empty();
                 var row =
-                '<img id="backgroundImagee" src="/Pictures/Update/' + update.picheadblur + '" onload="adjustHeight()" />' +
-                '<img id="backgroundImagee" src="/Pictures/Update/' + update.picheadmain + '" onload="adjustHeight()" />' +
-                '<img id="backgroundImagee" src="/Pictures/Update/' + update.picupdate + '" onload="adjustHeight()" />' +
-                '<h3>' + update.version_update + ' </h3>' +
-                '<h1> ' + update.maintitle + ' </h1>' +
-                '<p> ' + update.maindestitle + ' </p>' +
-                '<p>Vai trò: ' + update.upversiontitle1 + ' </p>' +
-                '<p>Vai trò: ' + update.upversiontitle_con1 + ' </p>' +
-                '<p>Vai trò: ' + update.upversiontitle2 + ' </p>' +
-                '<p>Vai trò: ' + update.upversiontitle_con2 + ' </p>' +
-                '<p>Vai trò: ' + update.upversiontitle3 + ' </p>' +
-                '<p>Vai trò: ' + update.upversiontitle_con3 + ' </p>' +
-                '<p>Vai trò: ' + update.upversiontitle4 + ' </p>' +
-                '<p>Vai trò: ' + update.upversiontitle_con4 + ' </p>' +
-                '<p>Vai trò: ' + update.upversiontitle5 + ' </p>' +
-                '<p>Vai trò: ' + update.upversiontitle_con5 + ' </p>' +
-                '<p>Độ khó: ' + update.nangcaptrainghiem + ' </p>' +
-                '<p>Độ khó: ' + update.sualoi + ' </p>' +
-                '<p>Độ khó bìu: ' + update.champName + ' </p>' +
-                '<p>Độ khó bìu: ' + update.noiTai + ' </p>' +
-                '<p>Độ khó bìu: ' + update.skillQ + ' </p>' +
-                '<p>Độ khó bìu: ' + update.skillW + ' </p>' +
-                '<p>Độ khó bìu: ' + update.skillE + ' </p>' +
-                '<p>Độ khó bìu: ' + update.skillR + ' </p>' +
-                '<img id="backgroundImagee" src="/Pictures/Skills/Skills_NT/' + update.avA_NT + '" onload="adjustHeight()" />' +
-                '<img id="backgroundImagee" src="/Pictures/Skills/Skills_Q/' + update.avA_Q + '" onload="adjustHeight()" />' +
-                '<img id="backgroundImagee" src="/Pictures/Skills/Skills_W/' + update.avA_W + '" onload="adjustHeight()" />' +
-                '<img id="backgroundImagee" src="/Pictures/Skills/Skills_E/' + update.avA_E + '" onload="adjustHeight()" />' +
-                '<img id="backgroundImagee" src="/Pictures/Skills/Skills_R/' + update.avA_R + '" onload="adjustHeight()" />' +
-                '<p>Độ khó bìu: ' + update.nameitem + ' </p>' +
-                '<img id="backgroundImagee" src="/Pictures/Items/' + update.picitem + '" onload="adjustHeight()" />' +
-                '<p>Độ khó bìu: ' + update.health + ' </p>' +
-                '<p>Độ khó bìu: ' + update.atkdame + ' </p>' +
-                '<p>Độ khó bìu: ' + update.apdame + ' </p>' +
-                '<p>Độ khó bìu: ' + update.atkspeed + ' </p>' +
-                '<p>Độ khó bìu: ' + update.crit + ' </p>' +
-                '<p>Độ khó bìu: ' + update.armor + ' </p>' +
-                '<p>Độ khó bìu: ' + update.magicresis + ' </p>';
-                '<p>Độ khó bìu: ' + update.ahaste + ' </p>';
-                '<p>Độ khó bìu: ' + update.movespeed + ' </p>';
-                '<p>Độ khó bìu: ' + update.noitaiitem + ' </p>';
-                '<p>Độ khó bìu: ' + update.cost + ' </p>';
-                '<p>Độ khó bìu: ' + update.dame_nt + ' </p>';
-                '<p>Độ khó bìu: ' + update.dame_q + ' </p>';
-                '<p>Độ khó bìu: ' + update.dame_w + ' </p>';
-                '<p>Độ khó bìu: ' + update.dame_e + ' </p>';
-                '<p>Độ khó bìu: ' + update.dame_r + ' </p>';
-                '<p>Độ khó bìu: ' + update.detail_NN + ' </p>';
+                    '<img id="backgroundImagee" src="/Pictures/Update/' + update.picheadblur + '" onload="adjustHeight()" />' +
+                    '<img id="backgroundImagee" src="/Pictures/Update/' + update.picheadmain + '" onload="adjustHeight()" />' +
+                    '<img id="backgroundImagee" src="/Pictures/Update/' + update.picupdate + '" onload="adjustHeight()" />' +
+                    '<h3>' + update.version_update + ' </h3>' +
+                    '<h1> ' + update.maintitle + ' </h1>' +
+                    '<p> ' + update.maindestitle + ' </p>' +
+                    '<p>Vai trò: ' + update.upversiontitle1 + ' </p>' +
+                    '<p>Vai trò: ' + update.upversiontitle_con1 + ' </p>' +
+                    '<p>Vai trò: ' + update.upversiontitle2 + ' </p>' +
+                    '<p>Vai trò: ' + update.upversiontitle_con2 + ' </p>' +
+                    '<p>Vai trò: ' + update.upversiontitle3 + ' </p>' +
+                    '<p>Vai trò: ' + update.upversiontitle_con3 + ' </p>' +
+                    '<p>Vai trò: ' + update.upversiontitle4 + ' </p>' +
+                    '<p>Vai trò: ' + update.upversiontitle_con4 + ' </p>' +
+                    '<p>Vai trò: ' + update.upversiontitle5 + ' </p>' +
+                    '<p>Vai trò: ' + update.upversiontitle_con5 + ' </p>' +
+                    '<div class="container" id="getuserdetailchampdetail-' + update.version_update + '">' +
+                    '</div>' +
+                    '<div class="container" id="getuserdetailskilldetail-' + update.version_update + '">' +
+                    '</div>' +
+                    '<div class="container" id="getuserdetailitemdetail-' + update.version_update + '">' +
+                    '</div>' +
+                    '<p>Độ khó: ' + update.nangcaptrainghiem + ' </p>' +
+                    '<p>Độ khó: ' + update.sualoi + ' </p>';
                 container.append(row);
+                fetchdetailchampDetails(version_update);
+                fetchdetailskillDetails(version_update);
+                fetchdetailitemDetails(version_update);
             },
             error: function (error) {
                 console.error("Error fetching data:", error);
             }
         });
     };
-
+    function fetchdetailchampDetails(version_update) {
+        $.ajax({
+            type: "GET",
+            url: "/api/UserUpdate/GetUserDetailChampDetail",
+            data: { version_update: version_update },
+            dataType: "json",
+            success: function (data) {
+                var container = $('#getuserdetailchampdetail-' + version_update);
+                container.empty();
+                data.forEach(function (champ) {
+                    var card =
+                        '<p>Độ khó bìu: ' + champ.dame_nt + ' </p>' +
+                        '<p>Độ khó bìu: ' + champ.dame_q + ' </p>' +
+                        '<p>Độ khó bìu: ' + champ.dame_w + ' </p>' +
+                        '<p>Độ khó bìu: ' + champ.dame_e + ' </p>' +
+                        '<p>Độ khó bìu: ' + champ.dame_r + ' </p>' +
+                        '<p>Độ khó bìu: ' + champ.detail_NN + ' </p>';
+                    container.append(card);
+                });
+            },
+            error: function (error) {
+                console.error("Error fetching data:", error);
+            }
+        });
+    }
+    function fetchdetailskillDetails(version_update) {
+        $.ajax({
+            type: "GET",
+            url: "/api/UserUpdate/GetUserSkillDetail",
+            data: { version_update: version_update },
+            dataType: "json",
+            success: function (data) {
+                var container = $('#getuserdetailskilldetail-' + version_update);
+                container.empty();
+                data.forEach(function (skill) {
+                    var card =
+                        '<p>Độ khó bìu: ' + skill.noiTai + ' </p>' +
+                        '<p>Độ khó bìu: ' + skill.skillQ + ' </p>' +
+                        '<p>Độ khó bìu: ' + skill.skillW + ' </p>' +
+                        '<p>Độ khó bìu: ' + skill.skillE + ' </p>' +
+                        '<p>Độ khó bìu: ' + skill.skillR + ' </p>' +
+                        '<img id="backgroundImagee" src="/Pictures/Skills/Skills_NT/' + skill.avA_NT + '" onload="adjustHeight()" />' +
+                        '<img id="backgroundImagee" src="/Pictures/Skills/Skills_Q/' + skill.avA_Q + '" onload="adjustHeight()" />' +
+                        '<img id="backgroundImagee" src="/Pictures/Skills/Skills_W/' + skill.avA_W + '" onload="adjustHeight()" />' +
+                        '<img id="backgroundImagee" src="/Pictures/Skills/Skills_E/' + skill.avA_E + '" onload="adjustHeight()" />' +
+                        '<img id="backgroundImagee" src="/Pictures/Skills/Skills_R/' + skill.avA_R + '" onload="adjustHeight()" />';
+                    container.append(card);
+                });
+            },
+            error: function (error) {
+                console.error("Error fetching data:", error);
+            }
+        });
+    }
+    function fetchdetailitemDetails(version_update) {
+        $.ajax({
+            type: "GET",
+            url: "/api/UserUpdate/GetUserItemDetail",
+            data: { version_update: version_update },
+            dataType: "json",
+            success: function (data) {
+                var container = $('#getuserdetailitemdetail-' + version_update);
+                container.empty();
+                data.forEach(function (item) {
+                    var card =
+                        '<p>Độ khó bìu: ' + item.nameitem + ' </p>' +
+                        '<img id="backgroundImagee" src="/Pictures/Items/' + item.picitem + '" onload="adjustHeight()" />' +
+                        '<p>Độ khó bìu: ' + item.health + ' </p>' +
+                        '<p>Độ khó bìu: ' + item.atkdame + ' </p>' +
+                        '<p>Độ khó bìu: ' + item.apdame + ' </p>' +
+                        '<p>Độ khó bìu: ' + item.atkspeed + ' </p>' +
+                        '<p>Độ khó bìu: ' + item.crit + ' </p>' +
+                        '<p>Độ khó bìu: ' + item.armor + ' </p>' +
+                        '<p>Độ khó bìu: ' + item.magicresis + ' </p>' +
+                        '<p>Độ khó bìu: ' + item.ahaste + ' </p>' +
+                        '<p>Độ khó bìu: ' + item.movespeed + ' </p>' +
+                        '<p>Độ khó bìu: ' + item.noitaiitem + ' </p>' +
+                        '<p>Độ khó bìu: ' + item.cost + ' </p>';
+                    container.append(card);
+                });
+            },
+            error: function (error) {
+                console.error("Error fetching data:", error);
+            }
+        });
+    }
     $(document).ready(function () {
         fetchUpdateDetails();
         setInterval(fetchUpdateDetails, 30000);
+    });
+    $(document).ready(function () {
+        fetchdetailchampDetails();
+        setInterval(fetchdetailchampDetails, 30000);
+    });
+    $(document).ready(function () {
+        fetchdetailskillDetails();
+        setInterval(fetchdetailskillDetails, 30000);
+    });
+    $(document).ready(function () {
+        fetchdetailitemDetails();
+        setInterval(fetchdetailitemDetails, 30000);
     });
 </script>

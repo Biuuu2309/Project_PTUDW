@@ -12,6 +12,190 @@ namespace Project_UDW.Models
 {
     public class DAL
     {
+        public Response GetUserItemDetail(SqlConnection conn, string version_update)
+        {
+            Response response = new Response();
+            List<Item> itemList = new List<Item>();
+
+            try
+            {
+                string query = @"   SELECT * 
+                                    FROM item
+                                    WHERE nameitem IN (	SELECT nameitem
+                                    					FROM update_item_version
+                                    					WHERE update_item_version.version_update IN (	SELECT version_update
+                                    																	FROM update_head
+                                    																	WHERE update_head.version_update = @version_update))";
+                SqlCommand cmd = new SqlCommand(query, conn);
+                cmd.Parameters.AddWithValue("@version_update", version_update);
+                conn.Open();
+                SqlDataReader reader = cmd.ExecuteReader();
+
+                while (reader.Read())
+                {
+                    Item item = new Item
+                    {
+                        nameitem = reader["nameitem"].ToString(),
+                        picitem = reader["picitem"].ToString(),
+                        health = reader["health"].ToString(),
+                        atkdame = reader["atkdame"].ToString(),
+                        apdame = reader["apdame"].ToString(),
+                        atkspeed = reader["atkspeed"].ToString(),
+                        crit = reader["crit"].ToString(),
+                        armor = reader["armor"].ToString(),
+                        magicresis = reader["magicresis"].ToString(),
+                        ahaste = reader["ahaste"].ToString(),
+                        movespeed = reader["movespeed"].ToString(),
+                        noitaiitem = reader["noitaiitem"].ToString(),
+                        cost = reader["cost"].ToString(),
+                    };
+                    itemList.Add(item);
+                }
+
+                if (itemList.Count > 0)
+                {
+                    response.StatusCode = 200;
+                    response.Data = itemList;
+                }
+                else
+                {
+                    response.StatusCode = 404;
+                    response.StatusMessage = "No detail item found for the given region";
+                }
+            }
+            catch (Exception ex)
+            {
+                response.StatusCode = 500;
+                response.StatusMessage = ex.Message;
+            }
+            finally
+            {
+                if (conn.State == ConnectionState.Open)
+                    conn.Close();
+            }
+
+            return response;
+        }
+        public Response GetUserDetailChampDetail(SqlConnection conn, string version_update)
+        {
+            Response response = new Response();
+            List<DetailsChamp> detailchampList = new List<DetailsChamp>();
+
+            try
+            {
+                string query = @"   SELECT *
+                                    FROM detail_update_champ
+                                    WHERE ChampName IN (SELECT ChampName
+                                    					FROM update_champ_version
+                                    					WHERE update_champ_version.version_update IN (	SELECT version_update
+                                    																	FROM update_head
+                                    																	WHERE update_head.version_update = @version_update))";
+                SqlCommand cmd = new SqlCommand(query, conn);
+                cmd.Parameters.AddWithValue("@version_update", version_update);
+                conn.Open();
+                SqlDataReader reader = cmd.ExecuteReader();
+
+                while (reader.Read())
+                {
+                    DetailsChamp detailsChamp = new DetailsChamp
+                    {
+                        ChampName = reader["ChampName"].ToString(),
+                        dame_nt = reader["dame_nt"].ToString(),
+                        dame_q = reader["dame_q"].ToString(),
+                        dame_w = reader["dame_w"].ToString(),
+                        dame_e = reader["dame_e"].ToString(),
+                        dame_r = reader["dame_r"].ToString(),
+                        detail_NN = reader["detail_NN"].ToString()
+                    };
+                    detailchampList.Add(detailsChamp);
+                }
+
+                if (detailchampList.Count > 0)
+                {
+                    response.StatusCode = 200;
+                    response.Data = detailchampList;
+                }
+                else
+                {
+                    response.StatusCode = 404;
+                    response.StatusMessage = "No detail champ found for the given region";
+                }
+            }
+            catch (Exception ex)
+            {
+                response.StatusCode = 500;
+                response.StatusMessage = ex.Message;
+            }
+            finally
+            {
+                if (conn.State == ConnectionState.Open)
+                    conn.Close();
+            }
+
+            return response;
+        }
+        public Response GetUserSkillDetail(SqlConnection conn, string version_update)
+        {
+            Response response = new Response();
+            List<Skills> skillList = new List<Skills>();
+
+            try
+            {
+                string query = @"   SELECT ChampName, Skillnt, Skillq, Skillw, Skille, Skillr, AVAnt, AVAq, AVAw, AVAe, AVAr
+                                    FROM skills
+                                    WHERE ChampName IN (SELECT ChampName
+                                    					FROM update_champ_version
+                                    					WHERE update_champ_version.version_update IN (	SELECT version_update
+                                    																	FROM update_head
+                                    																	WHERE update_head.version_update = @version_update))";
+                SqlCommand cmd = new SqlCommand(query, conn);
+                cmd.Parameters.AddWithValue("@version_update", version_update);
+                conn.Open();
+                SqlDataReader reader = cmd.ExecuteReader();
+
+                while (reader.Read())
+                {
+                    Skills skill = new Skills
+                    {
+                        ChampName = reader["ChampName"].ToString(),
+                        NoiTai = reader["Skillnt"].ToString(),
+                        SkillQ = reader["Skillq"].ToString(),
+                        SkillW = reader["Skillw"].ToString(),
+                        SkillE = reader["Skille"].ToString(),
+                        SkillR = reader["Skillr"].ToString(),
+                        AVA_NT = reader["AVAnt"].ToString(),
+                        AVA_Q = reader["AVAq"].ToString(),
+                        AVA_W = reader["AVAw"].ToString(),
+                        AVA_E = reader["AVAe"].ToString(),
+                        AVA_R = reader["AVAr"].ToString()
+                    };
+                    skillList.Add(skill);
+                }
+
+                if (skillList.Count > 0)
+                {
+                    response.StatusCode = 200;
+                    response.Data = skillList;
+                }
+                else
+                {
+                    response.StatusCode = 404;
+                    response.StatusMessage = "No skill found for the given region";
+                }
+            }
+            catch (Exception ex)
+            {
+                response.StatusCode = 500;
+                response.StatusMessage = ex.Message;
+            }
+            finally
+            {
+                if (conn.State == ConnectionState.Open)
+                    conn.Close();
+            }
+
+            return response;
+        }
         public Response AddTeam(Team team, SqlConnection conn)
         {
             Response response = new Response();
@@ -198,8 +382,6 @@ namespace Project_UDW.Models
 
             return response;
         }
-
-
         public Response GetChampionDetail(SqlConnection conn, string champName)
         {
             Response response = new Response();
@@ -1317,30 +1499,21 @@ namespace Project_UDW.Models
                 conn.Open();
                 string query = @"
         SELECT 
-            update_head.version_update, picheadblur, picheadmain, maintitle, maindestitle, picupdate, 
+            version_update, picheadblur, picheadmain, maintitle, maindestitle, picupdate, 
             upversiontitle1, upversiontitle_con1, upversiontitle2, upversiontitle_con2, 
             upversiontitle3, upversiontitle_con3, upversiontitle4, upversiontitle_con4, 
-            upversiontitle5, upversiontitle_con5, nangcaptrainghiem, sualoi, 
-            update_champ_version.ChampName, Skillnt, Skillq, Skillw, Skille, Skillr, 
-            AVAnt, AVAq, AVAw, AVAe, AVAr, dame_nt, dame_q, dame_w, dame_e, dame_r, detail_NN,
-            update_item_version.nameitem, picitem, health, atkdame, apdame, atkspeed, crit, armor, magicresis, ahaste, movespeed, noitaiitem, cost
+            upversiontitle5, upversiontitle_con5, nangcaptrainghiem, sualoi
         FROM 
             update_head 
-            INNER JOIN update_champ_version ON update_head.version_update = update_champ_version.version_update 
-            INNER JOIN champions ON update_champ_version.ChampName = champions.ChampName 
-            INNER JOIN detail_update_champ ON champions.ChampName = detail_update_champ.ChampName 
-            INNER JOIN skills ON champions.ChampName = skills.ChampName 
-            INNER JOIN update_item_version ON update_head.version_update = update_item_version.version_update
-            INNER JOIN item ON update_item_version.nameitem = item.nameitem
         WHERE 
-            update_head.version_update = @version_update";
+            version_update = @version_update";
                 SqlCommand cmd = new SqlCommand(query, conn);
                 cmd.Parameters.AddWithValue("@version_update", version_update);
                 SqlDataReader reader = cmd.ExecuteReader();
 
                 if (reader.Read())
                 {
-                    Update_Detail update = new Update_Detail
+                    Update_Head update = new Update_Head
                     {
                         version_update = reader["version_update"].ToString(),
                         picheadblur = reader["picheadblur"].ToString(),
@@ -1360,36 +1533,6 @@ namespace Project_UDW.Models
                         upversiontitle_con5 = reader["upversiontitle_con5"].ToString(),
                         nangcaptrainghiem = reader["nangcaptrainghiem"].ToString(),
                         sualoi = reader["sualoi"].ToString(),
-                        ChampName = reader["ChampName"].ToString(), // Corrected key
-                        NoiTai = reader["Skillnt"].ToString(),
-                        SkillQ = reader["Skillq"].ToString(),
-                        SkillW = reader["Skillw"].ToString(),
-                        SkillE = reader["Skille"].ToString(),
-                        SkillR = reader["Skillr"].ToString(),
-                        AVA_NT = reader["AVAnt"].ToString(),
-                        AVA_Q = reader["AVAq"].ToString(),
-                        AVA_W = reader["AVAw"].ToString(),
-                        AVA_E = reader["AVAe"].ToString(),
-                        AVA_R = reader["AVAr"].ToString(),
-                        dame_nt = reader["dame_nt"].ToString(),
-                        dame_q = reader["dame_q"].ToString(),
-                        dame_w = reader["dame_w"].ToString(),
-                        dame_e = reader["dame_e"].ToString(),
-                        dame_r = reader["dame_r"].ToString(),
-                        detail_NN = reader["detail_NN"].ToString(),
-                        nameitem = reader["nameitem"].ToString(),
-                        picitem = reader["picitem"].ToString(),
-                        health = reader["health"].ToString(),
-                        atkdame = reader["atkdame"].ToString(),
-                        apdame = reader["apdame"].ToString(),
-                        atkspeed = reader["atkspeed"].ToString(),
-                        crit = reader["crit"].ToString(),
-                        armor = reader["armor"].ToString(),
-                        magicresis = reader["magicresis"].ToString(),
-                        ahaste = reader["ahaste"].ToString(),
-                        movespeed = reader["movespeed"].ToString(),
-                        noitaiitem = reader["noitaiitem"].ToString(),
-                        cost = reader["cost"].ToString()
                     };
                     response.StatusCode = 200;
                     response.Data = update;

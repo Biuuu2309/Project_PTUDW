@@ -53,5 +53,53 @@ namespace Project_UDW.Controllers
                 return NotFound();
             }
         }
+        [HttpGet]
+        [Route("GetUserSkillDetail")]
+        public IActionResult GetUserSkillDetail(string version_update)
+        {
+            DAL dal = new DAL();
+            Response response = dal.GetUserSkillDetail(conn, version_update);
+
+            if (response.StatusCode == 200)
+            {
+                return Ok(response.Data);
+            }
+            else
+            {
+                return NotFound(response.StatusMessage);
+            }
+        }
+        [HttpGet]
+        [Route("GetUserDetailChampDetail")]
+        public IActionResult GetUserDetailChampDetail(string version_update)
+        {
+            DAL dal = new DAL();
+            Response response = dal.GetUserDetailChampDetail(conn, version_update);
+
+            if (response.StatusCode == 200)
+            {
+                return Ok(response.Data);
+            }
+            else
+            {
+                return NotFound(response.StatusMessage);
+            }
+        }
+        [HttpGet]
+        [Route("GetUserItemDetail")]
+        public IActionResult GetUserItemDetail(string version_update)
+        {
+            DAL dal = new DAL();
+            Response response = dal.GetUserItemDetail(conn, version_update);
+
+            if (response.StatusCode == 200)
+            {
+                return Ok(response.Data);
+            }
+            else
+            {
+                return NotFound(response.StatusMessage);
+            }
+        }
     }
 }
