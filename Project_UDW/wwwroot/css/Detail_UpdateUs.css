@@ -1,0 +1,307 @@
+﻿body, html {
+    height: 100%;
+    margin: 0;
+}
+
+@font-face {
+    font-family: "neuefrutigerworld-medium";
+    src: url("../neue-frutiger/neuefrutigerworld-medium.woff") format("woff");
+}
+
+body {
+    font-family: neuefrutigerworld-medium;
+}
+
+.DTU ::before {
+    filter: none;
+}
+
+.DTU {
+    background-color: #161f33;
+}
+
+.DTU_PHANDAU {
+    position: relative;
+    height: 100%;
+    z-index: 1;
+    overflow: hidden;
+}
+
+.DTU_MAIN {
+    padding: 30px;
+}
+
+.DTU_BG {
+    background-color: #0a1429;
+    position: relative;
+}
+
+
+.DTU_PHANDAU::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-image: url('../Pictures/Backgrounds/faker.jpeg');
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+    filter: blur(3px);
+    z-index: -1;
+}
+
+.DTU_PHANDAU_TIEUDE {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+}
+
+    .DTU_PHANDAU_TIEUDE::after {
+        content: "";
+        width: 70%;
+        border-bottom: 3px solid;
+        border-color: #313a4a;
+    }
+
+.DTU_PHANDAU_TIEUDE_COL {
+    color: #ffffff;
+    margin-bottom: 3%;
+}
+
+.DTU_PHANDAU_TIEUDE p {
+    font-size: 48px;
+    font-weight: bolder;
+    font-style: italic;
+}
+
+.DTU_PHANDAU_TIEUDE span {
+    font-size: 18px;
+}
+
+.DTU_PHANTHAN_TIEUDE {
+    color: #ffffff;
+    font-size: 32px;
+    font-weight: bolder;
+    font-style: italic;
+}
+
+.DTU_PHANTHAN_CONTAINER {
+    display: flex;
+    flex-direction: column;
+    padding-left: 15%;
+    padding-right: 15%;
+}
+
+.DTU_PHANTHAN_BANG {
+    border: 1px solid;
+    border-color: #313a4a;
+}
+
+.DTU_PHANTHAN_BANG_IMG {
+    padding: 3%;
+}
+
+.DTU_PHANTHAN_BANG_TEXT {
+    padding: 3%;
+    padding-bottom: 0;
+    padding-top: 0;
+    color: #ffffff;
+    font: 16px;
+}
+
+.DTU_PHANTHAN_BANG_2_TIEUDE {
+    color: #ffffff;
+    font-size: 32px;
+    font-weight: bolder;
+    font-style: italic;
+}
+
+.DTU_PHANTHAN_BANG_2 {
+    border: 1px solid;
+    border-color: #313a4a;
+    padding: 3%;
+}
+
+.DTU_PHANTHAN_BANG_2_TEXT {
+    color: #ffffff;
+}
+
+.DTU_PHANTHAN_BANG_3_TIEUDE {
+    color: #ffffff;
+    font-size: 32px;
+    font-weight: bolder;
+    font-style: italic;
+}
+
+.DTU_PHANTHAN_BANG_3 {
+    border: 1px solid;
+    border-color: #313a4a;
+    padding: 3%;
+}
+
+.DTU_PHANTHAN_BANG_3_IN_TEXT_SUBTEXT a {
+    color: #ffffff;
+    font-size: 28px;
+    text-decoration: none;
+    font-weight: bolder;
+}
+
+    .DTU_PHANTHAN_BANG_3_IN_TEXT_SUBTEXT a:hover {
+        color: #c7a96d;
+    }
+
+.DTU_PHANTHAN_BANG_3_IN_TEXT_SUBTEXT_2 {
+    color: #999999;
+    font-size: 14px;
+    margin-top: 5%;
+}
+
+.DTU_PHANTHAN_BANG_3_MAIN {
+    color: #ffffff;
+    font-size: 18px;
+}
+
+    .DTU_PHANTHAN_BANG_3_MAIN p {
+        padding-right: 7%;
+    }
+
+.DTU_PHANTHAN_BANG_3_BORDERBOTTOM {
+    border: 1px solid;
+    border-color: #3c4454;
+}
+
+.DTU_PHANTHAN_BANG_3_CHISO {
+    color: #ffffff;
+}
+
+    .DTU_PHANTHAN_BANG_3_CHISO p {
+        font-weight: bolder;
+        font-size: 22px;
+    }
+
+    .DTU_PHANTHAN_BANG_3_CHISO li {
+        font-size: 18px;
+    }
+
+.DTU_PHANTHAN_BANG_3_SKILL p {
+    color: #ffffff;
+    font-weight: bolder;
+    font-size: 22px;
+    margin: 0;
+}
+
+.DTU_PHANTHAN_BANG_3_SKILL li {
+    color: #ffffff;
+    font-size: 18px;
+}
+
+.DTU_PHANTHAN_BANG_3_SKILL img {
+    object-fit: cover;
+    height: 100%;
+}
+
+.DTU_PHANTHAN_BANG_4_TIEUDE {
+    color: #ffffff;
+    font-size: 32px;
+    font-weight: bolder;
+    font-style: italic;
+}
+
+.DTU_PHANTHAN_BANG_4 {
+    border: 1px solid;
+    border-color: #313a4a;
+    padding: 3%;
+}
+
+.DTU_PHANTHAN_BANG_4_IMG ing {
+    object-fit: cover;
+    height: 100%;
+}
+
+.DTU_PHANTHAN_BANG_4_IMG a {
+    color: #ffffff;
+    font-size: 18px;
+    text-decoration: none;
+    font-weight: bolder;
+}
+
+    .DTU_PHANTHAN_BANG_4_IMG a:hover {
+        color: #c7a96d;
+    }
+
+.DTU_PHANTHAN_BANG_4_MAIN {
+    color: #ffffff;
+    font-size: 18px;
+}
+
+.DTU_PHANTHAN_BANG_5_TIEUDE {
+    color: #ffffff;
+    font-size: 32px;
+    font-weight: bolder;
+    font-style: italic;
+}
+
+.DTU_PHANTHAN_BANG_5 {
+    border: 1px solid;
+    border-color: #313a4a;
+    padding: 3%;
+}
+
+.DTU_PHANTHAN_BANG_5_IMG ing {
+    object-fit: cover;
+    height: 100%;
+}
+
+.DTU_PHANTHAN_BANG_5_IMG p {
+    color: #ffffff;
+    font-size: 18px;
+    font-weight: bolder;
+}
+
+.DTU_PHANTHAN_BANG_5_MAIN {
+    color: #ffffff;
+    font-size: 18px;
+}
+
+.DTU_PHANTHAN_BANG_6_TIEUDE {
+    color: #ffffff;
+    font-size: 32px;
+    font-weight: bolder;
+    font-style: italic;
+}
+
+.DTU_PHANTHAN_BANG_6 {
+    border: 1px solid;
+    border-color: #313a4a;
+    padding: 3%;
+}
+
+.DTU_PHANTHAN_BANG_6_MAIN_1 {
+    color: #ffffff;
+}
+
+    .DTU_PHANTHAN_BANG_6_MAIN_1 p {
+        font-size: 22px;
+        font-weight: bolder;
+    }
+
+    .DTU_PHANTHAN_BANG_6_MAIN_1 ul {
+        font-size: 18px;
+    }
+
+.DTU_PHANTHAN_BANG_6_MAIN_2 {
+    color: #ffffff;
+}
+
+    .DTU_PHANTHAN_BANG_6_MAIN_2 p {
+        font-size: 22px;
+        font-weight: bolder;
+    }
+
+    .DTU_PHANTHAN_BANG_6_MAIN_2 ul {
+        font-size: 18px;
+    }
