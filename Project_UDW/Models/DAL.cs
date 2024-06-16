@@ -100,7 +100,7 @@ namespace Project_UDW.Models
                 {
                     DetailsChampUpdateVersion detailsChamp = new DetailsChampUpdateVersion
                     {
-                        ChampName = reader["detail_update_champ.ChampName"].ToString(),
+                        ChampName = reader["ChampName"].ToString(),
                         ImageAVA = reader["ImageAVA"].ToString(),
                         dame_nt = reader["dame_nt"].ToString(),
                         dame_q = reader["dame_q"].ToString(),
