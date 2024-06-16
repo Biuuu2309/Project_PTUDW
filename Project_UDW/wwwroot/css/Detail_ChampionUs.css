@@ -1,168 +1,178 @@
-﻿@font-face {
-    font-family: "neuefrutigerworld-medium";
-    src: url("../neue-frutiger/neuefrutigerworld-medium.woff") format("woff");
+﻿body {
+    padding: 0;
+    margin: 0;
 }
 
-body {
-    font-family: neuefrutigerworld-medium;
-}
-
-.DTC {
+.CTN {
+    flex-wrap: wrap;
+    position: relative;
     background-color: #161f33;
-}
-
-.DTC_CONTAINER {
-    background-color: #0a1429;
-}
-
-.DTC_TIEUDE_THANHKYNANG {
-    justify-content: center;
-    cursor: pointer;
-}
-
-.DTC_BORDER_VIDEO {
-    border: 1px solid;
-    width: 100%;
-    border-color: #c7a96d;
-    margin-top: 10px;
-}
-
-.DTC_TIEUDE_THANHKYNANG p {
-    font-size: 14px;
-    color: red;
-    margin-bottom: 0px;
-    margin-top: 15px;
-    color: #ffffff;
-    width: 100%;
-    height: 100%;
-    text-align: center;
-}
-
-.DTC_VIDEO_IN_KYNANG {
-    padding: 10px;
-}
-
-.DTC_KYNANG_COL {
-    padding: 10px;
-}
-
-.DTC_TIEUDE_KYNANG {
-    color: #ffffff;
-    font-weight: bolder;
-    font-style: italic;
-}
-
-    .DTC_TIEUDE_KYNANG h1 {
-        font-size: 80px;
-    }
-
-.DTC_VIDEO_TEXT_KYNANG {
-    text-align: center;
-    color: #ffffff;
-    font-size: 24px;
-}
-
-.DTC_VIDEO_TEXT_KYNANG_1 {
-    color: #879999;
-    font-size: 16px;
-}
-
-.DTC_VIDEO_TEXT_KYNANG_2 {
-    font-size: 18px;
-}
-
-.DTC_SKIN {
-    background-color: #161f33;
-}
-
-.DTC_SKIN_TIEUDE p {
-    font-size: 32px;
-    font-style: italic;
-    font-weight: bolder;
-    margin-left: 10%;
-}
-
-.DTC_SKIN_SHOW {
     display: flex;
     justify-content: center;
 }
+.CTNN {
+    background-color: #161f33;
 
-    .DTC_SKIN_SHOW img {
-        width: 80%;
-    }
-
-.DTC_SKIN_CONTAINER {
-    background-color: white;
 }
-
-.DTC_THANH_SKIN {
-    padding: 40px 80px 80px 80px;
+.SKILL_KN .SKILL_KN_1 {
+    text-wrap: balance;
+    word-break: break-word;
+    font-family: "Beaufort for LOL", sans-serif;
+    font-style: italic;
+    text-transform: uppercase;
+    font-weight: 900;
+    font-size: 80px;
+    line-height: 80px;
+    color: rgb(255, 255, 255);
 }
-
-div.owl-nav {
-    margin: 0 !important;
-}
-
-.owl-nav {
+.text-overlay {
     position: absolute;
-    top: 50%;
-    transform: translateY(-50%);
-    width: 97%;
+    top: 0;
+    width: 90%; /* Đảm bảo chiều rộng giống như ảnh */
+    color: white; /* Tùy chọn màu chữ */
     display: flex;
-    justify-content: space-between;
-    padding: 0 20px;
-    z-index: 1000;
+    justify-content: start;
+    align-items: center;
 }
 
-    .owl-nav button {
-        background-color: rgba(255, 255, 255, 0.5);
-        border: none;
-        padding: 10px;
-        cursor: pointer;
+img {
+    width: 100%;
+    height: auto; /* Đảm bảo tỉ lệ ảnh đúng */
+}
+.TITLE1 {
+    margin-left: 7%;
+}
+
+.NICKNAME1 {
+    color: rgb(200, 170, 110);
+    text-wrap: balance;
+    word-break: break-word;
+    font-family: "Beaufort for LOL", sans-serif;
+    font-weight: 700;
+    font-size: 32px;
+    line-height: 35px;
+    font-style: italic;
+    text-transform: uppercase;
+}
+.NICKNAME2 {
+    color: rgb(255, 255, 255);
+    text-wrap: balance;
+    word-break: break-word;
+    font-family: "Beaufort for LOL", sans-serif;
+    font-weight: 900;
+    font-size: 100px;
+    font-style: italic;
+    text-transform: uppercase;
+    line-height: 1;
+}
+.NICKNAME3 {
+    font-family: Spiegel, sans-serif;
+    font-weight: 400;
+    word-break: break-word;
+    font-size: 18px;
+    line-height: 26px;
+    color: rgb(255, 255, 255);
+}
+.NICKNAME4 {
+    text-wrap: balance;
+    word-break: break-word;
+    font-family: "Beaufort for LOL", sans-serif;
+    font-style: italic;
+    text-transform: uppercase;
+    font-weight: 900;
+    font-size: 80px;
+    line-height: 80px;
+    color: rgb(255, 255, 255);
+}
+.VAITRO {
+    border: 1px solid rgb(200, 170, 110);
+    margin-left: 20px;
+    height: 120px;
+    width: 120px;
+}
+INVAITRO {
+    height: 120px;
+    display: flex;
+    align-items: center;
+    padding-left: 20px;
+}
+.AVASKILL {
+    width: 80px;
+}
+.DETAILSKILL {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+}
+.TITLESKILL {
+    font-family: Spiegel, sans-serif;
+    word-break: break-word;
+    font-size: 14px;
+    line-height: 22px;
+    text-transform: uppercase;
+    font-weight: 600;
+    color: rgb(255, 255, 255);
+    margin-top: 16px;
+    margin-bottom: 0;
+    display: flex;
+    width: 100px;
+}
+.VIDEOSKILL {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.VIDEOSKILL_1 {
+    border: 1px solid rgb(200, 170, 110);
+}
+.VIDEOSKILL_2 {
+    padding: 20%;
+}
+.NICKNAME5 {
+    text-wrap: balance;
+    word-break: break-word;
+    font-family: "Beaufort for LOL", sans-serif;
+    font-style: italic;
+    text-transform: uppercase;
+    font-weight: 700;
+    font-size: 32px;
+    line-height: 35px;
+    padding-top: 5%;
+    padding-bottom: 8%;
+}
+.skinlist {
+    display: flex;
+    justify-content: center;
+}
+.CTNNN {
+    background-color: #ffffff;
+}
+@media (max-width: 991px) {
+    .TITLE1 {
+        margin-left: 0;
     }
-
-        .owl-nav button.owl-prev,
-        .owl-nav button.owl-next {
-            background-color: rgba(255, 255, 255, 0.5);
-            border: none;
-            padding: 10px;
-            cursor: pointer;
-            position: absolute;
-            top: 50%;
-            transform: translateY(-50%);
-            z-index: 1000;
-        }
-
-        .owl-nav button.owl-prev {
-            left: 20px;
-        }
-
-        .owl-nav button.owl-next {
-            right: 20px;
-        }
-
-
-button.owl-prev span {
-    color: #c7a96d;
-    font-size: 60px;
-}
-
-button.owl-next span {
-    color: #c7a96d;
-    font-size: 60px;
-}
-
-button.owl-prev span:hover {
-    background-color: none;
-}
-
-button.owl-next span:hover {
-    background-color: none;
-}
-
-.owl-theme .owl-nav [class*=owl-]:hover {
-    background: none;
-}
-div.DTC_MODAU_TEXT{
-    padding-left:80px;
+    .text-overlay {
+        position: static;
+    }
+    .VAITRO {
+        margin-left: 0px;
+    }
+    .NICKNAME4 {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        padding-top: 10%;
+        padding-bottom: 5%;
+    }
+    .TITLESKILL {
+        font-size: 17px;
+        color: rgb(255, 255, 255);
+        margin-top: 16px;
+        margin-bottom: 0;
+    }
+    .VIDEOSKILL {
+        padding-top: 7%;
+        padding-bottom: 7%;
+    }
 }

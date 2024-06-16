@@ -1,0 +1,70 @@
+﻿body {
+    padding: 0;
+    margin: 0;
+}
+
+.LO {
+    background-color: #161f33;
+    display: flex;
+    justify-content: center;
+}
+
+.LOUH {
+    width: 85%;
+    background-image: url('../Pictures/Backgrounds/Pic 18.png');
+}
+
+.LOUB {
+    display: flex;
+    justify-content: center;
+    background-color: #ffffff;
+    padding-top: 40px;
+}
+
+.LOUB_1 {
+    width: 90%;
+}
+
+.LG_COL {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    height: 350px;
+    text-align: start;
+    font-style: italic;
+    font-weight: bolder;
+}
+
+div.col-xxl-6.LG_COL {
+    padding-left: 10%;
+}
+
+.LG_COL h1 {
+    color: #0a1429;
+    font-size: 80px;
+}
+.TUONG_MODAU {
+    width: 85%;
+}
+.TUONG_MODAU_TEXT_1 {
+    color: rgb(200, 170, 110);
+    text-wrap: balance;
+    word-break: break-word;
+    font-family: "Beaufort for LOL", sans-serif;
+    font-weight: 700;
+    font-size: 32px;
+    line-height: 35px;
+    font-style: italic;
+    text-transform: uppercase;
+}
+.TUONG_MODAU_TEXT_3 {
+    font-family: Spiegel, sans-serif;
+    font-weight: 400;
+    word-break: break-word;
+    font-size: 18px;
+    line-height: 26px;
+}
+.BTTN {
+    background-image: url('../Pictures/Backgrounds/Pic 6.png');
+    width: 80%;
+}

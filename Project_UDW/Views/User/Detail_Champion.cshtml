@@ -2,46 +2,33 @@
     ViewData["Title"] = "Detail Champion";
     Layout = null;
 }
+<link rel="stylesheet" href="~/css/Detail_ChampionUs.css">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.13.1/css/all.min.css" integrity="sha256-2XFplPlrFClt0bIdPgpz8H7ojnk10H69xRqd9+uTShA=" crossorigin="anonymous" />
 <script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha384-KyZXEAg3QhqLMpG8r+8fhAXLR0Ff3B4o1RjM3TV7pHIUydm4e4W3F4L8tFVCmwHZ" crossorigin="anonymous"></script>
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
 <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
 <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" />
-<style>
-    body {
-        padding: 0;
-        margin: 0;
-    }
-
-    .container-fluid {
-        position: relative;
-        background-color: #161f33;
-        display: flex;
-        justify-content: center;
-    }
-
-    .text-overlay {
-        position: absolute;
-        top: 0;
-        width: 90%; /* Đảm bảo chiều rộng giống như ảnh */
-        color: white; /* Tùy chọn màu chữ */
-        display: flex;
-        justify-content: start;
-        align-items: center;
-    }
-
-    img {
-        width: 90%;
-        height: auto; /* Đảm bảo tỉ lệ ảnh đúng */
-    }
-</style>
-<div class="container-fluid" id="getuserchampiondetail">
+<div class="container-fluid CTN" id="getuserchampiondetail">
 </div>
-<div class="container-fluid" id="getuserskilldetail">
+<div class="container-fluid CTNN" style="padding-left: 6%; padding-right: 6%;" id="getuserskilldetail">
 </div>
-<div class="container-fluid" id="getuserskindetail">
+<div class="container-fluid CTNNN" style="padding-left: 8%; padding-right: 8%;" id="getuserskindetail">
+    <p class="NICKNAME5">Trang phục hiện có</p>
+    <div id="carouselExampleInterval" class="carousel slide" data-bs-ride="carousel">
+        <div class="carousel-inner" id="carousel-inner">
+            <!-- Carousel items will be injected here by JavaScript -->
+        </div>
+        <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleInterval" data-bs-slide="prev">
+            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+            <span class="visually-hidden">Previous</span>
+        </button>
+        <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleInterval" data-bs-slide="next">
+            <span class="carousel-control-next-icon" aria-hidden="true"></span>
+            <span class="visually-hidden">Next</span>
+        </button>
+    </div>
+    <hr style="height: 2px; color: #c2902d" />
 </div>
-
 
 
 <p id="displayId"></p>
@@ -67,18 +54,18 @@
                 var container = $('#getuserchampiondetail');
                 container.empty();
                 var row =
-                    '<img id="backgroundImage" src="/Pictures/Backgrounds_Champs/' + champion.imageDD + '" onload="adjustHeight()" />' +
+                    '<img style="width: 90%;" id="backgroundImage" src="/Pictures/Backgrounds_Champs/' + champion.imageDD + '" onload="adjustHeight()" />' +
                     '<div id="textOverlay" class="text-overlay">' +
-                    '<div>' +
-                    '<h3>' + champion.nickName + ' </h3>' +
-                    '<h1> ' + champion.champName + ' </h1>' +
-                    '<p> ' + champion.describle + ' </p>' +
-                    '<div style="display: flex;">' +
-                    '<div>' +
-                    '<p>Vai trò: ' + champion.role + ' </p>' +
+                    '<div class="col-xxl-7 col-xl-7 col-lg-7 TITLE1">' +
+                    '<p class="NICKNAME1">' + champion.nickName + ' </p>' +
+                    '<p class="NICKNAME2"> ' + champion.champName + ' </p>' +
+                    '<p class="NICKNAME3"> ' + champion.describle + ' </p>' +
+                    '<div class="col-xxl-4 col-xl-4 col-lg-4" style="display: flex; justify-content: center; align-items: center;">' +
+                    '<div class="col VAITRO" style="display: flex; justify-content: center; align-items: center;">' +
+                    '<p class="m-0 INVAITRO" style="width: 120px; padding-left: 20px;">Vai trò: ' + champion.role + ' </p>' +
                     '</div>' +
-                    '<div>' +
-                    '<p>Độ khó: ' + champion.level + ' </p>' +
+                    '<div class="col VAITRO" style="display: flex; justify-content: center; align-items: center;">' +
+                    '<p class="m-0 INVAITRO" style="width: 120px; padding-left: 20px;">Độ khó: ' + champion.level + ' </p>' +
                     '</div>' +
                     '</div>' +
                     '</div>' +
@@ -101,30 +88,37 @@
                 var container = $('#getuserskilldetail');
                 container.empty();
                 var row =
-                    '<div>' +
-                    '<h1>Ky nang</h1>' +
+                    '<div class="row">' +
+                    '<div class="col-xxl-5 col-xl-5 col-lg-5">' +
+                    '<p class="NICKNAME4">Skill</p>' +
                     '<div style = "display: flex;">' +
-                    '<div>' +
-                    '<img src = "/Pictures/Skills/Skills_NT/' + skill.avA_NT + '" />' +
-                    '<p>' + skill.noiTai + '</p>' +
+                    '<div class="DETAILSKILL">' +
+                    '<img class="AVASKILL" src = "/Pictures/Skills/Skills_NT/' + skill.avA_NT + '" />' +
+                    '<p class="TITLESKILL">' + skill.noiTai + '</p>' +
                     '</div>' +
-                    '<div>' +
-                    '<img src = "/Pictures/Skills/Skills_Q/' + skill.avA_Q + '" />' +
-                    '<p>' + skill.skillQ + '</p>' +
+                    '<div class="DETAILSKILL">' +
+                    '<img class="AVASKILL" src = "/Pictures/Skills/Skills_Q/' + skill.avA_Q + '" />' +
+                    '<p class="TITLESKILL">' + skill.skillQ + '</p>' +
                     '</div>' +
-                    '<div>' +
-                    '<img src = "/Pictures/Skills/Skills_W/' + skill.avA_W + '" />' +
-                    '<p>' + skill.skillW + '</p>' +
+                    '<div class="DETAILSKILL">' +
+                    '<img class="AVASKILL" src = "/Pictures/Skills/Skills_W/' + skill.avA_W + '" />' +
+                    '<p class="TITLESKILL">' + skill.skillW + '</p>' +
                     '</div>' +
-                    '<div>' +
-                    '<img src = "/Pictures/Skills/Skills_E/' + skill.avA_E + '" />' +
-                    '<p>' + skill.skillE + '</p>' +
+                    '<div class="DETAILSKILL">' +
+                    '<img class="AVASKILL" src = "/Pictures/Skills/Skills_E/' + skill.avA_E + '" />' +
+                    '<p class="TITLESKILL">' + skill.skillE + '</p>' +
                     '</div>' +
-                    '<div>' +
-                    '<img src = "/Pictures/Skills/Skills_R/' + skill.avA_R + '" />' +
-                    '<p>' + skill.skillR + '</p>' +
-                    '</div>'
-                '</div>' +
+                    '<div class="DETAILSKILL">' +
+                    '<img class="AVASKILL" src = "/Pictures/Skills/Skills_R/' + skill.avA_R + '" />' +
+                    '<p class="TITLESKILL">' + skill.skillR + '</p>' +
+                    '</div>' +
+                    '</div>' +
+                    '</div>' +
+                    '<div class="col-xxl-7 col-xl-7 col-lg-7 VIDEOSKILL">' +
+                    '<div class="VIDEOSKILL_1">' +
+                    '<img class="VIDEOSKILL_2" src = "/Pictures/Skills/Skills_R/' + skill.avA_R + '" />' +
+                    '</div>' +
+                    '</div>' +
                     '</div>';
                 container.append(row);
             },
@@ -141,25 +135,23 @@
             data: { champName: champName },
             dataType: "json",
             success: function (skin) {
-                var container = $('#getuserskindetail');
-                container.empty();
-                var row = '<div>' +
-                    '<h1>Tranh phuc hien co</h1>' +
-                    '<div style="display: flex;" class="skinlist">' +
-                    '<div style="display: flex; flex-direction: column;">';
+                var carouselInner = $('#carousel-inner');
+                carouselInner.empty();
 
                 var skinProperties = ['skin1', 'skin2', 'skin3', 'skin4', 'skin5', 'skin6', 'skin7', 'skin8', 'skin9', 'skin10', 'skin11', 'skin12', 'skin13', 'skin14', 'skin15', 'skin16', 'skin17', 'skin18'];
+                var isFirstItem = true;
 
                 for (var i = 0; i < skinProperties.length; i++) {
                     var skinProperty = skinProperties[i];
                     if (skin[skinProperty]) {
-                        row += '<img src="/Pictures/Skins/' + skin[skinProperty] + '"/>';
+                        var activeClass = isFirstItem ? ' active' : '';
+                        var item = '<div class="carousel-item' + activeClass + '" data-bs-interval="2000">' +
+                            '<img src="/Pictures/Skins/' + skin[skinProperty] + '" class="d-block w-100" alt="' + skinProperty + '">' +
+                            '</div>';
+                        carouselInner.append(item);
+                        isFirstItem = false;
                     }
                 }
-
-                row += '</div></div></div>';
-
-                container.append(row);
             },
             error: function (error) {
                 console.error("Error fetching data:", error);
@@ -167,4 +159,6 @@
         });
     });
 
+
 </script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.min.js" integrity="sha384-cVKIPhGWiC2Al4u+LWgxfKTRIcfu0JTxR+EQDz/bgldoEyl4H0zUF0QKbrJ0EcQF" crossorigin="anonymous"></script>
