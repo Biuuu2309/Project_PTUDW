@@ -1,0 +1,119 @@
+﻿body, html {
+    height: 100%;
+    margin: 0;
+}
+
+@font-face {
+    font-family: "neuefrutigerworld-medium";
+    src: url("../neue-frutiger/neuefrutigerworld-medium.woff") format("woff");
+}
+
+body {
+    font-family: neuefrutigerworld-medium;
+}
+
+.DTT::before {
+    filter: none;
+}
+
+.DTT_MAIN img.img-fluid {
+    width: 60%;
+}
+
+.DTT {
+    background-color: #161f33;
+}
+
+.DTT_PHANDAU {
+    position: relative;
+    z-index: 1;
+    overflow: hidden;
+}
+
+.DTT_MAIN {
+    padding: 30px;
+}
+
+.DTT_BG {
+    background-color: #ffffff;
+    position: relative;
+}
+
+
+.DTT_PHANDAU::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 60%;
+    background-image: url('../Pictures/Backgrounds/faker.jpeg');
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+    filter: blur(3px);
+    z-index: -1;
+}
+
+.DTT_PHANDAU_TIEUDE {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+}
+
+    .DTT_PHANDAU_TIEUDE::after {
+        content: "";
+        width: 70%;
+        border-bottom: 3px solid;
+        border-color: #313a4a;
+    }
+
+.DTT_PHANDAU_TIEUDE_COL {
+    color: #0a1429;
+    margin-bottom: 3%;
+}
+
+.DTT_PHANDAU_TIEUDE p {
+    font-size: 48px;
+    font-weight: bolder;
+    font-style: italic;
+}
+
+.DTT_PHANDAU_TIEUDE span {
+    font-size: 18px;
+}
+
+.DTT_PHANDAU_TIEUDE span {
+    font-size: 18px;
+}
+
+.DTT_PHANTHAN_TIEUDE {
+    color: #0a1429;
+    font-size: 18px;
+    font-weight: bolder;
+    font-style: italic;
+}
+
+.DTT_PHANTHAN_CONTAINER {
+    display: flex;
+    flex-direction: column;
+    padding-left: 15%;
+    padding-right: 15%;
+}
+
+.DTT_PHANDAU_MAIN_TEXT {
+    font-size: 18px;
+}
+
+.DTT_PHANTHAN_TIEUDE_2 {
+    color: #0a1429;
+    font-size: 18px;
+    font-weight: bolder;
+    font-style: italic;
+}
+
+.DTT_PHANDAU_MAIN_TEXT_2 {
+    font-size: 18px;
+}
