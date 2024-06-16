@@ -34,90 +34,34 @@
         width: 90%;
         height: auto;
     }
+
+    .DTT_PHANDAU::before {
+        content: "";
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        background-repeat: no-repeat;
+        background-position: center;
+        background-size: cover;
+        filter: blur(3px);
+        z-index: -1;
+        background-image: var(--background-image);
+    }
 </style>
-<div class="container-fluid" id="getusernewsdetail">
-</div>
-<div class="container-fluid" id="getuserupdatedetail">
-</div>
-<div class="container-fluid" id="getuserchampiondetail">
-</div>
-<div class="container-fluid" id="getuserskilldetail">
-</div>
-<div class="container-fluid" id="getuserskindetail">
+
+<div class="DTT">
+    <div class="container DTT_BG w-100 p-0" id="getusernewsdetail">
+    </div>
 </div>
 
-@* <section class="DTT">
-    <div class="container DTT_BG w-100 p-0">
-        <div class="DTT_PHANDAU">
-            <div class="row">
-                <div class="col-xxl-12 DTT_MAIN d-flex justify-content-center align-items-center">
-                    <img class="img-fluid" src="~/Pictures/Backgrounds/fakerpng.png" alt="Alternate Text" />
-                </div>
-            </div>
-        </div>
-        <div class="DTT_PHANDAU_TIEUDE mt-3">
-            <div class="row">
-                <div class="col-xxl-12 DTT_PHANDAU_TIEUDE_COL">
-                    <p class="mb-3">CỬA HÀNG XOAY TUA ĐTCL SẮP RA MẮT!</p>
-                    <span>Từ Dango cho tới Chiến Binh Rồng, tìm hiểu chi tiết về Cửa Hàng Xoay Tua mới trong ĐTCL!</span>
-                </div>
-            </div>
-        </div>
-        <div class="DTT_PHANTHAN_CONTAINER">
-            <div class="DTT_PHANTHAN_TIEUDE mt-5">
-                <div class="row">
-                    <div class="col-xxl-12">
-                        <p>
-                            Cửa Hàng Xoay Tua là gì?
-                        </p>
-                    </div>
-                </div>
-            </div>
-            <div class="DTT_PHANDAU_MAIN_TEXT">
-                <div class="row">
-                    <div class="col-xxl-12">
-                        <p>Như chúng tôi đã từng bàn về các tính năng kiếm tiền trong ĐTCL vài năm qua, một trong những phản hồi mà chúng tôi nhận được nhiều nhất từ người chơi đó là muốn có thêm phương thức để kiếm một vật phẩm cụ thể.</p>
-                        <p>Xứ Sở Kho Báu vẫn sẽ tiếp tục tồn tại (và sẽ liên quan đáng kể đến Cửa Hàng Xoay Tua, chúng tôi sẽ giải thích ở phần sau), nhưng cung cấp một phương thức mới để kiếm vật phẩm là mục tiêu chính của Cửa Hàng Xoay Tua. Khi ra mắt, bạn sẽ thấy một loạt vật phẩm trang trí mới được xoay tua theo lịch trình cố định. Cửa Hàng Xoay Tua sẽ sử dụng 2 loại tiền tệ, Pha Lê Xứ Sở và Huy Chương Thần Thoại. Bạn sẽ nhận được Pha Lê Xứ Sở từ Sự Kiện, lượt mở Xứ Sở Kho Báu, và ở cả Vé Sự Kiện miễn phí và có phí. Huy Chương Thần Thoại sẽ được kiếm từ Xứ Sở Kho Báu.</p>
-                    </div>
-                </div>
-            </div>
-            <div class="DTT_PHANTHAN_TIEUDE_2 mt-5">
-                <div class="row">
-                    <div class="col-xxl-12">
-                        <p>
-                            Cửa Hàng Xoay Tua là gì?
-                        </p>
-                    </div>
-                </div>
-            </div>
-            <div class="DTT_PHANDAU_MAIN_TEXT_2">
-                <div class="row">
-                    <div class="col-xxl-12">
-                        <p>Cửa Hàng Xoay Tua sẽ ra mắt trong bản cập nhật 14.11.</p>
-                        <ul>
-                            <li>
-                                Bạn sẽ có thẻ kiếm Pha Lê Xứ Sở mới qua Vé Sự Kiện (cả miễn phí và Vé+), các sự kiện và Xứ Sở Kho Báu sau khi phiên bản ra mắt.
-                            </li>
-                        </ul>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-</section>
- *@
 <p id="displayId"></p>
 <script>
     function getQueryParameterr(name) {
         var urlParamss = new URLSearchParams(window.location.search);
         return urlParamss.get(name);
-    };
-    function adjustHeight() {
-        var img = document.getElementById('backgroundImagee');
-        var textOverlay = document.getElementById('textOverlayy');
-        textOverlay.style.height = img.clientHeight + 'px';
-    };
-    window.onresize = adjustHeight;
+    }
+
     function fetchNewsDetails() {
         var namenews = getQueryParameterr("Usnews");
         $.ajax({
@@ -129,34 +73,126 @@
                 var container = $('#getusernewsdetail');
                 container.empty();
                 var row =
-                    '<img id="backgroundImagee" src="/Pictures/News/' + news.picnewmain + '" onload="adjustHeight()" />' +
-                    '<img id="backgroundImagee" src="/Pictures/News/' + news.picnewblur + '" onload="adjustHeight()" />' +
-                    '<h3>' + news.maintitle + ' </h3>' +
-                    '<h1> ' + news.destitle + ' </h1>' +
-                    '<p> ' + news.mota + ' </p>' +
-                    '<p> ' + news.title1 + ' </p>' +
-                    '<p> ' + news.title1_con1 + ' </p>' +
-                    '<p> ' + news.title1_con2 + ' </p>' +
-                    '<p> ' + news.title2 + ' </p>' +
-                    '<p> ' + news.title2_con1 + ' </p>' +
-                    '<p> ' + news.title2_con2 + ' </p>' +
-                    '<p> ' + news.title3 + ' </p>' +
-                    '<p> ' + news.title3_con1 + ' </p>' +
-                    '<p> ' + news.title3_con2 + ' </p>' +
-                    '<p> ' + news.title4 + ' </p>' +
-                    '<p> ' + news.title4_con1 + ' </p>' +
-                    '<p> ' + news.title4_con2 + ' </p>' +
-                    '<p> ' + news.title5 + ' </p>' +
-                    '<p> ' + news.title5_con1 + ' </p>' +
-                    '<p> ' + news.title5_con2 + ' </p>' +
-                    '<p> ' + news.tomtat + ' </p>';
+                    '<div class="DTT_PHANDAU">' +
+                    '<div class="row">' +
+                    '<div class="col-xxl-12 DTT_MAIN d-flex justify-content-center align-items-center">' +
+                    '<img class="img-fluid" src = "../Pictures/News/' + news.picnewmain + '" alt = "Alternate Text"/>' +
+                    '</div>' +
+                    '</div>' +
+                    '</div>' +
+                    '<div class="DTT_PHANDAU_TIEUDE mt-3">' +
+                    '<div class="row">' +
+                    '<div class="col-xxl-12 DTT_PHANDAU_TIEUDE_COL">' +
+                    '<p class="mb-3">' + news.maintitle + '</p>' +
+                    '<span>' + news.destitle + '</span>' +
+                    '</div>' +
+                    '</div>' +
+                    '</div>' +
+                    '<div class="DTT_PHANTHAN_CONTAINER">' +
+                    '<div class="DTT_PHANTHAN_TIEUDE mt-5">' +
+                    '<div class="row">' +
+                    '<div class="col-xxl-12">' +
+                    '<p>' + news.title1 + '</p>' +
+                    '</div>' +
+                    '</div>' +
+                    '</div>' +
+                    '<div class="DTT_PHANDAU_MAIN_TEXT">' +
+                    '<div class="row">' +
+                    '<div class="col-xxl-12">' +
+                    '<p>' + news.title1_con1 + '</p>' +
+                    '<p>' + news.title1_con2 + '</p>' +
+                    '</div>' +
+                    '</div>' +
+                    '</div>' +
+                    '<div class="DTT_PHANTHAN_TIEUDE mt-5">' +
+                    '<div class="row">' +
+                    '<div class="col-xxl-12">' +
+                    '<p>' + news.title2 + '</p>' +
+                    '</div>' +
+                    '</div>' +
+                    '</div>' +
+                    '<div class="DTT_PHANDAU_MAIN_TEXT">' +
+                    '<div class="row">' +
+                    '<div class="col-xxl-12">' +
+                    '<p>' + news.title2_con1 + '</p>' +
+                    '<p>' + news.title2_con2 + '</p>' +
+                    '</div>' +
+                    '</div>' +
+                    '</div>' +
+                    '<div class="DTT_PHANTHAN_TIEUDE mt-5">' +
+                    '<div class="row">' +
+                    '<div class="col-xxl-12">' +
+                    '<p>' + news.title3 + '</p>' +
+                    '</div>' +
+                    '</div>' +
+                    '</div>' +
+                    '<div class="DTT_PHANDAU_MAIN_TEXT">' +
+                    '<div class="row">' +
+                    '<div class="col-xxl-12">' +
+                    '<p>' + news.title3_con1 + '</p>' +
+                    '<p>' + news.title3_con2 + '</p>' +
+                    '</div>' +
+                    '</div>' +
+                    '</div>' +
+                    '<div class="DTT_PHANTHAN_TIEUDE mt-5">' +
+                    '<div class="row">' +
+                    '<div class="col-xxl-12">' +
+                    '<p>' + news.title4 + '</p>' +
+                    '</div>' +
+                    '</div>' +
+                    '</div>' +
+                    '<div class="DTT_PHANDAU_MAIN_TEXT">' +
+                    '<div class="row">' +
+                    '<div class="col-xxl-12">' +
+                    '<p>' + news.title4_con1 + '</p>' +
+                    '<p>' + news.title4_con2 + '</p>' +
+                    '</div>' +
+                    '</div>' +
+                    '</div>' +
+                    '<div class="DTT_PHANTHAN_TIEUDE mt-5">' +
+                    '<div class="row">' +
+                    '<div class="col-xxl-12">' +
+                    '<p>' + news.title5 + '</p>' +
+                    '</div>' +
+                    '</div>' +
+                    '</div>' +
+                    '<div class="DTT_PHANDAU_MAIN_TEXT">' +
+                    '<div class="row">' +
+                    '<div class="col-xxl-12">' +
+                    '<p>' + news.title5_con1 + '</p>' +
+                    '<p>' + news.title5_con2 + '</p>' +
+                    '</div>' +
+                    '</div>' +
+                    '</div>' +
+                    '<div class="DTT_PHANTHAN_TIEUDE_2 mt-5">' +
+                    '<div class="row">' +
+                    '<div class="col-xxl-12">' +
+                    '<p>Tóm tắt tổng thể</p>' +
+                    '</div>' +
+                    '</div>' +
+                    '</div>' +
+                    '<div class="DTT_PHANDAU_MAIN_TEXT_2">' +
+                    '<div class="row">' +
+                    '<div class="col-xxl-12">' +
+                    '<p>' + news.tomtat + '</p>' +
+                    '</div>' +
+                    '</div>' +
+                    '</div>' +
+                    '</div>';
+
                 container.append(row);
+
+                // Set background image dynamically
+                var phandau = document.querySelector('.DTT_PHANDAU');
+                if (phandau) {
+                    phandau.style.setProperty('--background-image', 'url(../Pictures/News/' + news.picnewmain + ')');
+                }
             },
             error: function (error) {
                 console.error("Error fetching data:", error);
             }
         });
-    };
+    }
 
     $(document).ready(function () {
         fetchNewsDetails();

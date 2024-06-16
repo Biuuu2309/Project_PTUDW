@@ -20,29 +20,31 @@
         background-color: #161f33;
         display: flex;
         justify-content: center;
-    }
-
-    .text-overlay {
-        position: absolute;
-        top: 0;
-        width: 90%;
-        color: white;
-        display: flex;
-        justify-content: start;
+        flex-direction: column;
         align-items: center;
+        color: white;
     }
 
     img {
         width: 90%;
         height: auto;
     }
+
+    .container {
+        margin-top: 20px;
+    }
 </style>
-<div class="container-fluid" id="getuserupdatedetail"></div>
+
+<section class="DTU">
+    <div class="container DTU_BG w-100 p-0" id="getuserupdatedetail">
+        
+    </div>
+
+
+</section>
 
 <p id="displayId"></p>
 <script>
-    
-
     function fetchUpdateDetails() {
         var version_update = getQueryParameter("Usupdate");
         $.ajax({
@@ -54,22 +56,177 @@
                 var container = $('#getuserupdatedetail');
                 container.empty();
                 var row =
-                    '<img id="backgroundImage" src="/Pictures/Update/' + update.picheadblur + '" />' +
-                    '<img id="backgroundImage" src="/Pictures/Update/' + update.picheadmain + '" />' +
-                    '<img id="backgroundImage" src="/Pictures/Update/' + update.picupdate + '" />' +
-                    '<h3>' + update.version_update + ' </h3>' +
-                    '<h1> ' + update.maintitle + ' </h1>' +
-                    '<p> ' + update.maindestitle + ' </p>' +
-                    '<div class="container" id="getuserdetailchampdetail-' + update.version_update + '">' +
-                    '</div>';
+                '<div class="DTU_PHANDAU">' +
+                '<div class="row">' +
+                '<div class="col-xxl-12 DTU_MAIN d-flex justify-content-center align-items-center">' +
+                '<img class="img-fluid  w-50" src = "~/Pictures/Update/' + update.version_update + '" alt = "Alternate Text"/>' +
+                '</div>' +
+                '</div>' +
+                '</div>' +
+                '<div class="DTU_PHANDAU_TIEUDE mt-3">' +
+                '<div class="row">' +
+                '<div class="col-xxl-12 DTU_PHANDAU_TIEUDE_COL">' +
+                '<p class="mb-3" >' + update.maintitle + '</p>' +
+                '<span >' + update.maindestitle + '</span>' +
+                '</div>' +
+                '</div>' +
+                '</div>' +
+                '<div class="DTU_PHANTHAN_CONTAINER">' +
+                '<div class="DTU_PHANTHAN_TIEUDE mt-5">' +
+                '<div class="row">' +
+                '<div class="col-xxl-12">' +
+                '<p>TIÊU ĐIỂM CẬP NHẬT </p>' +
+                '</div>' +
+                '</div>' +
+                '</div>' +
+                '<div class="DTU_PHANTHAN_BANG">' +
+                '<div class="DTU_PHANTHAN_BANG_IMG">' +
+                '<div class="row">' +
+                '<div class="col-xxl-12">' +
+                '<img class="img-fluid" src = "~/Pictures/Update/' + update.picupdate + '" alt = "Alternate Text"/>' +
+                '</div>' +
+                '</div>' +
+                '</div>' +
+                '</div>' +
+                '<div class="DTU_PHANTHAN_BANG_2_CONTAINER mt-5">' +
+                '<div class="DTU_PHANTHAN_BANG_2_TIEUDE">' +
+                '<div class="row">' +
+                '<div class="col-xxl-12">' +
+                '<p>' + update.upversiontitle1 + '</p>' +
+                '</div>' +
+                '</div>' +
+                '</div>' +
+                '<div class="DTU_PHANTHAN_BANG_2">' +
+                '<div class="DTU_PHANTHAN_BANG_2_TEXT">' +
+                '<div class="row">' +
+                '<div class="col-xxl-12">' +
+                '<p>' + update.upversiontitle_con1 + '</p>' +
+                '</div>' +
+                '</div>' +
+                '</div>' +
+                '</div>' +
+                '</div>' +
+                '<div class="DTU_PHANTHAN_BANG_2_CONTAINER mt-5">' +
+                '<div class="DTU_PHANTHAN_BANG_2_TIEUDE">' +
+                '<div class="row">' +
+                '<div class="col-xxl-12">' +
+                '<p>' + update.upversiontitle2 + '</p>' +
+                '</div>' +
+                '</div>' +
+                '</div>' +
+                '<div class="DTU_PHANTHAN_BANG_2">' +
+                '<div class="DTU_PHANTHAN_BANG_2_TEXT">' +
+                '<div class="row">' +
+                '<div class="col-xxl-12">' +
+                '<p>' + update.upversiontitle_con2 + '</p>' +
+                '</div>' +
+                '</div>' +
+                '</div>' +
+                '</div>' +
+                '</div>' +
+                '<div class="DTU_PHANTHAN_BANG_2_CONTAINER mt-5">' +
+                '<div class="DTU_PHANTHAN_BANG_2_TIEUDE">' +
+                '<div class="row">' +
+                '<div class="col-xxl-12">' +
+                '<p>' + update.upversiontitle3 + '</p>' +
+                '</div>' +
+                '</div>' +
+                '</div>' +
+                '<div class="DTU_PHANTHAN_BANG_2">' +
+                '<div class="DTU_PHANTHAN_BANG_2_TEXT">' +
+                '<div class="row">' +
+                '<div class="col-xxl-12">' +
+                '<p>' + update.upversiontitle_con3 + '</p>' +
+                '</div>' +
+                '</div>' +
+                '</div>' +
+                '</div>' +
+                '</div>' +
+                '<div class="DTU_PHANTHAN_BA +NG_2_CONTAINER mt-5">' +
+                '<div class="DTU_PHANTHAN_BANG_2_TIEUDE">' +
+                '<div class="row">' +
+                '<div class="col-xxl-12">' +
+                '<p>' + update.upversiontitle4 + '</p>' +
+                '</div>' +
+                '</div>' +
+                '</div>' +
+                '<div class="DTU_PHANTHAN_BANG_2">' +
+                '<div class="DTU_PHANTHAN_BANG_2_TEXT">' +
+                '<div class="row">' +
+                '<div class="col-xxl-12">' +
+                '<p>' + update.upversiontitle_con4 + '</p>' +
+                '</div>' +
+                '</div>' +
+                '</div>' +
+                '</div>' +
+                '</div>' +
+                '<div class="DTU_PHANTHAN_BANG_2_CONTAINER mt-5">' +
+                '<div class="DTU_PHANTHAN_BANG_2_TIEUDE">' +
+                '<div class="row">' +
+                '<div class="col-xxl-12">' +
+                '<p>' + update.upversiontitle5 + '</p>' +
+                '</div>' +
+                '</div>' +
+                '</div>' +
+                '<div class="DTU_PHANTHAN_BANG_2">' +
+                '<div class="DTU_PHANTHAN_BANG_2_TEXT">' +
+                '<div class="row">' +
+                '<div class="col-xxl-12">' +
+                '<p>' + update.upversiontitle_con5 + '</p>' +
+                '</div>' +
+                '</div>' +
+                '</div>' +
+                '</div>' +
+                '</div>' +
+                '<div class="container" id = "champ-detail-container">' +
+                '</div>' +
+                '<div class="container" id = "item-detail-container">' +
+                '</div>' +
+                '<div class="DTU_PHANTHAN_BANG_6_CONTAINER mt-5">' +
+                '<div class="DTU_PHANTHAN_BANG_6_TIEUDE">' +
+                '<div class="row">' +
+                '<div class="col-xxl-12">' +
+                '<p>SỬA LỖI & NÂNG CẤP CHẤT LƯỢNG TRẢI NGHIỆM</p>' +
+                '</div>' +
+                '</div>' +
+                '</div>' +
+                '<div class="DTU_PHANTHAN_BANG_6">' +
+                '<div class="DTU_PHANTHAN_BANG_6_MAIN_1">' +
+                '<div class="row">' +
+                '<div class="col-xxl-12">' +
+                '<p>Nâng Cấp Chất Lượng Trải Nghiệm </p>' +
+                '<ul>' +
+                '<li>' + update.nangcaptrainghiem + '</li>' +
+                '</ul>' +
+                '</div>' +
+                '</div>' +
+                '</div>' +
+                '<div class="DTU_PHANTHAN_BANG_3_BORDERBOTTOM mt-3 mb-3">' +
+                '</div>' +
+                '<div class="DTU_PHANTHAN_BANG_6_MAIN_2">' +
+                '<div class="row">' +
+                '<div class="col-xxl-12">' +
+                '<p>Sửa Lỗi </p>' +
+                '<ul>' +
+                '<li>' + update.sualoi + '</li>' +
+                '</ul>' +
+                '</div>' +
+                '</div>' +
+                '</div>' +
+                '</div>' +
+                '</div>' +
+                '</div>';
                 container.append(row);
                 fetchChampDetailUpdate(version_update);
+                fetchdetailskillDetails(version_update);
+                fetchdetailitemDetails(version_update);
             },
             error: function (error) {
                 console.error("Error fetching data:", error);
             }
         });
     }
+
     function fetchChampDetailUpdate(version_update) {
         $.ajax({
             type: "GET",
@@ -77,13 +234,58 @@
             data: { version_update: version_update },
             dataType: "json",
             success: function (data) {
-                var container = $('#getuserdetailchampdetail-' + version_update);
-                container.empty();
-                console.log("Data:");
+                var container = $('#champ-detail-container');
                 data.forEach(function (champ) {
-                    console.log("Data:", champ.champName);
                     var row =
-                        '<h5>' + champ.champName + '</h5>';
+                    '<div class="DTU_PHANTHAN_BANG_3_CONTAINER mt-5"> +
+                    '<div class="DTU_PHANTHAN_BANG_3_TIEUDE">' +
+                    '<div class="row">' +
+                    '<div class="col-xxl-12">' +
+                    '<p>TƯỚNG </p>' +
+                    '</div>' +
+                    '</div>' +
+                    '</div>' +
+                    '<div class="DTU_PHANTHAN_BANG_3">' +
+                    '<div class="DTU_PHANTHAN_BANG_3_TEXT">' +
+                    '<div class="row">' +
+                    '<div class="col-xxl-2 col-xl-2 col-lg-2 col-md-4 col-sm-4 col-6">' +
+                    '<img class="img-fluid" src = "/Pictures/Champions/' + champ.imageAVA + '" alt = "Alternate Text"/>' +
+                    '</div>' +
+                    '<div class="col-xxl-10 col-xl-10 col-lg-10 col-md-8 col-sm-8 col-6 d-flex justify-content-start align-items-center text-start">' +
+                    '<div class="DTU_PHANTHAN_BANG_3_IN_TEXT_SUBTEXT">' +
+                    '<a href="#" >' + champ.chamName + '</a>' +
+                    '</div> +
+                    '<div class="container" id = "skill-detail-container">' +
+                    '</div>' +
+                    '</div>' +
+                    '</div>' +
+                    '<div class="DTU_PHANTHAN_BANG_3_BORDERBOTTOM mt-3 mb-3">' +
+                    '</div>' +
+                    '<div class="DTU_PHANTHAN_BANG_3_CHISO">' +
+                    '<div class="row">' +
+                    '<div class="col-xxl-12">' +
+                    '<p>Chỉ Số Cơ Bản </p>' +
+                    '<ul>' +
+                    '<li><b>' + champ.dame_nt + '</b></li>' +
+                    '<li><b>' + champ.dame_q + '</b></li>' +
+                    '<li><b>' + champ.dame_w + '</b></li>' +
+                    '<li><b>' + champ.dame_e + '</b></li>' +
+                    '<li><b>' + champ.dame_r + '</b></li>'
+                    '</ul>' +
+                    '</div>' +
+                    '</div>' +
+                    '</div>' +
+                    '<div class="DTU_PHANTHAN_BANG_3_BORDERBOTTOM mt-3 mb-3">' +
+                    '</div>' +
+                    '<div class="DTU_PHANTHAN_BANG_3_MAIN mt-3">' +
+                    '<div class="row">' +
+                    '<div class="col-xxl-12">' +
+                    '<p>' + champ.detai_NN + '</p>' +
+                    '</div>' +
+                    '</div>' +
+                    '</div>' +
+                    '</div>' +
+                    '</div>';
                     container.append(row);
                 });
             },
@@ -91,17 +293,129 @@
                 console.error("Error fetching data:", error);
             }
         });
-    };
-    // Utility function to get query parameters
+    }
+    function fetchdetailskillDetails(version_update) {
+        $.ajax({
+            type: "GET",
+            url: "/api/UserUpdate/GetUserSkillDetail",
+            data: { version_update: version_update },
+            dataType: "json",
+            success: function (data) {
+                var container = $('#skill-detail-container');
+                data.forEach(function (skill) {
+                    var row =
+                    '<div class="row">' +
+                    '<div class="col-xxl-1 col-xl-1 col-lg-2 col-md-2 col-sm-3 col-4">' +
+                    '<img class="img-fluid" src = "/Pictures/Skills/Skills_NT/' + skill.avA_NT + '" alt = "Alternate Text"/>' +
+                    '</div>' +
+                    '<div class="col-xxl-11 col-xl-11 col-lg-10 col-md-10 col-sm-9 col-8 d-flex justify-content-start align-items-center text-center">' +
+                    '<p>Nội tại - ' + skill.noiTai + '</p>' +
+                    '</div>' +
+                    '</div>' +
+                    '<div class="row">' +
+                    '<div class="col-xxl-1 col-xl-1 col-lg-2 col-md-2 col-sm-3 col-4">' +
+                    '<img class="img-fluid" src = "/Pictures/Skills/Skills_Q/' + skill.avA_Q + '" alt = "Alternate Text"/>' +
+                    '</div>' +
+                    '<div class="col-xxl-11 col-xl-11 col-lg-10 col-md-10 col-sm-9 col-8 d-flex justify-content-start align-items-center text-center">' +
+                    '<p>Q - ' + skill.skillQ + '</p>' +
+                    '</div>' +
+                    '</div>' +
+                    '<div class="row">' +
+                    '<div class="col-xxl-1 col-xl-1 col-lg-2 col-md-2 col-sm-3 col-4">' +
+                    '<img class="img-fluid" src = "/Pictures/Skills/Skills_W/' + skill.avA_W + '" alt = "Alternate Text"/>' +
+                    '</div>' +
+                    '<div class="col-xxl-11 col-xl-11 col-lg-10 col-md-10 col-sm-9 col-8 d-flex justify-content-start align-items-center text-center">' +
+                    '<p>W - ' + skill.skillW + '</p>' +
+                    '</div>' +
+                    '</div>' +
+                    '<div class="row">' +
+                    '<div class="col-xxl-1 col-xl-1 col-lg-2 col-md-2 col-sm-3 col-4">' +
+                    '<img class="img-fluid" src = "/Pictures/Skills/Skills_E/' + skill.avA_E + '" alt = "Alternate Text"/>' +
+                    '</div>' +
+                    '<div class="col-xxl-11 col-xl-11 col-lg-10 col-md-10 col-sm-9 col-8 d-flex justify-content-start align-items-center text-center">' +
+                    '<p>E - ' + skill.skillE + '</p>' +
+                    '</div>' +
+                    '</div>' +
+                    '<div class="row">' +
+                    '<div class="col-xxl-1 col-xl-1 col-lg-2 col-md-2 col-sm-3 col-4">' +
+                    '<img class="img-fluid" src = "/Pictures/Skills/Skills_R/' + skill.avA_R + '" alt = "Alternate Text"/>' +
+                    '</div>' +
+                    '<div class="col-xxl-11 col-xl-11 col-lg-10 col-md-10 col-sm-9 col-8 d-flex justify-content-start align-items-center text-center">' +
+                    '<p>R - ' + skill.skillR + '</p>' +
+                    '</div>' +
+                    '</div>';
+                    container.append(row);
+                });
+            },
+            error: function (error) {
+                console.error("Error fetching data:", error);
+            }
+        });
+    }
+    function fetchdetailitemDetails(version_update) {
+        $.ajax({
+            type: "GET",
+            url: "/api/UserUpdate/GetUserItemDetail",
+            data: { version_update: version_update },
+            dataType: "json",
+            success: function (data) {
+                var container = $('#item-detail-container');
+                data.forEach(function (item) {
+                    var row =
+                    '<div class="DTU_PHANTHAN_BANG_4_CONTAINER mt-5">' +
+                    '<div class="DTU_PHANTHAN_BANG_4_TIEUDE">' +
+                    '<div class="row">' +
+                    '<div class="col-xxl-12">' +
+                    '<p>TRANG BỊ </p>' +
+                    '</div>' +
+                    '</div>' +
+                    '</div>' +
+                    '<div class="DTU_PHANTHAN_BANG_4">' +
+                    '<div class="DTU_PHANTHAN_BANG_4_IMG">' +
+                    '<div class="row">' +
+                    '<div class="col-xxl-1 col-xl-1 col-lg-2 col-md-2 col-sm-3 col-4">' +
+                    '<img class="img-fluid" src = "/Pictures/Items/' + item.picitem + '" alt = "Alternate Text"/>' +
+                    '</div>' +
+                    '<div class="col-xxl-11 col-xl-11 col-lg-10 col-md-10 col-sm-9 col-8 d-flex justify-content-start align-items-center text-center">' +
+                    '<a href="#">' + item.nameitem + '</a>' +
+                    '</div>' +
+                    '</div>' +
+                    '</div>' +
+                    '<div class="DTU_PHANTHAN_BANG_4_MAIN mt-4">' +
+                    '<div class="row">' +
+                    '<div class="col-xxl-12">' +
+                    '<ul>' +
+                    '<li>' + item.noitaiitem + '</li>' +
+                    '</ul>' +
+                    '<p>' + item.health + '</p>' +
+                    '<p>' + item.atkdame + '</p>' +
+                    '<p>' + item.apdame + '</p>' +
+                    '<p>' + item.atkspeed + '</p>' +
+                    '<p>' + item.crit + '</p>' +
+                    '<p>' + item.armor + '</p>' +
+                    '<p>' + item.magicresis + '</p>' +
+                    '<p>' + item.ahaste + '</p>' +
+                    '<p>' + item.movespeed + '</p>' +
+                    '<p>' + item.cost + '</p>' +
+                    '</div>' +
+                    '</div>' +
+                    '</div>' +
+                    '</div>' +
+                    '</div>';
+                    container.append(row);
+                });
+            },
+            error: function (error) {
+                console.error("Error fetching data:", error);
+            }
+        });
+    }
     function getQueryParameter(name) {
         var urlParams = new URLSearchParams(window.location.search);
         return urlParams.get(name);
     }
-    // Call fetchUpdateDetails on page load
+
     $(document).ready(function () {
         fetchUpdateDetails();
     });
 </script>
-
-
-

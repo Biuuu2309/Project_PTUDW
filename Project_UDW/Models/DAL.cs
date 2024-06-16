@@ -79,17 +79,18 @@ namespace Project_UDW.Models
         public Response GetUserDetailChampDetail(SqlConnection conn, string version_update)
         {
             Response response = new Response();
-            List<DetailsChamp> detailchampList = new List<DetailsChamp>();
+            List<DetailsChampUpdateVersion> detailchampList = new List<DetailsChampUpdateVersion>();
 
             try
             {
-                string query = @"   SELECT *
+                string query = @"   SELECT detail_update_champ.ChampName, ImageAVA, dame_nt, dame_q, dame_w, dame_e, dame_r, detail_NN
                                     FROM detail_update_champ
-                                    WHERE ChampName IN (SELECT ChampName
-                                    					FROM update_champ_version
-                                    					WHERE update_champ_version.version_update IN (	SELECT version_update
-                                    																	FROM update_head
-                                    																	WHERE update_head.version_update = @version_update))";
+                                    INNER JOIN champions ON detail_update_champ.ChampName = champions.ChampName
+                                    WHERE detail_update_champ.ChampName IN (SELECT ChampName
+                                    					                    FROM update_champ_version
+                                    					                    WHERE update_champ_version.version_update IN (	SELECT version_update
+                                    																	                    FROM update_head
+                                    																	                    WHERE update_head.version_update = @version_update))";
                 SqlCommand cmd = new SqlCommand(query, conn);
                 cmd.Parameters.AddWithValue("@version_update", version_update);
                 conn.Open();
@@ -97,9 +98,10 @@ namespace Project_UDW.Models
 
                 while (reader.Read())
                 {
-                    DetailsChamp detailsChamp = new DetailsChamp
+                    DetailsChampUpdateVersion detailsChamp = new DetailsChampUpdateVersion
                     {
-                        ChampName = reader["ChampName"].ToString(),
+                        ChampName = reader["detail_update_champ.ChampName"].ToString(),
+                        ImageAVA = reader["ImageAVA"].ToString(),
                         dame_nt = reader["dame_nt"].ToString(),
                         dame_q = reader["dame_q"].ToString(),
                         dame_w = reader["dame_w"].ToString(),
