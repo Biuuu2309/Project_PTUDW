@@ -452,6 +452,19 @@
         height: auto;
     }
 
+    .DTT_PHANDAU::before {
+        content: "";
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 60%;
+        background-repeat: no-repeat;
+        background-position: center;
+        background-size: cover;
+        filter: blur(3px);
+        z-index: -1;
+    }
     .container {
         margin-top: 20px;
     }
@@ -478,7 +491,7 @@
                     '<div class="DTU_PHANDAU">' +
                     '<div class="row">' +
                     '<div class="col-xxl-12 DTU_MAIN d-flex justify-content-center align-items-center">' +
-                    '<img class="img-fluid  w-50" src = "/Pictures/Update/' + update.version_update + '" alt = "Alternate Text"/>' +
+                    '<img class="img-fluid  w-50" src = "/Pictures/Update/' + update.picheadmain + '" alt = "Alternate Text"/>' +
                     '</div>' +
                     '</div>' +
                     '</div>' +
@@ -610,12 +623,25 @@
                     '</div>' +
                     '</div>' +
                     '<div class="DTU_PHANTHAN_BANG_6">' +
+                    '<div class="DTU_PHANTHAN_BANG_6_MAIN_1">' +
                     '<div class="row">' +
                     '<div class="col-xxl-12">' +
-                    '<div class="col-xxl-12 dtufixbug">' +
-                    '<p>' + update.upversiontitle_con6 + '</p>' +
+                    '<p>Nâng Cấp Chất Lượng Trải Nghiệm </p>' +
+                    '<ul>' +
+                    '<li>' + update.nangcaptrainghiem + '</li>' +
+                    '</ul>' +
                     '</div>' +
                     '</div>' +
+                    '</div>' +
+                    '<div class="DTU_PHANTHAN_BANG_3_BORDERBOTTOM mt-3 mb-3">' +
+                    '</div>' +
+                    '<div class="DTU_PHANTHAN_BANG_6_MAIN_2">' +
+                    '<div class="row">' +
+                    '<div class="col-xxl-12">' +
+                    '<p>Sửa Lỗi </p>' +
+                    '<ul>' +
+                    '<li>' + update.sualoi + '</li>' +
+                    '</ul>' +
                     '</div>' +
                     '</div>' +
                     '</div>' +
@@ -623,6 +649,13 @@
                     '</div>' +
                     '</div>';
                 container.append(row);
+                fetchChampDetailUpdate(version_update);
+                fetchdetailskillDetails(version_update);
+                fetchdetailitemDetails(version_update);
+                var phandau = document.querySelector('.DTT_PHANDAU');
+                if (phandau) {
+                    phandau.style.setProperty('--background-image', 'url(../Pictures/Update/' + news.picheadblur + ')');
+                }
             },
             error: function () {
                 console.log("An error occurred while fetching the update details.");
@@ -656,7 +689,7 @@
                         '</div>' +
                         '<div class="col-xxl-10 col-xl-10 col-lg-10 col-md-8 col-sm-8 col-6 d-flex justify-content-start align-items-center text-start">' +
                         '<div class="DTU_PHANTHAN_BANG_3_IN_TEXT_SUBTEXT">' +
-                        '<a href="#">' + champ.chamName + '</a>' +
+                        '<a href="#">' + champ.champName + '</a>' +
                         '</div>' +
                         '</div>' +
                         '</div>' +
@@ -679,7 +712,7 @@
                         '<div class="DTU_PHANTHAN_BANG_3_MAIN mt-3">' +
                         '<div class="row">' +
                         '<div class="col-xxl-12">' +
-                        '<p>' + champ.detai_NN + '</p>' +
+                        '<p>' + champ.detail_NN + '</p>' +
                         '</div>' +
                         '</div>' +
                         '</div>' +
