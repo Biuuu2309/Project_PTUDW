@@ -1,0 +1,335 @@
+﻿@{
+    ViewData["Title"] = "TroChoi";
+}
+<link href="~/css/TroChoiUs.css" rel="stylesheet" />
+<link href="~/js/TroChoiUs.js" rel="stylesheet" />
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.13.1/css/all.min.css" integrity="sha256-2XFplPlrFClt0bIdPgpz8H7ojnk10H69xRqd9+uTShA=" crossorigin="anonymous" />
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"></script>
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" />
+
+<section class="TROCHOI">
+    <div class="container TROCHOI_BG w-100 p-0">
+        <div class="TROCHOI_PHAN1">
+            <div class="row">
+                <div class="col-xxl-12 TROCHOI_PHAN1_MAIN_TEXT">
+                    <div class="row TROCHOI_PHAN1_MAIN_TEXT_ROW">
+                        <div class="col-xxl-4">
+                            <p class="TROCHOI_PHAN1_SUB_TEXT_1">
+                                Cập Nhật Trò Chơi
+                            </p>
+                        </div>
+                        <div class="col-xxl-4">
+                            <p class="TROCHOI_PHAN1_SUB_TEXT_2">
+                                CẬP NHẬT MÙA GIẢI 2024
+                            </p>
+                        </div>
+                        <div class="col-xxl-4">
+                            <p class="TROCHOI_PHAN1_SUB_TEXT_3">
+                                Một vài hình ảnh và chi tiết trên trang này có thể không còn chính xác trong Mùa Giải 2024. Hãy đón xem Tổng Quan Lối Chơi Mùa Giải 2024 để cập nhật thông tin mới nhất.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-xxl-12">
+                    <button class="btn btn-lg TROCHOI_PHAN1_BUTTON">
+                        <a href="">TÌM HIỂU THÊM</a>
+                    </button>
+                </div>
+            </div>
+        </div>
+        <div class="TROCHOI_PHAN2 bg-white">
+            <div class="row">
+                <div class="col-xxl-12">
+                    <p class="TROCHOI_PHAN2_MAIN_TEXT_1 m-0">CHÀO MỪNG ĐẾN VỚI SUMMONER'S RIFT</p>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-xxl-12">
+                    <p class="TROCHOI_PHAN2_MAIN_TEXT_2 m-0">HỌC CÁC BƯỚC CƠ BẢN</p>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-xxl-12">
+                    <p class="TROCHOI_PHAN2_MAIN_TEXT_3 m-0">Có rất nhiều thứ cần học hỏi trong LMHT, vì vậy, chúng ta sẽ bắt đầu từ những điều cơ bản. <br /> Khám phá hướng dẫn dưới đây để biết cách chơi chế độ phổ biến nhất.</p>
+                </div>
+            </div>
+        </div>
+        <div class="TROCHOI_PHAN3">
+            <div class="row">
+                <div class="col-xxl-12">
+                    <img class="img-fluid" src="~/Pictures/Backgrounds/Pic-41.png" alt="Alternate Text" />
+                </div>
+            </div>
+        </div>
+        <div class="TROCHOI_PHAN4">
+            <div class="TROCHOI_PHAN4_VIDEO_TEXT">
+                <div class="row">
+                    <div class="col-xxl-12">
+                        <h2>LIÊN MINH HUYỀN <br /> THOẠI LÀ GÌ?</h2>
+                        <p>Liên Minh Huyền Thoại là trò chơi phối hợp đồng đội đầy tính chiến thuật, nơi hai đội chơi chọn ra 5 vị tướng mỗi bên để đối đầu với nhau và phá hủy căn cứ của địch. Chọn lựa từ hơn 140 vị tướng để tạo nên những pha giao đấu hoành tráng, tiêu diệt kẻ địch và đánh phá trụ nhằm giành lấy chiến thắng vinh quang.</p>
+                    </div>
+                </div>
+            </div>
+            <div class="TROCHOI_PHAN4_VIDEO">
+                <div class="row">
+                    <div class="col-xxl-12">
+                        <video class="TROCHOI_PHAN4_VIDEO_MAIN" autoplay muted loop>
+                            <source src="~/Videos/trochoivideo.webm" type="video/webm" />
+                        </video>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="TROCHOI_PHAN5">
+            <div class="TROCHOI_PHAN5_TONG">
+                <div class="row">
+                    <div class="col-xxl-6 d-flex flex-column justify-content-center align-items-center text-center">
+                        <div class="TROCHOI_PHAN5_ND_TRAI_TEXT">
+                            <h2>PHÁ HỦY <br /> CĂN CỨ</h2>
+                            <p>Nhà Chính là trung tâm căn cứ của cả hai đội. Phá hủy Nhà Chính của kẻ địch trước để giành chiến thắng.</p>
+                        </div>
+                        <div class="row TROCHOI_PHAN5_ND_TRAI_TEXT_ROW mt-4">
+                            <div class="col-xxl-6 col-xl-6 col-lg-6 col-md-6 col-sm-6 col-6 TROCHOI_PHAN5_ND_TRAI_TEXT_COL " onclick="updateCancuContent('nha_ban')">
+                                <div class="TROCHOI_PHAN5_ND_TRAI_ICON_1">
+                                    <img class="img-fluid w-50" src="~/Pictures/Backgrounds/trochoi2.png" alt="Alternate Text" />
+                                    <p>NHÀ CHÍNH CỦA BẠN</p>
+                                </div>
+                            </div>
+                            <div class="col-xxl-6 col-xl-6 col-lg-6 col-md-6 col-sm-6 col-6 TROCHOI_PHAN5_ND_TRAI_TEXT_COL" onclick="updateCancuContent('nha_dich')">
+                                <div class="TROCHOI_PHAN5_ND_TRAI_ICON_2">
+                                    <img class="img-fluid w-50" src="~/Pictures/Backgrounds/trochoi3.png" alt="Alternate Text" />
+                                    <p>NHÀ CHÍNH CỦA ĐỊCH</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-xxl-6 text-center">
+                        <div class="TROCHOI_PHAN5_ND_PHAI">
+                            <img id="mainimageTroChoi" class="img-fluid w-100" src="~/Pictures/Backgrounds/trochoi1.png" alt="Alternate Text" />
+                            <p id="mainNameTroChoi" class="mt-5 TROCHOI_PHAN5_ND_PHAI_TEXT_1">NHÀ CHÍNH CỦA BẠN</p>
+                            <p id="mainDescriptionTroChoi" class="TROCHOI_PHAN5_ND_PHAI_TEXT_2">Nhà Chính của bạn là nơi Lính xuất hiện. Phía sau Nhà Chính của bạn là Bệ Đá Cổ, nơi bạn có thể nhanh chóng hồi máu và hồi năng lượng cũng như mở Cửa Hàng.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="TROCHOI_PHAN6">
+            <div class="TROCHOI_PHAN6_TONG">
+                <div class="row">
+                    <div class="col-xxl-6 d-flex flex-column justify-content-center align-items-center text-center">
+                        <div class="TROCHOI_PHAN6_ND_TRAI_TEXT">
+                            <h2>DỌN ĐƯỜNG</h2>
+                            <p>Đội của bạn cần dọn được ít nhất một đường để có thể tiến tới Nhà Chính của địch. Trên đường sẽ có các chốt chặn phòng thủ gọi là trụ và nhà lính. Mỗi đường sẽ có 3 trụ và 1 nhà lính, mỗi Nhà Chính được bảo vệ bởi 2 trụ.</p>
+                        </div>
+                        <div class="row TROCHOI_PHAN6_ND_TRAI_TEXT_ROW mt-4">
+                            <div class="col-xxl-6 col-xl-6 col-lg-6 col-md-6 col-sm-6 col-6 TROCHOI_PHAN6_ND_TRAI_TEXT_COL " onclick="updateDonduongContent('tru')">
+                                <div class="TROCHOI_PHAN6_ND_TRAI_ICON_1">
+                                    <img class="img-fluid w-100" src="~/Pictures/Backgrounds/donduong1.png" alt="Alternate Text" />
+                                    <p>TRỤ</p>
+                                </div>
+                            </div>
+                            <div class="col-xxl-6 col-xl-6 col-lg-6 col-md-6 col-sm-6 col-6 TROCHOI_PHAN6_ND_TRAI_TEXT_COL" onclick="updateDonduongContent('nha_linh')">
+                                <div class="TROCHOI_PHAN6_ND_TRAI_ICON_2">
+                                    <img class="img-fluid w-100" src="~/Pictures/Backgrounds/donduong2.png" alt="Alternate Text" />
+                                    <p>NHÀ LÍNH</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-xxl-6 text-center">
+                        <div class="TROCHOI_PHAN6_ND_PHAI">
+                            <img id="mainimageDonDuong" class="img-fluid w-100" src="~/Pictures/Backgrounds/donduong3.png" alt="Alternate Text" />
+                            <p id="mainNameDonDuong" class="mt-5 TROCHOI_PHAN6_ND_PHAI_TEXT_1">TRỤ</p>
+                            <p id="mainDescriptionDonDuong" class="TROCHOI_PHAN6_ND_PHAI_TEXT_2">Trụ gây sát thương lên lính và tướng địch, đồng thời cung cấp tầm nhìn giới hạn trong Sương Mù cho đồng minh. Hãy cho lính đi vào trước khi tấn công các công trình này để tránh nhận sát thương và xông lên chiến đấu.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="TROCHOI_PHAN7">
+            <div class="TROCHOI_PHAN7_TONG">
+                <div class="row">
+                    <div class="col-xxl-6 d-flex flex-column justify-content-center align-items-center text-center">
+                        <div class="TROCHOI_PHAN7_ND_TRAI_TEXT">
+                            <h2>KHÁI QUÁT VỀ KHU VỰC RỪNG</h2>
+                            <p>Giữa các đường là khu vực rừng, nơi sinh sống của nhiều loài quái rừng và cây cỏ. Hai loài quái vật quan trọng nhất là Baron Nashor và Rồng. Tiêu diệt những quái vật này sẽ ban cho đội bạn các bùa lợi độc nhất và thậm chí còn có thể xoay chuyển cục diện trận đấu.</p>
+                        </div>
+                        <div class="row TROCHOI_PHAN7_ND_TRAI_TEXT_ROW mt-4">
+                            <div class="col-xxl-6 col-xl-6 col-lg-6 col-md-6 col-sm-6 col-6 TROCHOI_PHAN7_ND_TRAI_TEXT_COL " onclick="updateJugContent('baron')">
+                                <div class="TROCHOI_PHAN6_ND_TRAI_ICON_1">
+                                    <img class="img-fluid w-100" src="~/Pictures/Backgrounds/rung1.png" alt="Alternate Text" />
+                                    <p>
+                                        BARON NASHOR
+                                    </p>
+                                </div>
+                            </div>
+                            <div class="col-xxl-6 col-xl-6 col-lg-6 col-md-6 col-sm-6 col-6 TROCHOI_PHAN7_ND_TRAI_TEXT_COL" onclick="updateJugContent('rong')">
+                                <div class="TROCHOI_PHAN7_ND_TRAI_ICON_2">
+                                    <img class="img-fluid w-100" src="~/Pictures/Backgrounds/rung2.png" alt="Alternate Text" />
+                                    <p>RỒNG</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-xxl-6 text-center">
+                        <div class="TROCHOI_PHAN7_ND_PHAI">
+                            <img id="mainimageJug" class="img-fluid w-100" src="~/Pictures/Backgrounds/rung3.png" alt="Alternate Text" />
+                            <p id="mainNameJug" class="mt-5 TROCHOI_PHAN7_ND_PHAI_TEXT_1">BARON NASHOR</p>
+                            <p id="mainDescriptionJug" class="TROCHOI_PHAN7_ND_PHAI_TEXT_2">Baron Nashor là quái vật hùng mạnh nhất trong khu vực rừng. Đội tiêu diệt Baron sẽ được cộng thêm sức mạnh công kích, sức mạnh phép thuật, cường hóa biến về và gia tăng đáng kể sức mạnh của lính xung quanh.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="TROCHOI_PHAN8">
+            <div class="TROCHOI_PHAN8_TONG">
+                <div class="row">
+                    <div class="col-xxl-6 d-flex flex-column justify-content-center align-items-center text-center">
+                        <div class="TROCHOI_PHAN8_ND_TRAI_TEXT">
+                            <h2>CHỌN ĐƯỜNG BẠN MUỐN</h2>
+                            <p>Có 5 vị trí tạo nên đội hình được đề xuất cho trò chơi. Mỗi đường phù hợp với một số tướng và vị trí nhất định—hãy thử tất cả hoặc chọn một đường bạn cảm thấy thích hợp nhất.</p>
+                        </div>
+                        <div class="row TROCHOI_PHAN8_ND_TRAI_TEXT_ROW mt-4 d-flex justify-content-center">
+                            <div class="col-xxl-2 col-xl-2 col-lg-2 col-md-2 col-sm-2 col-2 TROCHOI_PHAN8_ND_TRAI_TEXT_COL" onclick="updateLaneContent('top')">
+                                <div class="TROCHOI_PHAN8_ND_TRAI_ICON_1">
+                                    <img class="img-fluid w-100" src="~/Pictures/Backgrounds/top.png" alt="Alternate Text" />
+                                    <p>ĐƯỜNG TRÊN</p>
+                                </div>
+                            </div>
+                            <div class="col-xxl-2 col-xl-2 col-lg-2 col-md-2 col-sm-2 col-2 TROCHOI_PHAN8_ND_TRAI_TEXT_COL" onclick="updateLaneContent('rung')">
+                                <div class="TROCHOI_PHAN8_ND_TRAI_ICON_2">
+                                    <img class="img-fluid w-100" src="~/Pictures/Backgrounds/rung.png" alt="Alternate Text" />
+                                    <p>RỪNG</p>
+                                </div>
+                            </div>
+                            <div class="col-xxl-2 col-xl-2 col-lg-2 col-md-2 col-sm-2 col-2 TROCHOI_PHAN8_ND_TRAI_TEXT_COL" onclick="updateLaneContent('mid')">
+                                <div class="TROCHOI_PHAN8_ND_TRAI_ICON_1">
+                                    <img class="img-fluid w-100" src="~/Pictures/Backgrounds/mid.png" alt="Alternate Text" />
+                                    <p>ĐƯỜNG GIỮA</p>
+                                </div>
+                            </div>
+                            <div class="col-xxl-2 col-xl-2 col-lg-2 col-md-2 col-sm-2 col-2 TROCHOI_PHAN8_ND_TRAI_TEXT_COL" onclick="updateLaneContent('bot')">
+                                <div class="TROCHOI_PHAN8_ND_TRAI_ICON_1">
+                                    <img class="img-fluid w-100" src="~/Pictures/Backgrounds/bot.png" alt="Alternate Text" />
+                                    <p>ĐƯỜNG DƯỚI</p>
+                                </div>
+                            </div>
+                            <div class="col-xxl-2 col-xl-2 col-lg-2 col-md-2 col-sm-2 col-2 TROCHOI_PHAN8_ND_TRAI_TEXT_COL" onclick="updateLaneContent('sp')">
+                                <div class="TROCHOI_PHAN8_ND_TRAI_ICON_1">
+                                    <img class="img-fluid w-100" src="~/Pictures/Backgrounds/sp.png" alt="Alternate Text" />
+                                    <p>HỖ TRỢ</p>
+                                </div>
+                            </div>
+                            <div class="col-xxl-2 col-xl-2 col-lg-2 col-md-2 col-sm-2 col-2 d-none">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-xxl-6 text-center">
+                        <div class="TROCHOI_PHAN8_ND_PHAI">
+                            <img id="mainimagelane" class="img-fluid w-100" src="~/Pictures/Backgrounds/topphai.png" alt="Alternate Text" />
+                            <p id="mainNamelane" class="mt-5 TROCHOI_PHAN8_ND_PHAI_TEXT_1">ĐƯỜNG TRÊN</p>
+                            <p id="mainDescriptionlane" class="TROCHOI_PHAN8_ND_PHAI_TEXT_2">Các vị tướng đường trên là những đấu sĩ đơn độc ngoan cường của cả đội. Nhiệm vụ của họ là bảo vệ đường của mình và tập trung xử lý các thành viên nguy hiểm nhất của đội địch.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="TROCHOI_PHAN9">
+            <div class="TROCHOI_PHAN9_TONG">
+                <div class="row">
+                    <div class="col-xxl-12">
+                        <div class="TROCHOI_PHAN9_TIEUDE">
+                            <h1>
+                                TĂNG SỨC MẠNH <br /> CHO TƯỚNG
+                            </h1>
+                            <p>Các vị tướng trở nên mạnh mẽ hơn bằng cách thu thập điểm kinh nghiệm để thăng cấp và kiếm vàng để mua những trang bị uy lực hơn theo tiến trình của trận đấu. Luôn dẫn đầu trong hai yếu tố này là điều quan trọng để áp đảo đội địch và phá hủy căn cứ của họ.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-xxl-12">
+                        <div class="TROCHOI_PHAN9_VIDEO">
+                            <video controls autoplay muted loop id="mainVideopower">
+                                <source id="mainVideosourcepower" src="../Videos/Video-19.webm" type="video/webm" />
+                            </video>
+                            <img id="mainImagepower" src="" alt="Shop Image" class="img-fluid w-100" style="display: none;" />
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-xxl-12 d-flex justify-content-center align-items-center p-0 mt-3">
+                        <div class="row">
+                            <div class="col-xxl-4 col-xl-4 col-lg-4 col-md-4 col-sm-4 col-4 " onclick="updatePowerContent('exp')">
+                                <div class="TROCHOI_PHAN9_THANHVIDEO">
+                                    <img class="img-fluid w-100" src="../Pictures/IconGames/Icon-29.png" alt="Alternate Text" />
+                                </div>
+                            </div>
+                            <div class="col-xxl-4 col-xl-4 col-lg-4 col-md-4 col-sm-4 col-4" onclick="updatePowerContent('gold')">
+                                <div class="TROCHOI_PHAN9_THANHVIDEO">
+                                    <img class="img-fluid w-100" src="../Pictures/IconGames/Icon-30.png" alt="Alternate Text" />
+                                </div>
+                            </div>
+                            <div class="col-xxl-4 col-xl-4 col-lg-4 col-md-4 col-sm-4 col-4" onclick="updatePowerContent('shop')">
+                                <div class="TROCHOI_PHAN9_THANHVIDEO">
+                                    <img class="img-fluid w-100" src="../Pictures/IconGames/Icon-31.png" alt="Alternate Text" />
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="TROCHOI_PHAN9_BORDERBOTTOM mt-4"></div>
+                <div class="row mt-4">
+                    <div class="col-xxl-12">
+                        <div class="TROCHOI_PHAN9_SUB_TIEUDE">
+                            <h2 id="mainNameVideopower">TÍCH LŨY KINH NGHIỆM</h2>
+                            <p id="mainDescriptionVdieopower">Khi một tướng thu thập đủ lượng điểm kinh nghiệm nhất định, họ sẽ thăng cấp và có thể mở khóa hoặc cường hóa các kỹ năng cũng như gia tăng chỉ số cơ bản. Thu thập điểm kinh nghiệm bằng cách tiêu diệt/hỗ trợ tiêu diệt lính và tướng địch, cũng như phá hủy các công trình phòng thủ.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="TROCHOI_PHAN10">
+            <div class="TROCHOI_PHAN10_TONG">
+                <div class="row">
+                    <div class="col-xxl-6 d-flex flex-column justify-content-center align-items-center text-center">
+                        <div class="TROCHOI_PHAN10_ND_TRAI_TEXT">
+                            <h2>MỞ KHÓA KỸ NĂNG</h2>
+                            <p>Mỗi tướng có 5 kỹ năng chính, 2 phép bổ trợ đặc biệt và có thể sở hữu cùng lúc tối đa 7 trang bị. Khám phá ra thứ tự kỹ năng, phép bổ trợ và cách lên đồ tối ưu cho tướng của bạn sẽ giúp bạn cũng như cả đội giành được chiến thắng.</p>
+                        </div>
+                        <div class="row TROCHOI_PHAN10_ND_TRAI_TEXT_ROW mt-4">
+                            <div class="col-xxl-4 col-xl-4 col-lg-4 col-md-4 col-sm-4 col-4 TROCHOI_PHAN10_ND_TRAI_TEXT_COL" onclick="updateSkillitemContent('kynang')">
+                                <div class="TROCHOI_PHAN10_ND_TRAI_ICON_1">
+                                    <img class="img-fluid w-100" src="../Pictures/Backgrounds/skillitem1.png" alt="Alternate Text" />
+                                    <p>KỸ NĂNG</p>
+                                </div>
+                            </div>
+                            <div class="col-xxl-4 col-xl-4 col-lg-4 col-md-4 col-sm-4 col-4 TROCHOI_PHAN10_ND_TRAI_TEXT_COL" onclick="updateSkillitemContent('spell')">
+                                <div class="TROCHOI_PHAN10_ND_TRAI_ICON_1">
+                                    <img class="img-fluid w-100" src="../Pictures/Backgrounds/skillitem2.png" alt="Alternate Text" />
+                                    <p>PHÉP BỔ TRỢ</p>
+                                </div>
+                            </div>
+                            <div class="col-xxl-4 col-xl-4 col-lg-4 col-md-4 col-sm-4 col-4 TROCHOI_PHAN10_ND_TRAI_TEXT_COL" onclick="updateSkillitemContent('trangbi')">
+                                <div class="TROCHOI_PHAN10_ND_TRAI_ICON_1">
+                                    <img class="img-fluid w-100" src="../Pictures/Backgrounds/skillitem3.png" alt="Alternate Text" />
+                                    <p>TRANG BỊ</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-xxl-6 d-flex justify-content-center align-items-center">
+                        <div class="TROCHOI_PHAN10_ND_PHAI text-center">
+                            <img id="mainimageskillitem" class="img-fluid w-100" src="../Pictures/Backgrounds/skillitem4.png" alt="Alternate Text" />
+                            <p id="mainNameskillitem" class="mt-5 TROCHOI_PHAN10_ND_PHAI_TEXT_1">KỸ NĂNG</p>
+                            <p id="mainDescriptionskillitem" class="TROCHOI_PHAN10_ND_PHAI_TEXT_2">Đa số các tướng đều sở hữu một bộ kỹ năng độc nhất bao gồm 5 kỹ năng: 1 Nội Tại, 3 Kỹ Năng Cơ Bản và 1 Chiêu Cuối. Những kỹ năng này được gán mặc định cho các phím Q, W, E và R.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script src="~/js/TroChoiUs.js"></script>
+</section>

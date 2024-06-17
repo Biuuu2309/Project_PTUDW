@@ -1,0 +1,525 @@
+﻿body, html {
+    height: 100%;
+    margin: 0;
+}
+
+@font-face {
+    font-family: "neuefrutigerworld-medium";
+    src: url("../neue-frutiger/neuefrutigerworld-medium.woff") format("woff");
+}
+
+body {
+    font-family: neuefrutigerworld-medium;
+}
+
+.TROCHOI {
+    background-color: #161f33;
+}
+
+.TROCHOI_PHAN1 {
+    padding: 3%;
+    position: relative;
+    top: 0;
+    left: 0;
+    width: 100%;
+    background-image: url(../Pictures/Backgrounds/3r.jpeg);
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+    display: flex;
+    justify-content: flex-start;
+    align-items: start;
+    flex-direction: column;
+}
+
+.TROCHOI_PHAN1_MAIN_TEXT_ROW {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: start;
+    color: #ffffff;
+}
+
+.TROCHOI_PHAN1_SUB_TEXT_1 {
+    font-size: 22px;
+    margin: 0;
+}
+
+.TROCHOI_PHAN1_SUB_TEXT_2 {
+    font-size: 52px;
+    margin: 0;
+    font-style: italic;
+    font-weight: bolder;
+}
+
+button.TROCHOI_PHAN1_BUTTON {
+    background-color: #c7a96d;
+    border-radius: inherit;
+    height: 60px;
+}
+
+.TROCHOI_PHAN1_BUTTON a {
+    text-decoration: none;
+    color: #0a1429;
+    border: inherit;
+}
+
+    .TROCHOI_PHAN1_BUTTON a:hover {
+        color: #0a1429;
+    }
+
+button.TROCHOI_PHAN1_BUTTON:hover {
+    color: #0a1429;
+    background-color: #ccb17b;
+}
+
+.TROCHOI_PHAN2 {
+    height: 400px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    text-align: center;
+}
+
+.TROCHOI_PHAN2_MAIN_TEXT_2 {
+    font-size: 50px;
+    font-weight: bolder;
+    font-style: italic;
+}
+
+.TROCHOI_PHAN2_MAIN_TEXT_1 {
+    font-size: 22px;
+}
+
+.TROCHOI_PHAN2_MAIN_TEXT_3 {
+    font-size: 18px;
+}
+
+.TROCHOI_PHAN4_VIDEO_MAIN {
+    width: 100%;
+    position: relative;
+}
+
+.TROCHOI_PHAN4_VIDEO_TEXT {
+    position: absolute;
+    color: white;
+    z-index: 2;
+    padding-left: 20%;
+    padding-right: 20%;
+}
+
+.TROCHOI_PHAN4 {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+}
+
+.TROCHOI_PHAN4_VIDEO_TEXT h2 {
+    font-size: 5vw;
+    font-weight: bolder;
+    font-style: italic;
+}
+
+.TROCHOI_PHAN4_VIDEO_TEXT p {
+    padding-left: 10%;
+    padding-right: 10%;
+}
+
+.TROCHOI_PHAN5 {
+    background-color: #0a1429;
+}
+
+.TROCHOI_PHAN5_TONG {
+    color: #ffffff;
+    padding-top: 3%;
+}
+
+.TROCHOI_PHAN5_ND_TRAI_ICON_1 p {
+    margin: 0;
+    padding-top: 10%;
+}
+
+.TROCHOI_PHAN5_ND_TRAI_ICON_2 p {
+    margin: 0;
+    padding-top: 10%;
+}
+
+.TROCHOI_PHAN5_ND_TRAI_TEXT h2 {
+    font-size: 55px;
+    font-style: italic;
+    font-weight: bolder;
+}
+
+.TROCHOI_PHAN5_ND_TRAI_TEXT p {
+    font-size: 17px;
+    padding-left: 5%;
+    padding-right: 5%;
+    padding-top: 2%;
+}
+
+}
+
+.TROCHOI_PHAN5_ND_TRAI_ICON_1 p {
+    font-size: 16px;
+}
+
+.TROCHOI_PHAN5_ND_TRAI_ICON_2 p {
+    font-size: 16px;
+}
+
+.TROCHOI_PHAN5_ND_PHAI_TEXT_1 {
+    font-size: 24px;
+    font-style: italic;
+    font-weight: bolder;
+}
+
+.TROCHOI_PHAN5_ND_PHAI_TEXT_2 {
+    font-size: 17px;
+    font-weight: 400;
+    padding-right: 5%;
+}
+
+.TROCHOI_PHAN5_ND_TRAI_TEXT_ROW {
+    cursor: pointer;
+}
+
+.TROCHOI_PHAN5_ND_TRAI_TEXT_COL {
+    transition: transform 0.5s ease;
+}
+
+    .TROCHOI_PHAN5_ND_TRAI_TEXT_COL:hover {
+        transform: scale(1.1);
+    }
+
+.TROCHOI_PHAN6 {
+    background-image: url('../Pictures/Backgrounds/donduongbg.jpeg');
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+
+.TROCHOI_PHAN6_TONG {
+    color: #ffffff;
+    padding-top: 10%;
+}
+
+.TROCHOI_PHAN6_ND_TRAI_ICON_1 p {
+    margin: 0;
+    padding-top: 10%;
+}
+
+.TROCHOI_PHAN6_ND_TRAI_ICON_2 p {
+    margin: 0;
+    padding-top: 10%;
+}
+
+.TROCHOI_PHAN6_ND_TRAI_TEXT h2 {
+    font-size: 55px;
+    font-style: italic;
+    font-weight: bolder;
+}
+
+.TROCHOI_PHAN6_ND_TRAI_TEXT p {
+    font-size: 17px;
+    padding-left: 5%;
+    padding-right: 5%;
+    padding-top: 2%;
+}
+
+}
+
+.TROCHOI_PHAN6_ND_TRAI_ICON_1 p {
+    font-size: 16px;
+}
+
+.TROCHOI_PHAN6_ND_TRAI_ICON_2 p {
+    font-size: 16px;
+}
+
+.TROCHOI_PHAN6_ND_PHAI_TEXT_1 {
+    font-size: 24px;
+    font-style: italic;
+    font-weight: bolder;
+}
+
+.TROCHOI_PHAN6_ND_PHAI_TEXT_2 {
+    font-size: 17px;
+    font-weight: 400;
+    padding-right: 5%;
+}
+
+.TROCHOI_PHAN6_ND_TRAI_TEXT_ROW {
+    cursor: pointer;
+}
+
+.TROCHOI_PHAN6_ND_TRAI_TEXT_COL {
+    transition: transform 0.5s ease;
+}
+
+    .TROCHOI_PHAN6_ND_TRAI_TEXT_COL:hover {
+        transform: scale(1.1);
+    }
+
+.TROCHOI_PHAN7 {
+    background-image: url('../Pictures/Backgrounds/rungbg.jpeg');
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+
+.TROCHOI_PHAN7_TONG {
+    color: #ffffff;
+    padding-top: 10%;
+}
+
+.TROCHOI_PHAN7_ND_TRAI_ICON_1 p {
+    margin: 0;
+    padding-top: 10%;
+}
+
+.TROCHOI_PHAN7_ND_TRAI_ICON_2 p {
+    margin: 0;
+    padding-top: 10%;
+}
+
+.TROCHOI_PHAN7_ND_TRAI_TEXT h2 {
+    font-size: 55px;
+    font-style: italic;
+    font-weight: bolder;
+    padding-left: 2%;
+    padding-right: 2%;
+}
+
+.TROCHOI_PHAN7_ND_TRAI_TEXT p {
+    font-size: 17px;
+    padding-left: 5%;
+    padding-right: 5%;
+    padding-top: 2%;
+}
+
+}
+
+.TROCHOI_PHAN7_ND_TRAI_ICON_1 p {
+    font-size: 16px;
+}
+
+.TROCHOI_PHAN7_ND_TRAI_ICON_2 p {
+    font-size: 16px;
+}
+
+.TROCHOI_PHAN7_ND_PHAI_TEXT_1 {
+    font-size: 24px;
+    font-style: italic;
+    font-weight: bolder;
+}
+
+.TROCHOI_PHAN7_ND_PHAI_TEXT_2 {
+    font-size: 17px;
+    font-weight: 400;
+    padding-right: 5%;
+}
+
+.TROCHOI_PHAN7_ND_TRAI_TEXT_ROW {
+    cursor: pointer;
+}
+
+.TROCHOI_PHAN7_ND_TRAI_TEXT_COL {
+    transition: transform 0.5s ease;
+}
+
+    .TROCHOI_PHAN7_ND_TRAI_TEXT_COL:hover {
+        transform: scale(1.1);
+    }
+
+.TROCHOI_PHAN8 {
+    background-color: #0a1429;
+}
+
+.TROCHOI_PHAN8_TONG {
+    color: #ffffff;
+    padding-top: 10%;
+}
+
+.TROCHOI_PHAN8_ND_TRAI_ICON_1 p {
+    margin: 0;
+    padding-top: 10%;
+}
+
+.TROCHOI_PHAN8_ND_TRAI_ICON_2 p {
+    margin: 0;
+    padding-top: 10%;
+}
+
+.TROCHOI_PHAN8_ND_TRAI_TEXT h2 {
+    font-size: 55px;
+    font-style: italic;
+    font-weight: bolder;
+}
+
+.TROCHOI_PHAN8_ND_TRAI_TEXT p {
+    font-size: 17px;
+    padding-left: 5%;
+    padding-right: 5%;
+    padding-top: 2%;
+}
+
+.TROCHOI_PHAN8_ND_TRAI_ICON_1 p {
+    font-size: 16px;
+}
+
+.TROCHOI_PHAN8_ND_TRAI_ICON_2 p {
+    font-size: 16px;
+}
+
+.TROCHOI_PHAN8_ND_PHAI_TEXT_1 {
+    font-size: 24px;
+    font-style: italic;
+    font-weight: bolder;
+}
+
+.TROCHOI_PHAN8_ND_PHAI_TEXT_2 {
+    font-size: 17px;
+    font-weight: 400;
+    padding-right: 5%;
+}
+
+.TROCHOI_PHAN8_ND_TRAI_TEXT_ROW {
+    cursor: pointer;
+}
+
+.TROCHOI_PHAN8_ND_TRAI_TEXT_COL {
+    transition: transform 0.5s ease;
+}
+
+    .TROCHOI_PHAN8_ND_TRAI_TEXT_COL:hover {
+        transform: scale(1.1);
+    }
+
+.TROCHOI_PHAN9 {
+    background: #0a1429;
+}
+
+.TROCHOI_PHAN9_TONG {
+    padding-top: 10%;
+    padding-left: 10%;
+    padding-right: 10%;
+    color: #ffffff;
+}
+
+.TROCHOI_PHAN9_TIEUDE {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+}
+
+.TROCHOI_PHAN9_VIDEO video {
+    width: 100%;
+}
+
+.TROCHOI_PHAN9_TIEUDE h1 {
+    font-size: 55px;
+    font-style: italic;
+    font-weight: bolder;
+}
+
+.TROCHOI_PHAN9_THANHVIDEO {
+    border: 1px solid;
+    border-color: #c7a96d;
+    cursor: pointer;
+}
+
+    .TROCHOI_PHAN9_THANHVIDEO img:hover {
+        filter: opacity(70%);
+    }
+
+.TROCHOI_PHAN9_BORDERBOTTOM {
+    border: 1px solid;
+    border-color: #3c4454;
+}
+
+.TROCHOI_PHAN9_SUB_TIEUDE h2 {
+    font-size: 22px;
+    font-weight: bolder;
+    font-style: italic;
+}
+
+.TROCHOI_PHAN9_SUB_TIEUDE p {
+    text-align: center;
+}
+
+.TROCHOI_PHAN10 {
+    background-color: #0a1429;
+}
+
+.TROCHOI_PHAN10_TONG {
+    color: #ffffff;
+}
+
+    .TROCHOI_PHAN10_TONG div.row {
+        padding-top: 10%;
+        padding-bottom: 5%;
+    }
+
+.TROCHOI_PHAN10_ND_TRAI_ICON_1 p {
+    margin: 0;
+    padding-top: 10%;
+}
+
+.TROCHOI_PHAN10_ND_TRAI_ICON_2 p {
+    margin: 0;
+    padding-top: 10%;
+}
+
+.TROCHOI_PHAN10_ND_TRAI_TEXT h2 {
+    font-size: 55px;
+    font-style: italic;
+    font-weight: bolder;
+}
+
+.TROCHOI_PHAN10_ND_TRAI_TEXT p {
+    font-size: 17px;
+    padding-left: 5%;
+    padding-right: 5%;
+    padding-top: 2%;
+}
+
+}
+
+.TROCHOI_PHAN10_ND_TRAI_ICON_1 p {
+    font-size: 16px;
+}
+
+.TROCHOI_PHAN10_ND_TRAI_ICON_2 p {
+    font-size: 16px;
+}
+
+.TROCHOI_PHAN10_ND_PHAI_TEXT_1 {
+    font-size: 24px;
+    font-style: italic;
+    font-weight: bolder;
+}
+
+.TROCHOI_PHAN10_ND_PHAI_TEXT_2 {
+    font-size: 17px;
+    font-weight: 400;
+    padding-right: 5%;
+}
+
+.TROCHOI_PHAN10_ND_TRAI_TEXT_ROW {
+    cursor: pointer;
+}
+
+div.row.TROCHOI_PHAN10_ND_TRAI_TEXT_ROW {
+    padding: 0;
+}
+
+.TROCHOI_PHAN10_ND_TRAI_TEXT_COL {
+    transition: transform 0.5s ease;
+}
+
+    .TROCHOI_PHAN10_ND_TRAI_TEXT_COL:hover {
+        transform: scale(1.1);
+    }
