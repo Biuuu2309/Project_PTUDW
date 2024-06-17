@@ -35,10 +35,6 @@
     align-items: center;
 }
 
-img {
-    width: 100%;
-    height: auto; /* Đảm bảo tỉ lệ ảnh đúng */
-}
 .TITLE1 {
     margin-left: 7%;
 }

@@ -2,10 +2,71 @@
     ViewBag.Title = "Dash Board";
     Layout = "~/Views/Shared/Master.cshtml";
 }
+
 <link rel="stylesheet" href="~/css/Dashboard.css">
 
 <div class="container-fluid">
     <div class="row dash-main">
-        Welcome
+        <h2>Welcome to Dashboard</h2>
+        <div class="col-xxl-12 col-xl-12 col-lg-12 col-md-12 col-sm-12">
+            <div class="border p-3">
+                <!-- Video 1 -->
+                <div class="embed-responsive embed-responsive-16by9">
+                    <video style="width: 100%;" autoplay controls loop src="~/Videos/videoplayback.mp4"></video>
+                </div>
+            </div>
+        </div>
     </div>
 </div>
+
+
+@section scripts {
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+            function fetchDataAndUpdateChart() {
+                fetch('http://localhost:5136/api/UserChampion/GetUserChampion')
+                    .then(response => response.json())
+                    .then(data => {
+                        let labels = [];
+                        let times = [];
+
+                        data.forEach(item => {
+                            labels.push(item.UserName);
+                            times.push(item.AccessTime); 
+                        });
+
+                        let ctx = document.getElementById('apiAccessChart').getContext('2d');
+
+                        let chart = new Chart(ctx, {
+                            type: 'bar',
+                            data: {
+                                labels: labels,
+                                datasets: [{
+                                    label: 'API Access Time',
+                                    data: times,
+                                    backgroundColor: 'rgba(54, 162, 235, 0.6)',
+                                    borderColor: 'rgba(54, 162, 235, 1)',
+                                    borderWidth: 1
+                                }]
+                            },
+                            options: {
+                                scales: {
+                                    y: {
+                                        beginAtZero: true
+                                    }
+                                }
+                            }
+                        });
+                    })
+                    .catch(error => {
+                        console.error('Error fetching data:', error);
+                    });
+            }
+
+            fetchDataAndUpdateChart();
+        });
+    </script>
+
+}

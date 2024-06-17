@@ -10,7 +10,7 @@
                     <i class="ti-menu ti-close"></i>
                 </a>
                 <div class="navbar-brand">
-                    <a href="index.html" class="logo">
+                    <a href="@Url.Action("Dashboard", "Home")" class="logo">
                         <b class="logo-icon">
                             <img src="~/assets/images/logo-icon.png" alt="homepage" class="dark-logo" />
                             <img src="~/assets/images/logo-light-icon.png" alt="homepage" class="light-logo" />
@@ -22,26 +22,12 @@
                     </a>
                 </div>
             </div>
-            <div class="navbar-collapse collapse" id="navbarSupportedContent" data-navbarbg="skin6">
+            <div class="navbar-collapse collapse justify-content-end" id="navbarSupportedContent" data-navbarbg="skin6">
                 <ul class="navbar-nav float-end">
-                    <li class="nav-item dropdown">
-                        <a class="nav-link dropdown-toggle text-muted waves-effect waves-dark pro-pic" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                            <img src="~/assets/images/users/1.jpg" alt="user" class="rounded-circle" width="31">
+                    <li class="nav-item">
+                        <a class="nav-link text-muted waves-effect waves-dark pro-pic" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                            <img src="~/Pictures/Admin/biuuuuu.png" alt="user" class="rounded-circle" width="31">
                         </a>
-                        <ul class="dropdown-menu dropdown-menu-end user-dd animated" aria-labelledby="navbarDropdown">
-                            <a class="dropdown-item" href="javascript:void(0)">
-                                <i class="ti-user me-1 ms-1"></i>
-                                My Profile
-                            </a>
-                            <a class="dropdown-item" href="javascript:void(0)">
-                                <i class="ti-wallet me-1 ms-1"></i>
-                                My Balance
-                            </a>
-                            <a class="dropdown-item" href="javascript:void(0)">
-                                <i class="ti-email me-1 ms-1"></i>
-                                Inbox
-                            </a>
-                        </ul>
                     </li>
                 </ul>
             </div>
@@ -57,12 +43,12 @@
                             <span class="hide-menu">Dashboard</span>
                         </a>
                     </li>
-                    <li class="sidebar-item">
+                    @* <li class="sidebar-item">
                         <a class="sidebar-link waves-effect waves-dark sidebar-link" href="@Url.Action("ProfileUser", "Home")" aria-expanded="false">
                             <i class="mdi mdi-account-network"></i>
                             <span class="hide-menu">Profile User</span>
                         </a>
-                    </li>
+                    </li> *@
                     <li class="sidebar-item">
                         <a class="sidebar-link waves-effect waves-dark sidebar-link" href="@Url.Action("AdminChampions", "Home")" aria-expanded="false">
                             <i class="mdi mdi-border-none"></i>
