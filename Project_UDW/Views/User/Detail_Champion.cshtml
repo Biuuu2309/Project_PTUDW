@@ -188,6 +188,7 @@
                                     <a class="HD_HI" href="#">
                                         <img class="img-fluid" id="main-image" src="~/Pictures/IconGames/Icon 13.jpeg" alt="Alternate Text" />
                                         <p class="p-1" id="main-text">Huyền Thoại Runeterra - Bản Mở Rộng Mới - Con Đường Nguyện Ước</p>
+
                                     </a>
                                 </div>
                             </div>
@@ -199,7 +200,7 @@
         <div class="col-xxl-10 col-xl-10 col-lg-9 col-md-9 col-sm-9 col-7">
             <nav class="navbar navbar-expand-xxl navbar-dark p-0">
                 <div class="container-fluid HD_T p-0">
-                    <a class="navbar-brand d-flex justify-content-center align-items-center" style="height: 80px;" href="@Url.Action("Index", "User")">
+                    <a class="navbar-brand d-flex justify-content-center align-items-center" style="height: 80px;" href="#">
                         <img src="~/Pictures/IconGames/Icon 7.png" alt="Navbar Logo" />
                     </a>
                     <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
@@ -208,29 +209,61 @@
                         <span class="navbar-toggler-icon"></span>
                     </button>
                     <div class="collapse navbar-collapse" id="navbarSupportedContent">
-                        <ul class="navbar-nav me-auto mb-2 mb-lg-0 align-items-start">
+                        <ul class="navbar-nav me-auto mb-2 mb-lg-0">
                             <li class="nav-item TT">
                                 <a class="nav-link active NTT" aria-current="page"
-                                   href="@Url.Action("TroChoiUs", "User")">TRÒ CHƠI</a>
+                                   href="@Url.Action("TroChoi", "Home")">TRÒ CHƠI</a>
                             </li>
                             <li class="nav-item TT">
-                                <a class="nav-link NTT" href="@Url.Action("Champion", "User")">TƯỚNG</a>
+                                <a class="nav-link NTT" href="#">TƯỚNG</a>
+                            </li>
+                            <li class="nav-item dropdown active TT">
+                                <a class="nav-link dropdown-toggle NTT" href="#" id="navbarDropdown" role="button"
+                                   data-bs-toggle="dropdown" aria-expanded="false">
+                                    TIN TỨC
+                                </a>
+                                <ul class="dropdown-menu text-bg-dark HD_T2" aria-labelledby="navbarDropdown">
+                                    <li><a class="dropdown-item" href="#">TẤT CẢ</a></li>
+                                    <li><a class="dropdown-item" href="#">CẬP NHẬT TRÒ CHƠI</a></li>
+                                    <li><a class="dropdown-item" href="#">ESPORTS</a></li>
+                                    <li><a class="dropdown-item" href="#">ĐỘI NGŨ PHÁT TRIỂN</a></li>
+                                    <li><a class="dropdown-item" href="#">TRUYỀN THÔNG</a></li>
+                                    <li><a class="dropdown-item" href="#">RIOT GAMES</a></li>
+                                </ul>
                             </li>
                             <li class="nav-item TT">
-                                <a class="nav-link NTT" href="@Url.Action("News", "User")">TIN TỨC</a>
+                                <a class="nav-link NTT" href="#">CHI TIẾT CẬP NHẬT</a>
                             </li>
                             <li class="nav-item TT">
-                                <a class="nav-link NTT" href="@Url.Action("Update", "User")">CHI TIẾT CẬP NHẬT</a>
+                                <a class="nav-link NTT" href="#">ESPORTS</a>
                             </li>
                             <li class="nav-item TT">
-                                <a class="nav-link NTT" href="@Url.Action("Esport", "User")">ESPORTS</a>
+                                <a class="nav-link NTT" href="#">VŨ TRỤ</a>
+                            </li>
+                            <li class="nav-item TT">
+                                <a class="nav-link NTT" href="#">HỖ TRỢ</a>
                             </li>
                         </ul>
                         <form class="d-flex justify-content-end">
                             <div class="Biu">
                                 <div class="row justify-content-end align-items-center m-0">
-                                    <div class="col-xxl-3 col-xl-3 col-lg-3 col-md-3 col-sm-3 col-6 p-0 d-flex justify-content-center align-items-center" style="width: 150px;">
-                                        <div class="DC2"><a href="@Url.Action("ChoiNgayUs", "User")">Chơi Ngay</a></div>
+                                    <div class="col-xxl-6 p-0">
+                                        <div id="wrap">
+                                            <form action="" autocomplete="on">
+                                                <input id="search" name="search" type="text" placeholder="Tim kiem...">
+                                                <svg id="search_submit" value="Rechercher" type="submit"
+                                                     xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
+                                                     class="bi bi-search" viewBox="0 0 16 16">
+                                                    <path d="M11.742 10.344a6.5 6.5 0 1 0-1.397 1.398h-.001q.044.06.098.115l3.85 3.85a1 1 0 0 0 1.415-1.414l-3.85-3.85a1 1 0 0 0-.115-.1zM12 6.5a5.5 5.5 0 1 1-11 0 5.5 5.5 0 0 1 11 0" />
+                                                </svg>
+                                            </form>
+                                        </div>
+                                    </div>
+                                    <div class="col-xxl-3 col-xl-3 col-lg-3 col-md-3 col-sm-3 col-6 p-0 d-flex justify-content-center align-items-center">
+                                        <div class="DC1"><a href="#">Đăng Nhập</a></div>
+                                    </div>
+                                    <div class="col-xxl-3 col-xl-3 col-lg-3 col-md-3 col-sm-3 col-6 p-0 d-flex justify-content-center align-items-center">
+                                        <div class="DC2"><a href="#">Chơi Ngay</a></div>
                                     </div>
                                 </div>
                             </div>
@@ -240,7 +273,6 @@
             </nav>
         </div>
     </div>
-    <script src="~/js/MasterUs.js"></script>
 </div>
 
 <div class="container-fluid CTN" id="getuserchampiondetail">
