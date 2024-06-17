@@ -19,6 +19,7 @@
   </ItemGroup>
 
   <ItemGroup>
+    <None Include="D:\Project_PTUDW_22-6\Project_PTUDW\Project_UDW\.editorconfig" />
     <None Include="wwwroot\assets\extra-libs\sparkline\sparkline.js" />
     <None Include="wwwroot\assets\images\custom-select.png" />
     <None Include="wwwroot\assets\images\favicon.png" />
@@ -728,6 +729,10 @@
     <Folder Include="wwwroot\Pictures\Skills\Skills_Q\" />
     <Folder Include="wwwroot\Pictures\Skills\Skills_NT\" />
     <Folder Include="wwwroot\Videos\Video_Skill\" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <EditorConfigFiles Remove="D:\Project_PTUDW_22-6\Project_PTUDW\Project_UDW\.editorconfig" />
   </ItemGroup>
 
 </Project>

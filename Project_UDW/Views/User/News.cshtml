@@ -1,6 +1,5 @@
 ﻿@{
     ViewData["Title"] = "News";
-    Layout = null;
 }
 <link href="~/css/News.css" rel="stylesheet" />
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.13.1/css/all.min.css" integrity="sha256-2XFplPlrFClt0bIdPgpz8H7ojnk10H69xRqd9+uTShA=" crossorigin="anonymous" />
@@ -34,7 +33,7 @@
                 data.forEach(function (news, index) {
                     var row =
                         '<div class="col-xxl-4 col-xl-4 col-lg-4 col-md-6 col-sm-6 col-12">' +
-                        '<a href="/User/Detail_News?Usnews=' + news.namenews + '" id = "' + news.namenews + '">' +
+                        '<a href="/User/Detail_News?Usnews=' + news.namenews + '" id = "' + news.namenews + '" style="text-decoration: none;">' +
                         '<div class="card h-100">' +
                         '<img class="card-img-top TUONG_CARD_IMG" src = "/Pictures/News/' + news.picnewmain + '" alt = "">' +
                         '<div class="card-body UPDATE_CARD_BG_TEXT">' +
