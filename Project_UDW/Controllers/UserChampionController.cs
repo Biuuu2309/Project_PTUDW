@@ -53,5 +53,21 @@ namespace Project_UDW.Controllers
                 return NotFound();
             }
         }
+        [HttpGet]
+        [Route("GetUserChampionSearch")]
+        public IActionResult GetUserChampionSearch(string champName)
+        {
+            DAL dal = new DAL();
+            Response response = dal.GetUserChampionSearch(conn, champName);
+
+            if (response.StatusCode == 200)
+            {
+                return Ok(response.Data);
+            }
+            else
+            {
+                return NotFound();
+            }
+        }
     }
 }

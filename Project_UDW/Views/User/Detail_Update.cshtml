@@ -471,7 +471,7 @@
 </style>
 
 <section class="DTU">
-    <div class="container DTU_BG w-100 p-0" id="getuserupdatedetail">
+    <div class="container DTU_BG w-100 p-0" id="getuserupdatedetail" style="margin-top: 0px;">
     </div>
 </section>
 
@@ -650,7 +650,6 @@
                     '</div>';
                 container.append(row);
                 fetchChampDetailUpdate(version_update);
-                fetchdetailskillDetails(version_update);
                 fetchdetailitemDetails(version_update);
                 var phandau = document.querySelector('.DTT_PHANDAU');
                 if (phandau) {
@@ -662,6 +661,7 @@
             }
         });
     }
+
     function fetchChampDetailUpdate(version_update) {
         $.ajax({
             type: "GET",
@@ -672,6 +672,7 @@
                 var container = $('#champ-detail-container');
                 container.empty();
                 data.forEach(function (champ) {
+                    var skillContainerId = 'skill-detail-container-' + champ.champName.replace(/\s+/g, '-');
                     var row =
                         '<div class="DTU_PHANTHAN_BANG_3_CONTAINER mt-5">' +
                         '<div class="DTU_PHANTHAN_BANG_3_TIEUDE">' +
@@ -684,12 +685,14 @@
                         '<div class="DTU_PHANTHAN_BANG_3">' +
                         '<div class="DTU_PHANTHAN_BANG_3_TEXT">' +
                         '<div class="row">' +
-                        '<div class="col-xxl-2 col-xl-2 col-lg-2 col-md-4 col-sm-4 col-6">' +
+                        '<div class="col-xxl-2 col-xl-2 col-lg-2 col-md-4 col-sm-4 col-6" style="display: flex; flex-wrap: wrap; justify-content: center; align-content: center;">' +
                         '<img class="img-fluid" src="/Pictures/Champions/' + champ.imageAVA + '" alt="Alternate Text"/>' +
-                        '</div>' +
-                        '<div class="col-xxl-10 col-xl-10 col-lg-10 col-md-8 col-sm-8 col-6 d-flex justify-content-start align-items-center text-start">' +
                         '<div class="DTU_PHANTHAN_BANG_3_IN_TEXT_SUBTEXT">' +
                         '<a href="#">' + champ.champName + '</a>' +
+                        '</div>' +
+                        '</div>' +
+                        '<div class="col-xxl-10 col-xl-10 col-lg-10 col-md-8 col-sm-8 col-6 d-flex justify-content-start align-items-center text-start">' +
+                        '<div class="container" id="' + skillContainerId + '">' +
                         '</div>' +
                         '</div>' +
                         '</div>' +
@@ -697,13 +700,13 @@
                         '<div class="DTU_PHANTHAN_BANG_3_CHISO">' +
                         '<div class="row">' +
                         '<div class="col-xxl-12">' +
-                        '<p>Chỉ Số Cơ Bản</p>' +
+                        '<p>Chỉ Số Cơ Bản Tương Ứng</p>' +
                         '<ul>' +
-                        '<li><b>' + champ.dame_nt + '</b></li>' +
-                        '<li><b>' + champ.dame_q + '</b></li>' +
-                        '<li><b>' + champ.dame_w + '</b></li>' +
-                        '<li><b>' + champ.dame_e + '</b></li>' +
-                        '<li><b>' + champ.dame_r + '</b></li>' +
+                        '<li><b> Nội tại: ' + champ.dame_nt + '</b></li>' +
+                        '<li><b> Q: </b>' + champ.dame_q + '</li>' +
+                        '<li><b> W: </b>' + champ.dame_w + '</li>' +
+                        '<li><b> E: </b>' + champ.dame_e + '</li>' +
+                        '<li><b> R: </b>' + champ.dame_r + '</li>' +
                         '</ul>' +
                         '</div>' +
                         '</div>' +
@@ -719,6 +722,7 @@
                         '</div>' +
                         '</div>';
                     container.append(row);
+                    fetchdetailskillDetails(champ.champName, skillContainerId);
                 });
             },
             error: function (error) {
@@ -726,14 +730,15 @@
             }
         });
     }
-    function fetchdetailskillDetails(version_update) {
+
+    function fetchdetailskillDetails(champName, skillContainerId) {
         $.ajax({
             type: "GET",
             url: "/api/UserUpdate/GetUserSkillDetail",
-            data: { version_update: version_update },
+            data: { champName: champName },
             dataType: "json",
             success: function (data) {
-                var container = $('#skill-detail-container');
+                var container = $('#' + skillContainerId);
                 container.empty();
                 data.forEach(function (skill) {
                     var row =
@@ -742,7 +747,7 @@
                         '<img class="img-fluid" src="/Pictures/Skills/Skills_NT/' + skill.avA_NT + '" alt="Alternate Text"/>' +
                         '</div>' +
                         '<div class="col-xxl-11 col-xl-11 col-lg-10 col-md-10 col-sm-9 col-8 d-flex justify-content-start align-items-center text-center">' +
-                        '<p>Nội tại - ' + skill.noiTai + '</p>' +
+                        '<p style="color: wheat;">Nội tại - ' + skill.noiTai + '</p>' +
                         '</div>' +
                         '</div>' +
                         '<div class="row">' +
@@ -750,7 +755,7 @@
                         '<img class="img-fluid" src="/Pictures/Skills/Skills_Q/' + skill.avA_Q + '" alt="Alternate Text"/>' +
                         '</div>' +
                         '<div class="col-xxl-11 col-xl-11 col-lg-10 col-md-10 col-sm-9 col-8 d-flex justify-content-start align-items-center text-center">' +
-                        '<p>Q - ' + skill.skillQ + '</p>' +
+                        '<p style="color: wheat;">Q - ' + skill.skillQ + '</p>' +
                         '</div>' +
                         '</div>' +
                         '<div class="row">' +
@@ -758,7 +763,7 @@
                         '<img class="img-fluid" src="/Pictures/Skills/Skills_W/' + skill.avA_W + '" alt="Alternate Text"/>' +
                         '</div>' +
                         '<div class="col-xxl-11 col-xl-11 col-lg-10 col-md-10 col-sm-9 col-8 d-flex justify-content-start align-items-center text-center">' +
-                        '<p>W - ' + skill.skillW + '</p>' +
+                        '<p style="color: wheat;">W - ' + skill.skillW + '</p>' +
                         '</div>' +
                         '</div>' +
                         '<div class="row">' +
@@ -766,7 +771,7 @@
                         '<img class="img-fluid" src="/Pictures/Skills/Skills_E/' + skill.avA_E + '" alt="Alternate Text"/>' +
                         '</div>' +
                         '<div class="col-xxl-11 col-xl-11 col-lg-10 col-md-10 col-sm-9 col-8 d-flex justify-content-start align-items-center text-center">' +
-                        '<p>E - ' + skill.skillE + '</p>' +
+                        '<p style="color: wheat;">E - ' + skill.skillE + '</p>' +
                         '</div>' +
                         '</div>' +
                         '<div class="row">' +
@@ -774,7 +779,7 @@
                         '<img class="img-fluid" src="/Pictures/Skills/Skills_R/' + skill.avA_R + '" alt="Alternate Text"/>' +
                         '</div>' +
                         '<div class="col-xxl-11 col-xl-11 col-lg-10 col-md-10 col-sm-9 col-8 d-flex justify-content-start align-items-center text-center">' +
-                        '<p>R - ' + skill.skillR + '</p>' +
+                        '<p style="color: wheat;">R - ' + skill.skillR + '</p>' +
                         '</div>' +
                         '</div>';
                     container.append(row);
@@ -785,6 +790,7 @@
             }
         });
     }
+
     function fetchdetailitemDetails(version_update) {
         $.ajax({
             type: "GET",

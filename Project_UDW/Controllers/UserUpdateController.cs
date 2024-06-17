@@ -55,10 +55,10 @@ namespace Project_UDW.Controllers
         }
         [HttpGet]
         [Route("GetUserSkillDetail")]
-        public IActionResult GetUserSkillDetail(string version_update)
+        public IActionResult GetUserSkillDetail(string champName)
         {
             DAL dal = new DAL();
-            Response response = dal.GetUserSkillDetail(conn, version_update);
+            Response response = dal.GetUserSkillDetail(conn, champName);
 
             if (response.StatusCode == 200)
             {

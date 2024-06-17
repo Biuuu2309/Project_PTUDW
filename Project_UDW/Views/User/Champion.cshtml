@@ -31,12 +31,11 @@
           <div class="row">
               <div class="col-xxl-9 col-xl-9 col-lg-9 col-md-9 col-sm-9 col-9 p-0">
                   <form class="form-inline d-flex justify-content-end">
-                      <input class="form-control mr-sm-2 TUONG_SEARCH" type="search" placeholder="Tìm tướng bạn cần" aria-label="Search">
+                      <input class="form-control mr-sm-2 TUONG_SEARCH" type="search" id="champ-search" placeholder="Tìm tướng bạn cần" aria-label="Search">
                   </form>
               </div>
               <div class="col-xxl-3 col-xl-3 col-lg-3 col-md-3 col-sm-3 col-3 p-0">
-                  <button class="btn btn-outline-success my-2 my-sm-0 TUONG_SEARCHBUTTON" type="submit">Search</button>
-
+                <button class="btn btn-outline-success my-2 my-sm-0 TUONG_SEARCHBUTTON" id="search-button" type="button">Search</button>
               </div>
           </div>
       </div>
@@ -50,32 +49,93 @@
 
 <script>
     $(document).ready(function () {
-        $.ajax({
-            type: "GET",
-            url: "/api/UserChampion/GetUserChampion",
-            dataType: "json",
-            success: function (data) {
-                console.log("Data fetched successfully:", data);
-                var tbody = $('#getlistchampion');
-                tbody.empty();
-                data.forEach(function (champion, index) {
-                    var row =
-                        '<div class="col-xxl-3 col-xl-3 col-lg-4 col-md-6 col-sm-6 col-12" >' +
-                        '<a href="/User/Detail_Champion?Uschamp=' + champion.champName + '" id="' + champion.champName + '">' +
-                        '<div class="card">' +
-                        '<img class="card-img-top TUONG_CARD_IMG" src="/Pictures/Champions/' + champion.imageAVA + '" alt="Card image cap">' +
-                        '<div class="card-body TUONG_CARD_BG_TEXT">' +
-                        '<p class="card-text TUONG_CARD_TEXT">' + champion.champName + '</p>' +
-                        '</div>' +
-                        '</div>' +
-                        '</a>' +
-                        '</div>';
-                    tbody.append(row);
-                });
-            },
-            error: function (error) {
-                console.error("Error fetching data:", error);
+        function fetchChampions() {
+            $.ajax({
+                type: "GET",
+                url: "/api/UserChampion/GetUserChampion",
+                dataType: "json",
+                success: function (data) {
+                    console.log("Data fetched successfully:", data);
+                    var tbody = $('#getlistchampion');
+                    tbody.empty();
+                    data.forEach(function (champion, index) {
+                        var row =
+                            '<div class="col-xxl-3 col-xl-3 col-lg-4 col-md-6 col-sm-6 col-12" >' +
+                            '<a href="/User/Detail_Champion?Uschamp=' + champion.champName + '" id="' + champion.champName + '">' +
+                            '<div class="card">' +
+                            '<img class="card-img-top TUONG_CARD_IMG" src="/Pictures/Champions/' + champion.imageAVA + '" alt="Card image cap">' +
+                            '<div class="card-body TUONG_CARD_BG_TEXT">' +
+                            '<p class="card-text TUONG_CARD_TEXT">' + champion.champName + '</p>' +
+                            '</div>' +
+                            '</div>' +
+                            '</a>' +
+                            '</div>';
+                        tbody.append(row);
+                    });
+                },
+                error: function (error) {
+                    console.error("Error fetching data:", error);
+                }
+            });
+        }
+
+        function searchChampion(champName) {
+            $.ajax({
+                type: "GET",
+                url: "/api/UserChampion/GetUserChampionSearch",
+                data: { champName: champName },
+                dataType: "json",
+                success: function (data) {
+                    var tbody = $('#getlistchampion');
+                    tbody.empty();
+                    if (data) {
+                        var champion = data;
+                        var row =
+                            '<div class="col-xxl-3 col-xl-3 col-lg-4 col-md-6 col-sm-6 col-12" style="width: 100%;">' +
+                            '<a href="/User/Detail_Champion?Uschamp=' + champion.champName + '" id="' + champion.champName + '">' +
+                            '<div class="card">' +
+                            '<img class="card-img-top TUONG_CARD_IMG" src="/Pictures/Champions/' + champion.imageAVA + '" alt="Card image cap">' +
+                            '<div class="card-body TUONG_CARD_BG_TEXT">' +
+                            '<p class="card-text TUONG_CARD_TEXT">' + champion.champName + '</p>' +
+                            '</div>' +
+                            '</div>' +
+                            '</a>' +
+                            '</div>';
+                        tbody.append(row);
+                    } else {
+                        tbody.append('<div class="col-12 text-center"><p>Không tìm thấy tướng</p></div>');
+                    }
+                },
+                error: function (error) {
+                    console.error("Error fetching data:", error);
+                }
+            });
+        }
+
+        // Fetch all champions when the page loads
+        fetchChampions();
+
+        // Search champion on button click
+        $('#search-button').click(function () {
+            var champName = $('#champ-search').val().trim();
+            if (champName) {
+                searchChampion(champName);
+            } else {
+                fetchChampions(); // Fetch all champions if search input is empty
+            }
+        });
+
+        // Optional: Search champion on enter key press
+        $('#champ-search').keypress(function (e) {
+            if (e.which == 13) {
+                var champName = $('#champ-search').val().trim();
+                if (champName) {
+                    searchChampion(champName);
+                } else {
+                    fetchChampions(); // Fetch all champions if search input is empty
+                }
             }
         });
     });
+
 </script>

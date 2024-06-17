@@ -12,6 +12,47 @@ namespace Project_UDW.Models
 {
     public class DAL
     {
+        public Response GetUserChampionSearch(SqlConnection conn, string champName)
+        {
+            Response response = new Response();
+            try
+            {
+                conn.Open();
+                string query = "SELECT ChampName, NickName, Describle, Role, Level, ImageDD, ImageAVA FROM champions WHERE ChampName = @ChampName";
+                SqlCommand cmd = new SqlCommand(query, conn);
+                cmd.Parameters.AddWithValue("@ChampName", champName);
+                SqlDataReader reader = cmd.ExecuteReader();
+
+                if (reader.Read())
+                {
+                    Champions champion = new Champions
+                    {
+                        ChampName = reader["ChampName"].ToString(),
+                        NickName = reader["NickName"].ToString(),
+                        Describle = reader["Describle"].ToString(),
+                        Role = reader["Role"].ToString(),
+                        Level = reader["Level"].ToString(),
+                        ImageDD = reader["ImageDD"].ToString(),
+                        ImageAVA = reader["ImageAVA"].ToString()
+                    };
+                    response.StatusCode = 200;
+                    response.Data = champion;
+                }
+                else
+                {
+                    response.StatusCode = 404;
+                    response.StatusMessage = "Champion not found";
+                }
+                conn.Close();
+            }
+            catch (Exception ex)
+            {
+                response.StatusCode = 500;
+                response.StatusMessage = ex.Message;
+            }
+
+            return response;
+        }
         public Response GetUserItemDetail(SqlConnection conn, string version_update)
         {
             Response response = new Response();
@@ -136,7 +177,7 @@ namespace Project_UDW.Models
 
             return response;
         }
-        public Response GetUserSkillDetail(SqlConnection conn, string version_update)
+        public Response GetUserSkillDetail(SqlConnection conn, string champName)
         {
             Response response = new Response();
             List<Skills> skillList = new List<Skills>();
@@ -145,13 +186,9 @@ namespace Project_UDW.Models
             {
                 string query = @"   SELECT ChampName, Skillnt, Skillq, Skillw, Skille, Skillr, AVAnt, AVAq, AVAw, AVAe, AVAr
                                     FROM skills
-                                    WHERE ChampName IN (SELECT ChampName
-                                    					FROM update_champ_version
-                                    					WHERE update_champ_version.version_update IN (	SELECT version_update
-                                    																	FROM update_head
-                                    																	WHERE update_head.version_update = @version_update))";
+                                    WHERE ChampName = @champName";
                 SqlCommand cmd = new SqlCommand(query, conn);
-                cmd.Parameters.AddWithValue("@version_update", version_update);
+                cmd.Parameters.AddWithValue("@champName", champName);
                 conn.Open();
                 SqlDataReader reader = cmd.ExecuteReader();
 
