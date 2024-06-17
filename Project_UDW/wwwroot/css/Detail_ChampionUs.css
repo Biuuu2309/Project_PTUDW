@@ -123,7 +123,8 @@ INVAITRO {
     border: 1px solid rgb(200, 170, 110);
 }
 .VIDEOSKILL_2 {
-    padding: 20%;
+    padding: 3%;
+    width: 100%;
 }
 .NICKNAME5 {
     text-wrap: balance;
