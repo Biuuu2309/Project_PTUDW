@@ -10,10 +10,7 @@
     display: flex;
     justify-content: center;
 }
-.CTNN {
-    background-color: #161f33;
 
-}
 .SKILL_KN .SKILL_KN_1 {
     text-wrap: balance;
     word-break: break-word;
@@ -95,12 +92,7 @@ INVAITRO {
 .AVASKILL {
     width: 80px;
 }
-.DETAILSKILL {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    flex-wrap: wrap;
-}
+
 .TITLESKILL {
     font-family: Spiegel, sans-serif;
     word-break: break-word;
@@ -114,18 +106,12 @@ INVAITRO {
     display: flex;
     width: 100px;
 }
-.VIDEOSKILL {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-}
+
 .VIDEOSKILL_1 {
     border: 1px solid rgb(200, 170, 110);
 }
-.VIDEOSKILL_2 {
-    padding: 3%;
-    width: 100%;
-}
+
+
 .NICKNAME5 {
     text-wrap: balance;
     word-break: break-word;
@@ -145,6 +131,7 @@ INVAITRO {
 .CTNNN {
     background-color: #ffffff;
 }
+
 @media (max-width: 991px) {
     .TITLE1 {
         margin-left: 0;
@@ -172,4 +159,13 @@ INVAITRO {
         padding-top: 7%;
         padding-bottom: 7%;
     }
+    .NICKNAME1 {
+        margin-top: 40px;
+    }
+    .NICKNAME2 {
+        font-size: 60px;
+    }
+}
+@media (max-width: 725px) {
+
 }
