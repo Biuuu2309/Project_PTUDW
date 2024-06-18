@@ -110,3 +110,4 @@
         mainText.innerText = 'Huyền Thoại Runeterra - Bản Mở Rộng Mới - Con Đường Nguyện Ước';
     }
 });
+
