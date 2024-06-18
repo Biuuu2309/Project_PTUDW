@@ -37,7 +37,9 @@
 @{
     await Html.RenderPartialAsync("~/Views/UserShared/HeaderUs.cshtml");
 }
-@RenderBody()
+<div class="container-fluid">
+        @RenderBody()
+</div>
 @{
    await Html.RenderPartialAsync("~/Views/UserShared/FooterUs.cshtml");
 }
