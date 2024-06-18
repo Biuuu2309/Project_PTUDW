@@ -306,3 +306,10 @@ body {
     .DTU_PHANTHAN_BANG_6_MAIN_2 ul {
         font-size: 18px;
     }
+
+
+    @media (max-width: 580px) {
+        .ABC {
+            flex-direction: column;
+        }
+    }

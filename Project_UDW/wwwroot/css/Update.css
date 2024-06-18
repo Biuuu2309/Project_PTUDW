@@ -303,3 +303,8 @@ a, a:active, a:focus {
 .mt-6, .my-6 {
     margin-top: 3.5rem;
 }
+@media (max-width: 530px) {
+    .LG_COL h1 {
+        font-size: 50px;
+    }
+}
