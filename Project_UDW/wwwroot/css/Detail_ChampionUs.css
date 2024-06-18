@@ -25,8 +25,8 @@
 .text-overlay {
     position: absolute;
     top: 0;
-    width: 90%; /* Đảm bảo chiều rộng giống như ảnh */
-    color: white; /* Tùy chọn màu chữ */
+    width: 90%; 
+    color: white; 
     display: flex;
     justify-content: start;
     align-items: center;

@@ -5,31 +5,22 @@
 <link rel="stylesheet" href="~/css/Detail_ChampionUs.css">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.13.1/css/all.min.css" integrity="sha256-2XFplPlrFClt0bIdPgpz8H7ojnk10H69xRqd9+uTShA=" crossorigin="anonymous" />
 <script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha384-KyZXEAg3QhqLMpG8r+8fhAXLR0Ff3B4o1RjM3TV7pHIUydm4e4W3F4L8tFVCmwHZ" crossorigin="anonymous"></script>
-<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
-<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
 <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" />
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.13.1/css/all.min.css" integrity="sha256-2XFplPlrFClt0bIdPgpz8H7ojnk10H69xRqd9+uTShA=" crossorigin="anonymous" />
+<script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha384-KyZXEAg3QhqLMpG8r+8fhAXLR0Ff3B4o1RjM3TV7pHIUydm4e4W3F4L8tFVCmwHZ" crossorigin="anonymous"></script>
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" />
+<link href="~/css/MasterUs.css" rel="stylesheet" />
 
-
-<script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
-    <link rel="icon" type="image/png" sizes="16x16" href="~/assets/images/favicon.png">
-    <link href="~/assets/libs/chartist/dist/chartist.min.css" rel="stylesheet">
-    <link href="~/dist/css/style.min.css" rel="stylesheet">
-    <link href="~/Content/css" rel="stylesheet" />
-    <script src="~/bundles/modernizr"></script>
-    <link href="~/css/MasterUs.css" rel="stylesheet" />
-    <link href="~/css/HeaderUs.css" rel="stylesheet" />
-    <link href="~/js/MasterUs.js" rel="stylesheet" />
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-    <link rel="stylesheet" href="https://unicons.iconscout.com/release/v4.0.0/css/line.css">
-    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.5.0/css/all.css" integrity="sha384-B4dIYHKNBt8Bc12p+WXckhzcICo0wtJAoU8YZTY5qE0Id1GSseTk6S+L3BlXeVIU" crossorigin="anonymous">
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
-          integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
-            integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
-            crossorigin="anonymous"></script>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
-    <link rel="stylesheet" href="https://unicons.iconscout.com/release/v4.0.0/css/line.css">
 <style>
+    .offcanvas {
+        z-index: 1051; /* Higher than .modal-backdrop */
+    }
+
+    .modal-backdrop {
+        z-index: 1049; /* Lower than .offcanvas */
+    }
+
     #getuserskilldetail .VIDEOSKILL_2 {
         padding: 3%;
         width: 100%;
@@ -60,9 +51,15 @@
         background-color: #161f33;
         display: flex;
     }
+
+    .CTNNK {
+        background-color: #212529;
+        display: flex;
+    }
 </style>
-<div class="container-fluid w-100 p-0" style="height: 80px; position:relative;z-index:2;">
-    <div class="row bg-dark">
+
+<div class="container-fluid w-100 CTNNK" style="position:relative; z-index:1000;">
+    <div class="row bg-dark" style="width: 100%;">
         <div id="HD_L" class="col-xxl-2 col-xl-2 col-lg-3 col-md-3 col-sm-3 col-5 justify-content-center align-items-center p-0" style="height: 80px;">
             <a href="#" data-bs-toggle="offcanvas" data-bs-target="#offcanvasTop" aria-controls="offcanvasTop">
                 <img class="logo" src="~/Pictures/IconGames/Icon 2.png" alt="Logo" />
@@ -72,8 +69,7 @@
                     <a href="#">
                         <img class="HD_MINI" src="~/Pictures/IconGames/Icon 1.png" alt="Mini Logo" />
                     </a>
-                    <button type="button" class="btn-close text-reset" data-bs-dismiss="offcanvas"
-                            aria-label="Close"></button>
+                    <button type="button" class="btn-close text-reset" data-bs-dismiss="offcanvas" aria-label="Close"></button>
                 </div>
                 <div class="offcanvas-body">
                     <div class="row">
@@ -188,7 +184,6 @@
                                     <a class="HD_HI" href="#">
                                         <img class="img-fluid" id="main-image" src="~/Pictures/IconGames/Icon 13.jpeg" alt="Alternate Text" />
                                         <p class="p-1" id="main-text">Huyền Thoại Runeterra - Bản Mở Rộng Mới - Con Đường Nguyện Ước</p>
-
                                     </a>
                                 </div>
                             </div>
@@ -203,33 +198,19 @@
                     <a class="navbar-brand d-flex justify-content-center align-items-center" style="height: 80px;" href="#">
                         <img src="~/Pictures/IconGames/Icon 7.png" alt="Navbar Logo" />
                     </a>
-                    <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
-                            data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false"
-                            aria-label="Toggle navigation">
+                    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
                         <span class="navbar-toggler-icon"></span>
                     </button>
                     <div class="collapse navbar-collapse" id="navbarSupportedContent">
-                        <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                        <ul class="navbar-nav me-auto mb-2 mb-lg-0 align-items-start">
                             <li class="nav-item TT">
-                                <a class="nav-link active NTT" aria-current="page"
-                                   href="@Url.Action("TroChoi", "Home")">TRÒ CHƠI</a>
+                                <a class="nav-link active NTT" aria-current="page" href="#">TRÒ CHƠI</a>
                             </li>
                             <li class="nav-item TT">
                                 <a class="nav-link NTT" href="#">TƯỚNG</a>
                             </li>
-                            <li class="nav-item dropdown active TT">
-                                <a class="nav-link dropdown-toggle NTT" href="#" id="navbarDropdown" role="button"
-                                   data-bs-toggle="dropdown" aria-expanded="false">
-                                    TIN TỨC
-                                </a>
-                                <ul class="dropdown-menu text-bg-dark HD_T2" aria-labelledby="navbarDropdown">
-                                    <li><a class="dropdown-item" href="#">TẤT CẢ</a></li>
-                                    <li><a class="dropdown-item" href="#">CẬP NHẬT TRÒ CHƠI</a></li>
-                                    <li><a class="dropdown-item" href="#">ESPORTS</a></li>
-                                    <li><a class="dropdown-item" href="#">ĐỘI NGŨ PHÁT TRIỂN</a></li>
-                                    <li><a class="dropdown-item" href="#">TRUYỀN THÔNG</a></li>
-                                    <li><a class="dropdown-item" href="#">RIOT GAMES</a></li>
-                                </ul>
+                            <li class="nav-item TT">
+                                <a class="nav-link NTT" href="#">TIN TỨC</a>
                             </li>
                             <li class="nav-item TT">
                                 <a class="nav-link NTT" href="#">CHI TIẾT CẬP NHẬT</a>
@@ -237,32 +218,11 @@
                             <li class="nav-item TT">
                                 <a class="nav-link NTT" href="#">ESPORTS</a>
                             </li>
-                            <li class="nav-item TT">
-                                <a class="nav-link NTT" href="#">VŨ TRỤ</a>
-                            </li>
-                            <li class="nav-item TT">
-                                <a class="nav-link NTT" href="#">HỖ TRỢ</a>
-                            </li>
                         </ul>
                         <form class="d-flex justify-content-end">
                             <div class="Biu">
                                 <div class="row justify-content-end align-items-center m-0">
-                                    <div class="col-xxl-6 p-0">
-                                        <div id="wrap">
-                                            <form action="" autocomplete="on">
-                                                <input id="search" name="search" type="text" placeholder="Tim kiem...">
-                                                <svg id="search_submit" value="Rechercher" type="submit"
-                                                     xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
-                                                     class="bi bi-search" viewBox="0 0 16 16">
-                                                    <path d="M11.742 10.344a6.5 6.5 0 1 0-1.397 1.398h-.001q.044.06.098.115l3.85 3.85a1 1 0 0 0 1.415-1.414l-3.85-3.85a1 1 0 0 0-.115-.1zM12 6.5a5.5 5.5 0 1 1-11 0 5.5 5.5 0 0 1 11 0" />
-                                                </svg>
-                                            </form>
-                                        </div>
-                                    </div>
-                                    <div class="col-xxl-3 col-xl-3 col-lg-3 col-md-3 col-sm-3 col-6 p-0 d-flex justify-content-center align-items-center">
-                                        <div class="DC1"><a href="#">Đăng Nhập</a></div>
-                                    </div>
-                                    <div class="col-xxl-3 col-xl-3 col-lg-3 col-md-3 col-sm-3 col-6 p-0 d-flex justify-content-center align-items-center">
+                                    <div class="col-xxl-3 col-xl-3 col-lg-3 col-md-3 col-sm-3 col-6 p-0 d-flex justify-content-center align-items-center" style="width: 150px;">
                                         <div class="DC2"><a href="#">Chơi Ngay</a></div>
                                     </div>
                                 </div>
@@ -273,7 +233,9 @@
             </nav>
         </div>
     </div>
+    <script src="~/js/MasterUs.js"></script>
 </div>
+
 
 <div class="container-fluid CTN" id="getuserchampiondetail">
 </div>
