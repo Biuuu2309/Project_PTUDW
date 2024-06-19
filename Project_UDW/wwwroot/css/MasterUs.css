@@ -282,9 +282,6 @@ input[type="submit"] {
 }
 
 @media(max-width:430px) {
-    #HD_L {
-        display: none;
-    }
 
     div.col-xxl-10.col-xl-10.col-lg-9.col-md-9.col-sm-9.col-7 {
         width: 100%;
