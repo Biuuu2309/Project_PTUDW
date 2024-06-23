@@ -22,7 +22,7 @@ body {
     text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
 }
 
-.ID_NUT {
+button.btn.btn-secondary.btn-lg.ID_NUT {
     background-color: #c7a96d;
     color: #0a1340;
     border: none;
@@ -43,7 +43,7 @@ button.btn.btn-secondary.btn-lg:hover {
     justify-content: center;
 }
 
-.ID_NOC_NUT {
+button.btn.btn-secondary.btn-lg.ID_NOC_NUT {
     background-color: #c7a96d;
     color: #0a1340;
     border: none;
