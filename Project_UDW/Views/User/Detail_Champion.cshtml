@@ -80,7 +80,7 @@
                                         <p>TRÒ CHƠI</p>
                                     </div>
                                     <div class="col-xxl-2 col-xl-2 col-lg-2 col-md-2 col-sm-2 col-2 w-100 p-1 mt-1 HD_C">
-                                        <a class="HD_MN menu-item" id="lien-minh" data-image="image1" href="#">
+                                        <a class="HD_MN menu-item" id="lien-minh" data-image="image1" href="@Url.Action("Index","User")">
                                             <span>LIÊN MINH HUYỀN THOẠI</span>
                                         </a>
                                     </div>
@@ -195,7 +195,7 @@
         <div class="col-xxl-10 col-xl-10 col-lg-9 col-md-9 col-sm-9 col-7">
             <nav class="navbar navbar-expand-xxl navbar-dark p-0">
                 <div class="container-fluid HD_T p-0">
-                    <a class="navbar-brand d-flex justify-content-center align-items-center" style="height: 80px;" href="#">
+                    <a class="navbar-brand d-flex justify-content-center align-items-center" style="height: 80px;" href="@Url.Action("Index","User")">
                         <img src="~/Pictures/IconGames/Icon 7.png" alt="Navbar Logo" />
                     </a>
                     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
@@ -204,26 +204,26 @@
                     <div class="collapse navbar-collapse" id="navbarSupportedContent">
                         <ul class="navbar-nav me-auto mb-2 mb-lg-0 align-items-start">
                             <li class="nav-item TT">
-                                <a class="nav-link active NTT" aria-current="page" href="#">TRÒ CHƠI</a>
+                                <a class="nav-link active NTT" aria-current="page" href="@Url.Action("TroChoiUs","User")">TRÒ CHƠI</a>
                             </li>
                             <li class="nav-item TT">
-                                <a class="nav-link NTT" href="#">TƯỚNG</a>
+                                <a class="nav-link NTT" href="@Url.Action("Champion","User")">TƯỚNG</a>
                             </li>
                             <li class="nav-item TT">
-                                <a class="nav-link NTT" href="#">TIN TỨC</a>
+                                <a class="nav-link NTT" href="@Url.Action("News","User")">TIN TỨC</a>
                             </li>
                             <li class="nav-item TT">
-                                <a class="nav-link NTT" href="#">CHI TIẾT CẬP NHẬT</a>
+                                <a class="nav-link NTT" href="@Url.Action("Update","User")">CHI TIẾT CẬP NHẬT</a>
                             </li>
                             <li class="nav-item TT">
-                                <a class="nav-link NTT" href="#">ESPORTS</a>
+                                <a class="nav-link NTT" href="@Url.Action("Esport","User")">ESPORTS</a>
                             </li>
                         </ul>
                         <form class="d-flex justify-content-end">
                             <div class="Biu">
                                 <div class="row justify-content-end align-items-center m-0">
                                     <div class="col-xxl-3 col-xl-3 col-lg-3 col-md-3 col-sm-3 col-6 p-0 d-flex justify-content-center align-items-center" style="width: 150px;">
-                                        <div class="DC2"><a href="#">Chơi Ngay</a></div>
+                                        <div class="DC2"><a href="@Url.Action("ChoiNgayUs","User")">Chơi Ngay</a></div>
                                     </div>
                                 </div>
                             </div>
