@@ -54,6 +54,5 @@ namespace Project_UDW.Controllers
             DAL dal = new DAL();
             return dal.UpdateChamp(updatechamp, conn);
         }
-       
     }
 }
