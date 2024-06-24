@@ -29,7 +29,9 @@ button.btn.btn-secondary.btn-lg.ID_NUT {
     border-radius: inherit;
     width: 50%;
 }
-
+button.btn.btn-secondary.btn-lg.ID_NUT a:hover{
+    color:#0a1340;
+}
 button.btn.btn-secondary.btn-lg:hover {
     background-color: #c6b696;
 }
@@ -49,6 +51,9 @@ button.btn.btn-secondary.btn-lg.ID_NOC_NUT {
     border: none;
     border-radius: inherit;
     width: 30%;
+}
+button.btn.btn-secondary.btn-lg.ID_NOC_NUT a:hover{
+    color:#0a1340;
 }
 
     .ID_NOC_NUT a {
@@ -550,7 +555,7 @@ p.ID_HAGUC_TEXT_3 {
     font-weight: 100;
 }
 
-.ID_HAGUC_IN_NUT {
+button.ID_HAGUC_IN_NUT {
     background-color: #c7a96d;
     border-color: #c7a96d;
     color: #0a1429;
@@ -561,7 +566,9 @@ p.ID_HAGUC_TEXT_3 {
     align-items: center;
     width: 30%;
 }
-
+button.ID_HAGUC_IN_NUT a:hover{
+    color:#0a1340;
+}
     .ID_HAGUC_IN_NUT.btn:hover {
         background-color: #c6b696;
     }
