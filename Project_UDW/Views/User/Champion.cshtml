@@ -38,7 +38,7 @@
               </div>
           </div>
       </div>
-      <div class="container p-0 bg-white" style="display: flex; justify-content: space-around;">
+      <div class="container p-0 bg-white" style="display: flex; justify-content: space-around; margin-bottom: 40px;">
           <div class="row" id="getlistchampion">
               
           </div>
@@ -59,7 +59,7 @@
                     tbody.empty();
                     data.forEach(function (champion, index) {
                         var row =
-                            '<div class="col-xxl-3 col-xl-3 col-lg-4 col-md-6 col-sm-6 col-12" >' +
+                            '<div class="col-xxl-3 col-xl-3 col-lg-4 col-md-6 col-sm-6 col-12" style="padding-bottom: 20px;">' +
                             '<a href="/User/Detail_Champion?Uschamp=' + champion.champName + '" id="' + champion.champName + '">' +
                             '<div class="card">' +
                             '<img class="card-img-top TUONG_CARD_IMG" src="/Pictures/Champions/' + champion.imageAVA + '" alt="Card image cap">' +

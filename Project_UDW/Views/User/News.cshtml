@@ -13,7 +13,7 @@
             <h1>TIN TỨC <br /> TIÊU BIỂU</h1>
         </div>
         <div class="col-xxl-6"></div>
-        <div class="col LOUB">
+        <div class="col LOUB" style="margin-bottom: 40px;">
             <div class="row" id="getlistnews">
             </div>
         </div>
@@ -32,7 +32,7 @@
                 tbody.empty();
                 data.forEach(function (news, index) {
                     var row =
-                        '<div class="col-xxl-4 col-xl-4 col-lg-4 col-md-6 col-sm-6 col-12">' +
+                        '<div class="col-xxl-4 col-xl-4 col-lg-4 col-md-6 col-sm-6 col-12" style="padding-bottom: 20px;">' +
                         '<a href="/User/Detail_News?Usnews=' + news.namenews + '" id = "' + news.namenews + '" style="text-decoration: none;">' +
                         '<div class="card h-100">' +
                         '<img class="card-img-top TUONG_CARD_IMG" src = "/Pictures/News/' + news.picnewmain + '" alt = "">' +

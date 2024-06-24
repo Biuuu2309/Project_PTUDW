@@ -14,7 +14,7 @@
             <h1 style="font-size: 65px;">CHI TIẾT <br /> CẬP NHẬT</h1>
         </div>
         <div class="col-xxl-6"></div>
-        <div class="col LOUB">
+        <div class="col LOUB" style="margin-bottom: 40px;">
             <div class="row" id="getlistupdate">
                 
             </div>
@@ -34,7 +34,7 @@
                 tbody.empty();
                 data.forEach(function (update, index) {
                     var row =
-                    '<div class="col-xxl-4 col-xl-4 col-lg-4 col-md-6 col-sm-6 col-12">' +
+                    '<div class="col-xxl-4 col-xl-4 col-lg-4 col-md-6 col-sm-6 col-12" style="padding-bottom: 20px;">' +
                     '<a href="/User/Detail_Update?Usupdate=' + update.version_update + '" id = "' + update.version_update + '">' +
                     '<div class="card h-100">' +
                     '<img class="card-img-top TUONG_CARD_IMG" src = "/Pictures/Update/' + update.picheadmain + '" alt = "">' +
